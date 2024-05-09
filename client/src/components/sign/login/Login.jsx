@@ -2,13 +2,18 @@ import React from 'react'
 import './login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-
+import {
+  signInStart,
+  signInSuccess,
+  signInFailure,
+} from '../../../redux/user/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Login = () => {
   const [formData, setFormData] = useState({});
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const { loading, error } = useSelector((state) => state.user);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
@@ -16,8 +21,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
-      setError(false);
+      dispatch(signInStart());
+
       const res = await fetch('/api/auth/signin', {
         method: 'POST',
         headers: {
@@ -27,11 +32,11 @@ const Login = () => {
       });
       const data = await res.json();
 
-      setLoading(false);
       if (data.success === false) {
-        setError(true);
-        return;
+        dispatch(signInFailure(data));      
+          return;
       }
+      dispatch(signInSuccess(data));
       if (data.role === 'admin') {
         // Navigate to home page for admin
         navigate('/');
@@ -40,8 +45,7 @@ const Login = () => {
         navigate('/profile');
       }
     } catch (error) {
-      setLoading(false);
-      setError(true);
+      dispatch(signInFailure(error));
     }
   };
   return (
@@ -74,7 +78,8 @@ const Login = () => {
         </Link>
       </div>
       </form>
-      <p className='text-red-700 mt-5'>{error && 'wrong account!'}</p>
+      <p className='mt'>
+        {error ? error.message || 'Something went wrong!' : ''}</p>
 
     </div>
     </section>

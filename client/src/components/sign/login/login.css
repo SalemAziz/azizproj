@@ -76,4 +76,10 @@
 }
 .bgl .logl .formtxtl .txtsigl span {
   color: var(--yyy);
+}
+.bgl .logl .mt {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  transform: translateY(30px);
 }/*# sourceMappingURL=login.css.map */
