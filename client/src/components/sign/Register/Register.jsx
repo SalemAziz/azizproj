@@ -1,10 +1,10 @@
 import React from 'react'
-import './login.css';
+import './register.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 
-const Login = () => {
+const Register = () => {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -18,7 +18,7 @@ const Login = () => {
     try {
       setLoading(true);
       setError(false);
-      const res = await fetch('/api/auth/signin', {
+      const res = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,45 +26,52 @@ const Login = () => {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-
+      console.log(data);
       setLoading(false);
       if (data.success === false) {
         setError(true);
         return;
       }
-      navigate('/profile');
+      navigate('/sign-in');
     } catch (error) {
       setLoading(false);
       setError(true);
     }
   };
   return (
-    <section className='bgl'>
-    <div className='logl'>
-      <h1 className='logtextl'>Login</h1>
-      <form  onSubmit={handleSubmit} className='formtxtl'>
+    <section className='bg'>
+    <div className='log'>
+      <h1 className='logtext'>Sign Up</h1>
+      <form  onSubmit={handleSubmit} className='formtxt'>
+        <input
+          type='text'
+          placeholder='Username'
+          id='username'
+          className='inputtxt'
+          onChange={handleChange}
+        />
         <input
           type='email'
           placeholder='Email'
           id='email'
-          className='inputtxtl'
+          className='inputtxt'
           onChange={handleChange}
         />
         <input
           type='password'
           placeholder='Password'
           id='password'
-          className='inputtxtl'
+          className='inputtxt'
           onChange={handleChange}
         />
-        <button disabled={loading} className='btnlogl'>
+        <button disabled={loading} className='btnlog'>
            
-          {loading ? 'Loading...' : 'Sign in'}
+          {loading ? 'Loading...' : 'Sign Up'}
         </button>
-        <div className='txtsigl'>
-        <p>Dont Have an account?</p>
-        <Link to='/sign-up'>
-          <span >Sign up</span>
+        <div className='txtsig'>
+        <p>Have an account?</p>
+        <Link to='/sign-in'>
+          <span >Sign in</span>
         </Link>
       </div>
       </form>
@@ -75,4 +82,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register
