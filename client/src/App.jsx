@@ -4,6 +4,7 @@ import About from './pages/About';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
+import './index.css'
 
 export default function App() {
   return (
