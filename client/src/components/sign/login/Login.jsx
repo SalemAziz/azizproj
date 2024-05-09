@@ -65,14 +65,15 @@ const Login = () => {
            
           {loading ? 'Loading...' : 'Sign Up'}
         </button>
-      </form>
-      <div className='txtsig'>
+        <div className='txtsig'>
         <p>Have an account?</p>
         <Link to='/sign-in'>
           <span >Sign in</span>
         </Link>
       </div>
       <p className='text-red-700 mt-5'>{error && 'Something went wrong!'}</p>
+      </form>
+
     </section>
   )
 }
