@@ -1,32 +1,69 @@
 import React from 'react'
 import './login.css';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
 
 const Login = () => {
+  const [formData, setFormData] = useState({});
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      setError(false);
+      const res = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      console.log(data);
+      setLoading(false);
+      if (data.success === false) {
+        setError(true);
+        return;
+      }
+    } catch (error) {
+      setLoading(false);
+      setError(true);
+    }
+  };
   return (
     <section className='log'>
       <h1 className='logtext'>Sign Up</h1>
-      <form className='formtxt'>
+      <form  onSubmit={handleSubmit} className='formtxt'>
         <input
           type='text'
           placeholder='Username'
           id='username'
           className='inputtxt'
+          onChange={handleChange}
         />
         <input
           type='email'
           placeholder='Email'
           id='email'
           className='inputtxt'
+          onChange={handleChange}
         />
         <input
           type='password'
           placeholder='Password'
           id='password'
           className='inputtxt'
+          onChange={handleChange}
         />
-        <button className='btnlog'>
-          Sign up
+        <button disabled={loading} className='btnlog'>
+           
+          {loading ? 'Loading...' : 'Sign Up'}
         </button>
       </form>
       <div className='txtsig'>
@@ -35,6 +72,7 @@ const Login = () => {
           <span >Sign in</span>
         </Link>
       </div>
+      <p className='text-red-700 mt-5'>{error && 'Something went wrong!'}</p>
     </section>
   )
 }
