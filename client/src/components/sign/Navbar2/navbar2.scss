@@ -11,6 +11,8 @@
     --bodyColor: rgb(240, 240, 240);
     --cardBG: rgb(225, 225, 225);
     --mm: hsl(155, 70%, 30%);
+    --mmm: hsl(155, 38%, 41%);
+    
 }
 
 ;
@@ -28,7 +30,7 @@ header {
 
 
     .logo {
-        color: var(--blackColor);
+        color: var(--mmm);
         font-weight: 600;
         cursor: pointer;
         align-items: center;
@@ -36,17 +38,17 @@ header {
 
         .icon {
             font-size: 25px;
-            color: var(--blackColor);
+            color: var(--mmm);
             transform: translateY(5px);
 
         }
         .yt{
             font-size: 20px;
             font-weight: 400;
-            color: var(--mm);
+            color: var(--mmm);
             .ic{
                 transform: translateY(3px);
-                color:var(mm);
+                color:var(--mmm);
             }
         }
  
