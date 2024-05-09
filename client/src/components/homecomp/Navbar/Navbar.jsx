@@ -50,7 +50,7 @@ const Navbar = () => {
                             <h1 className="navLink" onClick={scrollToFooter}>Contact us</h1>
                         </li>
                         <button className='btn'>
-                            <Link to="/Login"><FaUser className='ico'/>&nbsp;&nbsp;Login</Link>
+                            <Link to="/sign-in"><FaUser className='ico'/>&nbsp;&nbsp;Login</Link>
                         </button>
                     </ul>
                     <div onClick={removeNavbar} className="closeNavbar">
