@@ -37,7 +37,8 @@ const Login = () => {
     }
   };
   return (
-    <section className='log'>
+    <section className='bg'>
+    <div className='log'>
       <h1 className='logtext'>Sign Up</h1>
       <form  onSubmit={handleSubmit} className='formtxt'>
         <input
@@ -71,9 +72,10 @@ const Login = () => {
           <span >Sign in</span>
         </Link>
       </div>
-      <p className='text-red-700 mt-5'>{error && 'Something went wrong!'}</p>
       </form>
+      <p className='text-red-700 mt-5'>{error && 'Something went wrong!'}</p>
 
+    </div>
     </section>
   )
 }
