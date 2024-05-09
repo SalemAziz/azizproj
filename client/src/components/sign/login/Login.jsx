@@ -32,7 +32,13 @@ const Login = () => {
         setError(true);
         return;
       }
-      navigate('/profile');
+      if (data.role === 'admin') {
+        // Navigate to home page for admin
+        navigate('/');
+      } else {
+        // Navigate to profile page for other users
+        navigate('/profile');
+      }
     } catch (error) {
       setLoading(false);
       setError(true);
@@ -68,7 +74,7 @@ const Login = () => {
         </Link>
       </div>
       </form>
-      <p className='text-red-700 mt-5'>{error && 'Something went wrong!'}</p>
+      <p className='text-red-700 mt-5'>{error && 'wrong account!'}</p>
 
     </div>
     </section>
