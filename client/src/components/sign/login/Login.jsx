@@ -8,6 +8,7 @@ import {
   signInFailure,
 } from '../../../redux/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import OAth from '../oath/OAth';
 
 
 const Login = () => {
@@ -72,6 +73,7 @@ const Login = () => {
            
           {loading ? 'Loading...' : 'Sign in'}
         </button>
+        <OAth/>
         
         <div className='txtsigl'>
         <p>Dont Have an account?</p>

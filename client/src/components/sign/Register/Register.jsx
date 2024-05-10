@@ -2,7 +2,7 @@ import React from 'react'
 import './register.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-
+import OAth from '../oath/OAth';
 
 
 const Register = () => {
@@ -69,7 +69,7 @@ const Register = () => {
            
           {loading ? 'Loading...' : 'Sign Up'}
         </button>
-        
+        <OAth/>
         <div className='txtsig'>
         <p>Have an account?</p>
         <Link to='/sign-in'>

@@ -82,8 +82,15 @@ header {
                 }
 
                 .profilepic {
+                    width: 55px;
+
+                    height: 55px;
+                    border-radius: 50%;
                     object-fit: cover;
-                    width: 45px;
+                    transform: translateY(10px);
+                    
+                    
+                    
                 }
             }
 
@@ -152,12 +159,14 @@ header {
                 }
 
                 .profilepic {
-                    width: 55px;
+                    
+                    .r{
+                        border-radius: 50%;
+                        height: 41px;
+                        width: 41px;
+                        transform: translateY(4px);
 
-                    height: 55px;
-                    border-radius: 100%;
-                    background-size: cover;
-                    transform: translateY(-3px);
+                    }
                     
 
 

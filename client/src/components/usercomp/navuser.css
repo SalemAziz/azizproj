@@ -71,9 +71,12 @@ header .logo .icon {
     color: var(--mm);
   }
   header .navBar .navLists .profilepic {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
     -o-object-fit: cover;
        object-fit: cover;
-    width: 45px;
+    transform: translateY(10px);
   }
   header .navBar .closeNavbar {
     position: absolute;
@@ -120,11 +123,10 @@ header .toggleNavbar:hover.icon {
   .header .navBar .navLists .navItem .navLink:hover {
     color: var(--mm);
   }
-  .header .navBar .navLists .profilepic {
-    width: 55px;
-    height: 55px;
-    border-radius: 100%;
-    background-size: cover;
-    transform: translateY(-3px);
+  .header .navBar .navLists .profilepic .r {
+    border-radius: 50%;
+    height: 41px;
+    width: 41px;
+    transform: translateY(4px);
   }
 }/*# sourceMappingURL=navuser.css.map */
