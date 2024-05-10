@@ -1,0 +1,130 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 43%);
+  --SecondryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColordeam: hsl(0, 0%, 93%);
+  --greytext: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 225);
+  --mm: hsl(155, 51%, 45%);
+}
+
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--whiteColor);
+  width: 100%;
+  padding: 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+}
+header .logo {
+  color: var(--blackColor);
+  font-weight: 600;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+header .logo .icon {
+  font-size: 25px;
+  color: var(--blackColor);
+  transform: translateY(5px);
+}
+@media screen and (max-width: 768px) {
+  header .navBar {
+    position: absolute;
+    background: var(--whiteColordeam);
+    height: -moz-max-content;
+    height: max-content;
+    width: 80%;
+    border-radius: 1rem;
+    top: -500rem;
+    left: 50%;
+    padding: 1rem;
+    transform: translate(-50%);
+    z-index: 2000;
+    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+    transition: 0.5s ease-in-out;
+  }
+  header .navBar .navLists {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    padding: 0.5rem 0;
+  }
+  header .navBar .navLists .navItem {
+    padding: 0.5rem 0;
+  }
+  header .navBar .navLists .navItem .navLink {
+    color: var(--textColor);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  header .navBar .navLists .navItem .navLink:hover {
+    color: var(--mm);
+  }
+  header .navBar .navLists .profilepic {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 45px;
+  }
+  header .navBar .closeNavbar {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--blackColor);
+  }
+  header .navBar .closeNavbar:hover {
+    color: var(mm);
+  }
+  header .activeNavbar {
+    top: 7rem;
+  }
+}
+header .toggleNavbar .icon {
+  font-size: 25px;
+  color: var(--blackColor);
+}
+header .toggleNavbar:hover.icon {
+  color: var(--mm);
+}
+
+@media screen and (min-width: 769px) {
+  .toggleNavbar,
+  .closeNavbar {
+    display: none;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+  }
+  .header .navBar .navLists {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .header .navBar .navLists .navItem .navLink {
+    color: var(--textColor);
+    padding: 0 3rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .header .navBar .navLists .navItem .navLink:hover {
+    color: var(--mm);
+  }
+  .header .navBar .navLists .profilepic {
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background-size: cover;
+    transform: translateY(-3px);
+  }
+}/*# sourceMappingURL=navuser.css.map */

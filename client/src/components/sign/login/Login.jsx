@@ -9,6 +9,7 @@ import {
 } from '../../../redux/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
+
 const Login = () => {
   const [formData, setFormData] = useState({});
   const { loading, error } = useSelector((state) => state.user);
@@ -51,7 +52,7 @@ const Login = () => {
   return (
     <section className='bgl'>
     <div className='logl'>
-      <h1 className='logtextl'>Login</h1>
+      <h1 className='logtextl'>Sign In</h1>
       <form  onSubmit={handleSubmit} className='formtxtl'>
         <input
           type='email'
@@ -71,10 +72,11 @@ const Login = () => {
            
           {loading ? 'Loading...' : 'Sign in'}
         </button>
+        
         <div className='txtsigl'>
         <p>Dont Have an account?</p>
         <Link to='/sign-up'>
-          <span >Sign up</span>
+          <span >Sign Up</span>
         </Link>
       </div>
       </form>

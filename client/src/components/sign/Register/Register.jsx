@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 
+
 const Register = () => {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
@@ -68,10 +69,11 @@ const Register = () => {
            
           {loading ? 'Loading...' : 'Sign Up'}
         </button>
+        
         <div className='txtsig'>
         <p>Have an account?</p>
         <Link to='/sign-in'>
-          <span >Sign in</span>
+          <span >Sign In</span>
         </Link>
       </div>
       </form>
