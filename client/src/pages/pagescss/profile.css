@@ -108,4 +108,11 @@
   transition: -webkit-text-decoration 0.3s ease;
   transition: text-decoration 0.3s ease;
   transition: text-decoration 0.3s ease, -webkit-text-decoration 0.3s ease;
+}
+.profsec .proff .uper {
+  color: #bebebe;
+  font-weight: 500;
+  font-size: 20px;
+  align-self: center;
+  transform: translateY(-430px) translateX(380px);
 }/*# sourceMappingURL=profile.css.map */

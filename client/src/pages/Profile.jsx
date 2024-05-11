@@ -10,15 +10,29 @@ import {
   ref,
   uploadBytesResumable,
 } from 'firebase/storage';
+import { useDispatch } from 'react-redux';
+import { updateUserStart, updateUserFailure, updateUserSuccess } from '../redux/user/userSlice';
 
 
 export default function Profile() {
-  const { currentUser } = useSelector((state) => state.user);
+  const { currentUser, loading, error } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const fileRef = useRef(null)
   const [image, setImage] = useState(undefined);
   const [imagePercent, setImagePercent] = useState(0);
   const [imageError, setImageError] = useState(false);
   const [formData, setFormData] = useState({});
+  const [updateSuccess, setUpdateSuccess] = useState(false);
+  useEffect(() => {
+    let timer;
+    if (updateSuccess) {
+      timer = setTimeout(() => {
+        setUpdateSuccess(false);
+      }, 1500);
+    }
+    return () => clearTimeout(timer);
+  }, [updateSuccess]);
+  
   useEffect(() => {
     if (image) {
       handleFileUpload(image);
@@ -46,6 +60,32 @@ export default function Profile() {
       }
     );
   };
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      dispatch(updateUserStart());
+      const res = await fetch(`/api/user/update/${currentUser._id}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(updateUserFailure(data));
+        return;
+      }
+      dispatch(updateUserSuccess(data));
+      setUpdateSuccess(true);
+    } catch (error) {
+      dispatch(updateUserFailure(error));
+    }
+  };
+
 
   return (
     <>
@@ -53,7 +93,7 @@ export default function Profile() {
       <section className='profsec'>
         <div className='proff'>
           <h1 className='proftit'>Profile Settings :</h1>
-          <form className='profform'>
+          <form onSubmit={handleSubmit} className='profform'>
             <input type="file" ref={fileRef} hidden accept='image/*'
               onChange={(e) => setImage(e.target.files[0])} />
             <img
@@ -67,8 +107,6 @@ export default function Profile() {
                 <span className='mr'>Error uploading image (file size must be less than 2 MB)</span>
               ) : imagePercent > 0 && imagePercent < 100 ? (
                 <span className='mr'>{`Uploading: ${imagePercent} %`}</span>
-              ) : imagePercent === 100 ? (
-                <span className='mr'>Image uploaded successfully !</span>
               ) : (
                 ''
               )}
@@ -80,6 +118,7 @@ export default function Profile() {
               id='username'
               placeholder='Username'
               className='profput'
+              onChange={handleChange}
             />
             <input
               defaultValue={currentUser.email}
@@ -87,19 +126,26 @@ export default function Profile() {
               id='email'
               placeholder='Email'
               className='profput'
+              onChange={handleChange}
             />
             <input
               type='password'
               id='password'
               placeholder='Password'
               className='profput'
+              onChange={handleChange}
             />
-            <button className='probtn'>update</button>
+            <button className='probtn'>
+              {loading ? 'Loading...' : 'Update'}
+            </button>
           </form>
           <div className="proft">
             <span className='proftx'>Delete Account</span>
             <span className='proftx'>Sign out</span>
           </div>
+          <p className='uper'>{error && 'Something went wrong!'}</p>
+          <p className='uper'> {updateSuccess && 'User is updated successfully!'}
+          </p>
         </div>
       </section>
     </>
