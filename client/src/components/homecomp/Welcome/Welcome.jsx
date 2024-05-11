@@ -18,7 +18,7 @@ const Welcome = () => {
 
           <h1 className="welcomeTitle">
           Score your perfect spot with just a click 
-              <h1>  where every yard counts!</h1>
+              <h1 className='welcomeTitl'>  where every yard counts!</h1>
           </h1>
 
         </div>

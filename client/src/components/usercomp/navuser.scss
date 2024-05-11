@@ -11,6 +11,7 @@
     --bodyColor: rgb(240, 240, 240);
     --cardBG: rgb(225, 225, 225);
     --mm: hsl(155, 51%, 45%);
+    
 }
 
 ;
@@ -162,9 +163,10 @@ header {
                     
                     .r{
                         border-radius: 50%;
-                        height: 41px;
-                        width: 41px;
+                        height: 48px;
+                        width: 48px;
                         transform: translateY(4px);
+                        border: 3px solid var(--mmm);
 
                     }
                     

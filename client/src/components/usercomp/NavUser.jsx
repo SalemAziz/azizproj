@@ -44,7 +44,7 @@ const NavUser = () => {
                         <li className="navItem">
                             <Link to="/Fields" className="navLink">Fields</Link>
                         </li>
-                        <Link className="profilepic" to='/acounth'>
+                        <Link className="profilepic" to='/profile'>
                             {currentUser && (
                                 <img className='r' src={currentUser.profilePicture} alt='profile' />
                             )}

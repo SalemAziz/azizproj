@@ -55,14 +55,19 @@
 }
 .welcome .welcomeContent .textDiv {
   padding: 2.5rem 0;
+  margin-top: -20px;
 }
 .welcome .welcomeContent .textDiv .smallText {
-  font-size: 20px;
+  font-size: 40px;
   text-transform: uppercase;
-  transform: translateY(-50px);
+  transform: translateY(-90px);
 }
 .welcome .welcomeContent .textDiv .welcomeTitle {
   position: relative;
-  font-size: 1.8rem;
-  transform: translateY(-50px);
+  font-size: 30px;
+  transform: translateY(-70px);
+}
+.welcome .welcomeContent .textDiv .welcomeTitle .welcomeTitl {
+  font-size: 30px;
+  transform: translateY(10px);
 }/*# sourceMappingURL=welcome.css.map */

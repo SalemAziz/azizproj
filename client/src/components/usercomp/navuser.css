@@ -125,8 +125,9 @@ header .toggleNavbar:hover.icon {
   }
   .header .navBar .navLists .profilepic .r {
     border-radius: 50%;
-    height: 41px;
-    width: 41px;
+    height: 48px;
+    width: 48px;
     transform: translateY(4px);
+    border: 3px solid var(--mmm);
   }
 }/*# sourceMappingURL=navuser.css.map */

@@ -17,15 +17,15 @@
 }
 
 .bg{
-    padding:76px ;
+    padding:40px ;
     background: rgb(209, 226, 202);
 .log {
     padding: 90px ;
     max-width: 38rem;
     margin: 0 auto;
-    transform: translateY(-10px);
     background-color: var(--mmm);
     border-radius: 2rem;
+    border: 4px solid white;
 
     
     .logtext {
