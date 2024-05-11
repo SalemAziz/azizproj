@@ -20,9 +20,9 @@
     .proff {
            padding: 20px;
         max-width: 70rem;
-        max-height: 30rem;
+        max-height: 33rem;
         margin: 0 auto;
-        transform: translateY(35%);
+        transform: translateY(25%);
         background-color: var(--mmm);
         border-radius: 2rem;
         border: 3px solid white;
@@ -49,23 +49,36 @@
 
             .profimg {
                 object-fit: cover;
-                margin-top: -1rem;
                 margin-right: 0rem;
                 align-self: center;
                 border-radius: 50%;
                 width: 7rem;
                 height: 7rem;
                 cursor: pointer;
-                transform: translateY(-100px);
+                transform: translateY(-120px);
                 border: 3px solid white;
                 
 
             }
+            .yh{
+                align-self: center; 
+                transform: translateY(-90px);
+ 
+                .mr{
+                    color: #bebebe; 
+                    font-weight: 500;
+                    font-size: 20px;
+
+                }
+            }
+
+ 
 
             .profput {
                 padding: 0.8rem;
                 border-radius : 1.5rem;
-                margin-bottom: 1rem;
+                margin-bottom: 0.5rem;
+                margin-top: 0;
                 transform: translateX(230px) translateY(-50px);
             
                 outline: none;
@@ -113,10 +126,7 @@
                 margin-left: 14rem;
                 font-weight: 600;
                 transition: text-decoration 0.3s ease;
-                &&:hover{
-                    text-decoration: underline; /* Underline text on hover */
-                }
-                
+
 
             }
         }

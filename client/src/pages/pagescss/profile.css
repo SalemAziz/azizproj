@@ -19,9 +19,9 @@
 .profsec .proff {
   padding: 20px;
   max-width: 70rem;
-  max-height: 30rem;
+  max-height: 33rem;
   margin: 0 auto;
-  transform: translateY(35%);
+  transform: translateY(25%);
   background-color: var(--mmm);
   border-radius: 2rem;
   border: 3px solid white;
@@ -32,7 +32,7 @@
   margin-right: 46rem;
   font-size: 2.5rem;
   line-height: 2.25rem;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
   color: white;
   transform: translateY(60px);
@@ -46,20 +46,29 @@
 .profsec .proff .profform .profimg {
   -o-object-fit: cover;
      object-fit: cover;
-  margin-top: -1rem;
   margin-right: 0rem;
   align-self: center;
   border-radius: 50%;
   width: 7rem;
   height: 7rem;
   cursor: pointer;
-  transform: translateY(-100px);
+  transform: translateY(-120px);
   border: 3px solid white;
+}
+.profsec .proff .profform .yh {
+  align-self: center;
+  transform: translateY(-90px);
+}
+.profsec .proff .profform .yh .mr {
+  color: #bebebe;
+  font-weight: 500;
+  font-size: 20px;
 }
 .profsec .proff .profform .profput {
   padding: 0.8rem;
   border-radius: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
   transform: translateX(230px) translateY(-50px);
   outline: none;
   background: var(--whiteColor);
@@ -96,7 +105,7 @@
   margin-right: 13.5rem;
   margin-left: 14rem;
   font-weight: 600;
-}
-.profsec .proff .proft .proftx proftx:hover {
-  text-decoration: underline; /* Underline text on hover */
+  transition: -webkit-text-decoration 0.3s ease;
+  transition: text-decoration 0.3s ease;
+  transition: text-decoration 0.3s ease, -webkit-text-decoration 0.3s ease;
 }/*# sourceMappingURL=profile.css.map */
