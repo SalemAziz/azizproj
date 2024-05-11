@@ -20,7 +20,7 @@
     padding: 0.75rem;
     border-radius : 1.5rem;
     background: var(--gradientColorm);
-    text-transform: uppercase;
+    
     font-size: 700;
     font-size: 1rem;
     font-weight: 600;
@@ -28,6 +28,11 @@
     border: none;
     outline: none;
     cursor: pointer;
+    .m{
+        transform: translateY(4px);
+        font-size: 20px;
+        margin-right: 5px;
+    }
     &:hover.btnlog{
         background: var(--yyy);
     }

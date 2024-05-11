@@ -11,7 +11,7 @@ export default function Profile() {
     <NavUser/>
     <section className='profsec'>
       <div className='proff'>
-      <h1 className='proftit'>Profile Settings</h1>
+      <h1 className='proftit'>Profile Settings :</h1>
       <form className='profform'>
         <img
           src={currentUser.profilePicture}
