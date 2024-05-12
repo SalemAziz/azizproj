@@ -11,7 +11,9 @@ import {
   uploadBytesResumable,
 } from 'firebase/storage';
 import { useDispatch } from 'react-redux';
-import { updateUserStart, updateUserFailure, updateUserSuccess } from '../redux/user/userSlice';
+import { updateUserStart, updateUserFailure, updateUserSuccess,  deleteUserStart,
+  deleteUserSuccess,
+  deleteUserFailure} from '../redux/user/userSlice';
 
 
 export default function Profile() {
@@ -85,6 +87,22 @@ export default function Profile() {
       dispatch(updateUserFailure(error));
     }
   };
+  const handleDeleteAccount = async () => {
+    try {
+      dispatch(deleteUserStart());
+      const res = await fetch(`/api/user/delete/${currentUser._id}`, {
+        method: 'DELETE',
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(deleteUserFailure(data));
+        return;
+      }
+      dispatch(deleteUserSuccess(data));
+    } catch (error) {
+      dispatch(deleteUserFailure(error));
+    }
+  };
 
 
   return (
@@ -140,7 +158,7 @@ export default function Profile() {
             </button>
           </form>
           <div className="proft">
-            <button className='proftx'>Delete Account</button>
+            <button onClick={handleDeleteAccount} className='proftx'>Delete Account</button>
           </div>
           <p className='uper'>{error && 'Something went wrong!'}</p>
           <p className='uper'> {updateSuccess && 'User is updated successfully!'}

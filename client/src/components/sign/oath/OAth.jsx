@@ -31,7 +31,7 @@ export default function OAuth() {
       const data = await res.json();
       console.log(data);
       dispatch(signInSuccess(data));
-      navigate('/profile');
+      navigate('/acounth');
     } 
    
     catch (error) {
