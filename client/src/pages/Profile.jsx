@@ -140,8 +140,7 @@ export default function Profile() {
             </button>
           </form>
           <div className="proft">
-            <span className='proftx'>Delete Account</span>
-            <span className='proftx'>Sign out</span>
+            <button className='proftx'>Delete Account</button>
           </div>
           <p className='uper'>{error && 'Something went wrong!'}</p>
           <p className='uper'> {updateSuccess && 'User is updated successfully!'}

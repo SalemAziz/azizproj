@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import { TbPlayFootball } from "react-icons/tb";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
-import { useSelector } from 'react-redux';
+import { useSelector , useDispatch} from 'react-redux';
 import "./navuser.css"
+import { PiSignOutBold } from "react-icons/pi";
+import { signOut } from '../../redux/user/userSlice';
+
 
 
 
@@ -19,9 +22,18 @@ const NavUser = () => {
         setActive(false);
     };
 
+    const dispatch = useDispatch();
 
 
     const { currentUser } = useSelector((state) => state.user);
+    const handleSignOut = async () => {
+        try {
+          await fetch('/api/auth/signout');
+          dispatch(signOut())
+        } catch (error) {
+          console.log(error);
+        }
+      };
 
 
     return (
@@ -51,6 +63,9 @@ const NavUser = () => {
                                 <img className='r' src={currentUser.profilePicture} alt='profile' />
                             )}
                         </Link>
+                        <li className="navItem">
+                            <span onClick={handleSignOut}  className="navLink"><PiSignOutBold className='logoutico'/></span>
+                        </li>
                     </ul>
                     <div onClick={removeNavbar} className="closeNavbar">
                         <AiFillCloseCircle className="icon" />

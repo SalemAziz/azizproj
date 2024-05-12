@@ -76,6 +76,8 @@ header {
 
                         &:hover {
                             color: var(--mm);
+                            text-decoration: underline;
+
                         }
 
                     }
@@ -92,6 +94,9 @@ header {
                     
                     
                     
+                }
+                .logoutico{
+                    font-size: 100px;
                 }
             }
 
@@ -148,13 +153,14 @@ header {
                 .navItem {
                     .navLink {
                         color: var(--textColor);
-                        padding: 0 3rem;
+                        padding: 0 2.6rem;
                         font-size: 0.9rem;
                         font-weight: 500;
                         cursor: pointer;
 
                         &:hover {
                             color: var(--mm);
+                            
                         }
                     }
                 }
@@ -165,13 +171,19 @@ header {
                         border-radius: 50%;
                         height: 48px;
                         width: 48px;
-                        transform: translateY(4px);
+                        transform: translateY(3px);
                         border: 3px solid var(--mmm);
 
                     }
                     
 
 
+                }
+                .logoutico{
+                    font-size: 25px;
+                    transform: translateY(3px)translateX(0px);
+                    margin-right: -20px;
+                    
                 }
             }
         }

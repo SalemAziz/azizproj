@@ -69,6 +69,7 @@ header .logo .icon {
   }
   header .navBar .navLists .navItem .navLink:hover {
     color: var(--mm);
+    text-decoration: underline;
   }
   header .navBar .navLists .profilepic {
     width: 55px;
@@ -77,6 +78,9 @@ header .logo .icon {
     -o-object-fit: cover;
        object-fit: cover;
     transform: translateY(10px);
+  }
+  header .navBar .navLists .logoutico {
+    font-size: 100px;
   }
   header .navBar .closeNavbar {
     position: absolute;
@@ -115,7 +119,7 @@ header .toggleNavbar:hover.icon {
   }
   .header .navBar .navLists .navItem .navLink {
     color: var(--textColor);
-    padding: 0 3rem;
+    padding: 0 2.6rem;
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
@@ -127,7 +131,12 @@ header .toggleNavbar:hover.icon {
     border-radius: 50%;
     height: 48px;
     width: 48px;
-    transform: translateY(4px);
+    transform: translateY(3px);
     border: 3px solid var(--mmm);
+  }
+  .header .navBar .navLists .logoutico {
+    font-size: 25px;
+    transform: translateY(3px) translateX(0px);
+    margin-right: -20px;
   }
 }/*# sourceMappingURL=navuser.css.map */
