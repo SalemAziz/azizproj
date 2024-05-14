@@ -1,0 +1,69 @@
+:root {
+    --PrimaryColor: hsl(199, 100%, 43%);
+    --SecondryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColordeam: hsl(0, 0%, 93%);
+    --greytext: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 240);
+    --cardBG: rgb(225, 225, 225);
+    --mm: hsl(155, 51%, 45%);
+    
+}
+
+
+.createpostcard{
+    box-shadow: 3px 3px 4px rgba(140, 140, 141, 0.549);
+
+    border: 50px  ;
+    margin: auto  ;
+    transform: translate(90%, 50%);
+    width: 35%;
+    height: 25%;
+    position: absolute;
+    border-radius: 3rem;
+    background: white;
+    .formpost{
+        .posttext{
+            width: 280%;
+            border: none;
+            height: 110px;
+            font-size: 16px;
+            resize: vertical;
+            transform: translate(25px,0px);
+            box-sizing: border-box;
+            border-bottom: 1.6px solid var(--greytext);
+        }
+
+        .picpost{
+            font-size: 20px;
+            transform: translate(380px,4px);
+            font-weight: 500;
+            color: var(--mm);
+            cursor: pointer;
+        }
+        .btnpost{
+
+            padding: .6rem 1.5rem;
+            background: var(--gradientColor);
+            border-radius : 3rem;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: white;
+            font-weight: 600;
+            font-size: 12px;
+            transform: translate(400PX);
+            &:hover {
+                background: var(--mm);
+            }
+            
+        }
+    }
+    
+}
+
+

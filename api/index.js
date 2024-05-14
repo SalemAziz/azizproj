@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import userRoutes from './routes/user.js';
 import authRoutes from './routes/auth.js';
 import matchRoutes from './routes/match.js';
+import postRoutes  from './routes/post.js';
+
 
 import cookieParser from 'cookie-parser';
 
@@ -32,6 +34,8 @@ app.listen(3000, () => {
 app.use('/api/user', userRoutes);
 app.use("/api/auth", authRoutes)
 app.use("/api/match", matchRoutes)
+app.use('/api/post', postRoutes);
+
 
 
 

@@ -8,6 +8,7 @@ import AcountH from './pages/AcountH';
 import './index.css'
 import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteA from './components/PrivateRouteA';
+import PostPage from './pages/PostPage';
 
 
 
@@ -17,13 +18,14 @@ export default function App() {
       <Routes>
        <Route element={<PrivateRouteA/>}>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
         </Route>
         <Route element={<PrivateRoute />}>
+        <Route path='/about' element={<About />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/acounth' element={<AcountH />} />
+        <Route path='/postpage' element={<PostPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
