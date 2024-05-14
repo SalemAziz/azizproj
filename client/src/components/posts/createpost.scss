@@ -19,32 +19,41 @@
     box-shadow: 3px 3px 4px rgba(140, 140, 141, 0.549);
 
     border: 50px  ;
-    margin: auto  ;
+  
     transform: translate(90%, 50%);
     width: 35%;
-    height: 25%;
+    height: 30%;
     position: absolute;
     border-radius: 3rem;
     background: white;
     .formpost{
         .posttext{
-            width: 280%;
+            width: 90%;
             border: none;
             height: 110px;
             font-size: 16px;
             resize: vertical;
-            transform: translate(25px,0px);
+            transform: translate(25px,10px);
             box-sizing: border-box;
-            border-bottom: 1.6px solid var(--greytext);
         }
 
         .picpost{
-            font-size: 20px;
-            transform: translate(380px,4px);
+            font-size: 17px;
+            transform: translate(40px,60px);
             font-weight: 500;
             color: var(--mm);
             cursor: pointer;
+            .tagimg{
+               height: 35px;
+               width: 35px;
+               border: dotted var(--greytext);
+               transform: translate(20rem,0.1rem);
+
+            }
+         
+         
         }
+
         .btnpost{
 
             padding: .6rem 1.5rem;
@@ -55,15 +64,21 @@
             cursor: pointer;
             color: white;
             font-weight: 600;
-            font-size: 12px;
-            transform: translate(400PX);
+            font-size: 15px;
+            transform: translate(25.9rem,1.1rem);
             &:hover {
                 background: var(--mm);
             }
             
         }
-    }
     
+    }
+    .selected{
+        width: 50px;
+        height: 50px;
+        transform: translate(18rem,-30px);
+        border-radius: 20rem;
+    }
 }
 
 
