@@ -60,6 +60,10 @@
 .createpostcard .formpost .btnpost:hover {
   background: var(--mm);
 }
+.createpostcard .progress {
+  transform: translateY(-1rem);
+  color: var(--mm);
+}
 .createpostcard .selected {
   width: 50px;
   height: 50px;

@@ -73,6 +73,10 @@
         }
     
     }
+    .progress{
+        transform: translateY(-1rem);
+        color: var(--mm);
+    }
     .selected{
         width: 50px;
         height: 50px;

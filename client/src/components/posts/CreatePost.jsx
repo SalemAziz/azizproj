@@ -7,12 +7,15 @@ import './createpost.css';
 import img from "./../../assets/pos.png"
 
 
+
 export default function CreatePost() {
   const fileRef = useRef(null);
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({});
+  const [publishError, setPublishError] = useState(null);
+
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -57,15 +60,42 @@ export default function CreatePost() {
       console.log(error);
     }
   };
+   const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(`/api/post/create`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setPublishError(data.message);
+        return;
+      }
 
+      if (res.ok) {
+        setPublishError(null); 
+        window.location.reload(); ;        
+      }
+    } catch (error) {
+      setPublishError('Something went wrong');
+    }
+  }
   return (
     <div className='createpostcard'>
-      <form className='formpost'>
+      <form className='formpost'  onSubmit={handleSubmit}>
         <ReactQuill
           theme='snow'
           placeholder='Write something...'
           className='posttext'
           required
+          onChange={(value) => {
+            setFormData({ ...formData, content: value });
+          }}
+          
         />
         <div className='picpost'>
           <input
@@ -85,8 +115,10 @@ export default function CreatePost() {
         <button type='submit' className='btnpost'>
           Publish
         </button>
+   
     
       </form>
+      <div></div>
       {imageUploadError && <div className='error'>{imageUploadError}</div>}
           {imageUploadProgress && (
             <div className='progress'>Uploading: {imageUploadProgress}%</div>
