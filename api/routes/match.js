@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { createMatch,getAllMatches } from '../controllers/match.js';
+import { createMatch,getmatchs } from '../controllers/match.js';
 import { verifyToken } from '../middleware/verifyUser.js';
 
 
@@ -9,7 +9,7 @@ import { verifyToken } from '../middleware/verifyUser.js';
 const router = express.Router();
 
 router.post("/creatematch",verifyToken ,createMatch)
-router.get("/getmatch",verifyToken,getAllMatches)
+router.get("/getmatch",verifyToken,getmatchs)
 
 
 

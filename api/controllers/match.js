@@ -51,11 +51,45 @@ export const createMatch = async (req, res) => {
 };
 
 
-export const getAllMatches = async (req, res) => {
-  try {
-    const matches = await Match.find();
-    res.json(matches);
-  } catch (err) {
-    return res.status(500).json({ error: "Internal Server Error" });
-  }
-};
+export const getmatchs = async (req, res, next) => {
+    try {
+      const startIndex = parseInt(req.query.startIndex) || 0;
+      const limit = parseInt(req.query.limit) || 9;
+      const sortDirection = req.query.order === 'asc' ? 1 : -1;
+      const matchs = await Match.find({
+        ...(req.query.userId && { userId: req.query.userId }),
+        ...(req.query.MatchId && { _id: req.query.matchId }),
+        ...(req.query.fees && { _id: req.query.fees}),
+        ...(req.query.reservationdate && { _id: req.query.reservationdate}),
+        ...(req.query.searchTerm && {
+          $or: [
+            { description: { $regex: req.query.searchTerm, $options: 'i' } },
+          ],
+        }),
+      })
+        .sort({ updatedAt: sortDirection })
+        .skip(startIndex)
+        .limit(limit);
+  
+      const totalMatch = await Match.countDocuments();
+  
+      const now = new Date();
+  
+      const oneMonthAgo = new Date(
+        now.getFullYear(),
+        now.getMonth() - 1,
+        now.getDate()
+      );
+  
+      const lastMonthMatch = await Match.countDocuments({
+        createdAt: { $gte: oneMonthAgo },
+      });
+  
+      res.status(200).json({
+        matchs,
+        totalMatch,
+        lastMonthMatch,
+      });
+    } catch (error) {
+      next(error);
+    } };
