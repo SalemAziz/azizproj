@@ -41,10 +41,10 @@ const Login = () => {
       dispatch(signInSuccess(data));
       if (data.role === 'admin') {
         // Navigate to home page for admin
-        navigate('/acounth');
+        navigate('/postpage');
       } else {
         // Navigate to profile page for other users
-        navigate('/acounth');
+        navigate('/postpage');
       }
     } catch (error) {
       dispatch(signInFailure(error));

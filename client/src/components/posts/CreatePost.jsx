@@ -1,10 +1,15 @@
 import React, { useRef, useState } from 'react';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { app } from '../../firebase';
 import './createpost.css';
-import img from "./../../assets/pos.png"
+import { PiTelegramLogo } from "react-icons/pi";
+import { GrGallery } from "react-icons/gr";
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+
+
 
 
 
@@ -15,6 +20,8 @@ export default function CreatePost() {
   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
+  const { currentUser } = useSelector((state) => state.user);
+
 
 
   const handleFileChange = (e) => {
@@ -60,7 +67,7 @@ export default function CreatePost() {
       console.log(error);
     }
   };
-   const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await fetch(`/api/post/create`, {
@@ -77,55 +84,66 @@ export default function CreatePost() {
       }
 
       if (res.ok) {
-        setPublishError(null); 
-        window.location.reload(); ;        
+        setPublishError(null);
+        window.location.reload();;
       }
     } catch (error) {
       setPublishError('Something went wrong');
     }
   }
   return (
-    <div className='createpostcard'>
-      <form className='formpost'  onSubmit={handleSubmit}>
-        <ReactQuill
-          theme='snow'
-          placeholder='Write something...'
-          className='posttext'
-          required
-          onChange={(value) => {
-            setFormData({ ...formData, content: value });
-          }}
-          
-        />
-        <div className='picpost'>
-          <input
-            type='file'
-            accept='image/*'
-            hidden
-            ref={fileRef}
-            onChange={handleFileChange}
-          />
-          <img
-            src={img}
-            className='tagimg'
-            onClick={() => fileRef.current.click()}
-          />
-    
+    <section className='postsec'>
+      <div className='createpostcard'>
+        <div className='postpicname'>
+        <Link className="propic" to='/profile'>
+          {currentUser && (
+            <img className='rm' src={currentUser.profilePicture} alt='profile' />
+          )}
+        </Link>
         </div>
-        <button type='submit' className='btnpost'>
-          Publish
-        </button>
-   
-    
-      </form>
-      <div></div>
-      {imageUploadError && <div className='error'>{imageUploadError}</div>}
-          {imageUploadProgress && (
-            <div className='progress'>Uploading: {imageUploadProgress}%</div>
-          )}
-          {formData.image && (
-            <img src={formData.image} alt='upload' className='selected' />
-          )}
-    </div>
+        <form className='formpost' onSubmit={handleSubmit}>
+          <textarea
+            placeholder='Write something '
+            className='posttext'
+            required
+            value={formData.content || ''}
+            onChange={(e) => {
+              setFormData({ ...formData, content: e.target.value });
+            }}
+          />
+          <div className='postpub'>
+          <div className='picpost'>
+            <input
+              type='file'
+              accept='image/*'
+              hidden
+              ref={fileRef}
+              onChange={handleFileChange}
+            />
+            <span
+
+              className='tagimg'
+              onClick={() => fileRef.current.click()}>
+              <GrGallery />
+
+            </span>
+
+          </div>
+          <button type='submit' className='btnpost'>
+            <a className='a'>Publish</a>
+          </button>
+          </div>
+
+        </form>
+        <div></div>
+        {imageUploadError && <div className='error'>{imageUploadError}</div>}
+        {imageUploadProgress && (
+          <div className='progress'>Uploading: {imageUploadProgress}%</div>
+        )}
+        {formData.image && (
+          <img src={formData.image} alt='upload' className='selected' />
+        )}
+      </div>
+    </section>
   );
 }

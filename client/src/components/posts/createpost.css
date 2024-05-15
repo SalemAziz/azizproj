@@ -11,41 +11,55 @@
   --bodyColor: rgb(240, 240, 240);
   --cardBG: rgb(225, 225, 225);
   --mm: hsl(155, 51%, 45%);
+  --mmm: hsl(156, 29%, 50%);
+  --mmy: hsl(43, 100%, 43%);
 }
 
-.createpostcard {
+.postsec .createpostcard {
   box-shadow: 3px 3px 4px rgba(140, 140, 141, 0.549);
-  border: 50px;
-  transform: translate(90%, 50%);
-  width: 35%;
-  height: 30%;
-  position: absolute;
-  border-radius: 3rem;
+  border: 1.7px solid var(--mm);
+  transform: translate(28rem, 7rem);
+  width: 38rem;
+  height: 13.2rem;
+  border-radius: 2.3rem;
   background: white;
 }
-.createpostcard .formpost .posttext {
-  width: 90%;
+.postsec .createpostcard .postpicname {
+  height: 4.5rem;
+  border-radius: 0rem;
+}
+.postsec .createpostcard .postpicname .propic .rm {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  transform: translate(0.5rem, 1.1rem);
+  border: 2.5px solid var(--mm);
+}
+.postsec .createpostcard .formpost .posttext {
+  width: 88%;
   border: none;
-  height: 110px;
+  height: 120px;
   font-size: 16px;
   resize: vertical;
-  transform: translate(25px, 10px);
+  transform: translate(4.2rem, -2.81rem);
   box-sizing: border-box;
+  border-radius: 0.5rem;
+  outline: none;
 }
-.createpostcard .formpost .picpost {
-  font-size: 17px;
-  transform: translate(40px, 60px);
-  font-weight: 500;
+.postsec .createpostcard .formpost .postpub {
+  border-top: solid 1px var(--greytext);
+  transform: translatey(-2.3rem);
+}
+.postsec .createpostcard .formpost .postpub .picpost {
+  font-size: 25px;
+  transform: translate(28rem, 0.45rem);
   color: var(--mm);
   cursor: pointer;
 }
-.createpostcard .formpost .picpost .tagimg {
-  height: 35px;
-  width: 35px;
-  border: dotted var(--greytext);
-  transform: translate(20rem, 0.1rem);
+.postsec .createpostcard .formpost .postpub .picpost:hover {
+  color: var(--mmm);
 }
-.createpostcard .formpost .btnpost {
+.postsec .createpostcard .formpost .postpub .btnpost {
   padding: 0.6rem 1.5rem;
   background: var(--gradientColor);
   border-radius: 3rem;
@@ -55,18 +69,21 @@
   color: white;
   font-weight: 600;
   font-size: 15px;
-  transform: translate(25.9rem, 1.1rem);
+  transform: translate(30.5rem, -2.1rem);
+  width: 6rem;
+  height: 2.4rem;
 }
-.createpostcard .formpost .btnpost:hover {
+.postsec .createpostcard .formpost .postpub .btnpost:hover {
   background: var(--mm);
 }
-.createpostcard .progress {
-  transform: translateY(-1rem);
+.postsec .createpostcard .progress {
+  transform: translateY(-5rem);
   color: var(--mm);
 }
-.createpostcard .selected {
+.postsec .createpostcard .selected {
   width: 50px;
   height: 50px;
-  transform: translate(18rem, -30px);
-  border-radius: 20rem;
+  transform: translate(24rem, -7.15rem);
+  border: dotted var(--mm);
+  border-radius: 1rem;
 }/*# sourceMappingURL=createpost.css.map */

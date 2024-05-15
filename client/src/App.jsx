@@ -9,6 +9,8 @@ import './index.css'
 import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteA from './components/PrivateRouteA';
 import PostPage from './pages/PostPage';
+import MatchPage from './pages/MatchPage';
+import ManagePost from'./pages/ManagePost';
 
 
 
@@ -26,6 +28,9 @@ export default function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/acounth' element={<AcountH />} />
         <Route path='/postpage' element={<PostPage />} />
+        <Route path='/matchpage' element={<MatchPage />} />
+        <Route path='/managepost' element={<ManagePost />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

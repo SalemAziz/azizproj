@@ -1,0 +1,142 @@
+:root {
+    --PrimaryColor: hsl(199, 100%, 43%);
+    --SecondryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColordeam: hsl(0, 0%, 93%);
+    --greytext: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 240);
+    --cardBG: rgb(225, 225, 225);
+    --mm: hsl(155, 70%, 30%);
+    --cardHover: rgba(255, 255, 255);
+    --mmm: hsl(155, 51%, 45%);
+    --mmy: hsl(43, 100%, 43%);
+    --mmr: hsl(0, 57%, 53%);
+
+
+}
+
+.post {
+    width: 10%;
+    transform: translate(43.4rem, 5.6rem);
+
+
+
+
+
+    .postContent {
+        justify-content: center;
+        gap: 1.5rem;
+
+
+        .singlepost {
+            height: 30rem;
+            width: 40rem;
+            row-gap: 10px;
+            border-radius: 1.5rem;
+            align-items: center;
+            background: var(--mm);
+            box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+            overflow: hidden;
+            border: 0.5px solid var(--mm);
+
+            .postcrtpic {
+
+                .imga {
+                    border-radius: 50%;
+                    height: 55px;
+                    width: 55px;
+                    transform: translate(0.65rem, 0.8rem);
+                    border: 2px solid var(--whiteColor);
+
+                }
+
+            }
+
+            .postcreator {
+                transform: translate(4.6rem, -2.3rem);
+                font-size: 18px;
+                color: var(--whiteColor);
+            }
+
+            .contentdiv {
+                width: 39.9rem;
+                border-top:1px solid var(--greytext) ;
+                border-bottom:1px solid var(--greytext) ;
+                border-radius:0.11rem ;
+                background-color: white;
+
+                height: 22rem;
+                transform: translate(0px, -11px);
+
+                .postpic {
+
+                    .imgb {
+                        height: 16rem;
+                        width: 25rem;
+                        transform: translate(7.5rem, 3rem);
+
+                    }
+
+
+                }
+
+                .desc {
+                    font-size: 17px;
+                    color: var(--textColor);
+                    font-weight: 500;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                    padding-top: 0.5rem;
+
+
+                }
+            }
+            .postbtnsdiv{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+
+            .postbtns{
+                border-radius:50rem;
+                width: 2.9rem;
+                height: 2.9rem;
+                outline: none;
+                cursor: pointer;
+                background: var(--mm);
+                border: none;
+                margin: 7rem;
+                transform: translatey(-7.4rem);
+           
+                .postico{
+                    color: var(--whiteColor);
+                    font-size: 25px;
+                    &:hover{
+                        color: var(--mmr);
+                    }
+                }
+                .postico2{color: var(--whiteColor);
+                    font-size: 25px;
+                    &:hover{
+                        color: var(--mmy);
+                    }}
+              
+            }
+        }
+
+
+
+
+
+
+        }
+
+    }
+
+
+
+}

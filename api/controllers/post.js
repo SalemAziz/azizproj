@@ -1,5 +1,7 @@
 import { errorHandler } from '../middleware/error.js';
 import Post from '../models/post.js';
+import User from '../models/user.js';
+
 
 export const create = async (req, res, next) => {
     if (!req.user) {
@@ -8,14 +10,29 @@ export const create = async (req, res, next) => {
     if ( !req.body.content) {
       return next(errorHandler(400, 'Please provide content'));
     }
+
+
+ const userId = req.user.id;
+
+    // Retrieve user details
+    const user = await User.findById(userId);
+    const username = user.username;
+    const userprof = user.profilePicture;
+
   
     const newPost = new Post({
       ...req.body,
       userId: req.user.id,
+      creatorpost: username,
+      creatorpic: userprof,
+     
+
+
     });
     try {
       const savedPost = await newPost.save();
       res.status(201).json(savedPost);
+      next();
     } catch (error) {
       next(error);
     }

@@ -40,20 +40,23 @@ const NavUser = () => {
         <section className='navBarSection'>
             <header className="header flex">
                 <div className="logoDiv">
-                    <Link to="/" className="logo flex">
+                    <Link to="/postpage" className="logo flex">
                         <h1><TbPlayFootball className="icon" />kawer </h1>
                     </Link>
                 </div>
                 <div className={`navBar ${active ? 'activeNavbar' : ''}`}>
                     <ul className="navLists flex">
                         <li className="navItem">
-                            <Link to="/Fields" className="navLink">Fields</Link>
+                            <Link to="/Fields" className="navLink"></Link>
                         </li>
                         <li className="navItem">
-                            <Link to="/Fields" className="navLink">Fields</Link>
+                            <Link to="/postpage" className="navLink">Posts</Link>
                         </li>
                         <li className="navItem">
-                            <Link to="/Fields" className="navLink">Fields</Link>
+                            <Link to="/matchpage" className="navLink">Matchs</Link>
+                        </li>
+                        <li className="navItem">
+                            <Link to="/matchpage" className="navLink">Addfields</Link>
                         </li>
                         <li className="navItem">
                             <Link to="/Fields" className="navLink">Fields</Link>
