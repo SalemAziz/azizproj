@@ -11,7 +11,7 @@
     --bodyColor: rgb(240, 240, 240);
     --cardBG: rgb(225, 225, 225);
     --mm: hsl(155, 51%, 45%);
-    --mmm: hsl(156, 29%, 50%);
+    --mmm: hsl(155, 27%, 45%);
     --mmy: hsl(43, 100%, 43%);
 
 
@@ -21,13 +21,13 @@
 .createpostcard {
     box-shadow: 3px 3px 4px rgba(140, 140, 141, 0.549);
 
-    border: 1.7px solid var(--mm);
+    border: 1.7px solid var(--whiteColor);
 
     transform: translate(28rem, 7rem);
     width: 38rem;
     height: 13.2rem;
     border-radius: 2.3rem;
-    background: white;
+    background: var(--mm);
 
     .postpicname {
         height: 4.5rem;
@@ -41,7 +41,7 @@
                 height: 50px;
                 width: 50px;
                 transform: translate(0.5rem, 1.1rem);
-                border: 2.5px solid var(--mm);
+                border: 2px solid var(--whiteColor);
 
             }
         }
@@ -60,6 +60,12 @@
             box-sizing: border-box;
             border-radius: 0.5rem;
             outline: none;
+            background: var(--mm);
+            color: white;
+            &::placeholder {
+                color: white;
+                font-weight: 400;
+            }
 
 
         }
@@ -70,14 +76,11 @@
         .picpost {
             font-size: 25px;
             transform: translate(28rem, 0.45rem);
-            color: var(--mm);
+            color: var(--whiteColor);
 
             cursor: pointer;
 
-            &:hover {
-                color: var(--mmm);
-            }
-
+          
 
 
         }
@@ -118,7 +121,7 @@
         width: 50px;
         height: 50px;
         transform: translate(24rem, -7.15rem);
-        border: dotted var(--mm);
+        border: dotted var(--whiteColor);
         border-radius: 1rem;
     }
 }

@@ -10,7 +10,7 @@
   --inputColor: rgb(239, 239, 239);
   --bodyColor: rgb(240, 240, 240);
   --cardBG: rgb(225, 225, 225);
-  --mm: hsl(155, 70%, 30%);
+  --mm: hsl(155, 27%, 45%);
   --cardHover: rgba(255, 255, 255);
   --mmm: hsl(155, 51%, 45%);
   --mmy: hsl(43, 100%, 43%);
@@ -19,22 +19,22 @@
 
 .post {
   width: 10%;
-  transform: translate(43.4rem, 5.6rem);
+  transform: translate(43.6rem, 5.6rem);
 }
 .post .postContent {
   justify-content: center;
   gap: 1.5rem;
 }
 .post .postContent .singlepost {
-  height: 30rem;
-  width: 40rem;
+  height: 35rem;
+  width: 38rem;
   row-gap: 10px;
   border-radius: 1.5rem;
   align-items: center;
   background: var(--mm);
   box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
   overflow: hidden;
-  border: 0.5px solid var(--mm);
+  border: 2px solid var(--whiteColor);
 }
 .post .postContent .singlepost .postcrtpic .imga {
   border-radius: 50%;
@@ -47,25 +47,26 @@
   transform: translate(4.6rem, -2.3rem);
   font-size: 18px;
   color: var(--whiteColor);
+  font-weight: 600;
 }
 .post .postContent .singlepost .contentdiv {
   width: 39.9rem;
   border-top: 1px solid var(--greytext);
   border-bottom: 1px solid var(--greytext);
   border-radius: 0.11rem;
-  background-color: white;
-  height: 22rem;
+  background-color: var(mmm);
+  height: 26.7rem;
   transform: translate(0px, -11px);
 }
 .post .postContent .singlepost .contentdiv .postpic .imgb {
-  height: 16rem;
-  width: 25rem;
-  transform: translate(7.5rem, 3rem);
+  height: 24.5rem;
+  width: 39.9rem;
+  transform: translate(rem, 3rem);
 }
 .post .postContent .singlepost .contentdiv .desc {
   font-size: 17px;
-  color: var(--textColor);
-  font-weight: 500;
+  color: var(--whiteColor);
+  font-weight: 400;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.5rem;
@@ -99,5 +100,5 @@
   font-size: 25px;
 }
 .post .postContent .singlepost .postbtnsdiv .postbtns .postico2:hover {
-  color: var(--mmy);
+  color: var(--PrimaryColor);
 }/*# sourceMappingURL=getpost.css.map */

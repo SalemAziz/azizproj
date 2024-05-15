@@ -103,7 +103,7 @@ export default function CreatePost() {
         </div>
         <form className='formpost' onSubmit={handleSubmit}>
           <textarea
-            placeholder='Write something '
+            placeholder='whats going on?! '
             className='posttext'
             required
             value={formData.content || ''}
