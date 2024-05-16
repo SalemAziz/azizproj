@@ -1,7 +1,12 @@
 import mongoose from 'mongoose';
 
-const matchSchema = new mongoose.Schema({
-    matchname: {
+const DemandeSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    owner:{
         type: String,
         required: true,
         unique: true,
@@ -10,16 +15,17 @@ const matchSchema = new mongoose.Schema({
         type: String,
         default: "50",
     },
-    creator: {
+    location: {
         type: mongoose.Types.ObjectId,
         ref: "user",
         required: true,
     },
-    creatorusername: {
+    playerallowd:{
         type: String,
-        ref: "user",
         required: true,
+        unique: true,
     },
+
     field: {
         type: String,
     },
@@ -27,19 +33,16 @@ const matchSchema = new mongoose.Schema({
         type: String,
         default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXaPPnZ5cT6rU9Naf3wD0lkhBbfoyPMwxvbQ&usqp=CAU',
     },
-    players: {
+    numtel: {
         type: Array,
     },
-    reservationdate: {
-        type: String,
-        required: true,
-    },
+
     description: {
         type: String,
         required: true,
     }
 }, { timestamps: true });
 
-const Match = mongoose.model('Match', matchSchema);
+const Demande = mongoose.model('Demande', DemandeSchema);
 
-export default Match;
+export default Demande;

@@ -2,7 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { FaLocationDot } from 'react-icons/fa6';
 import { LuClipboardCheck } from 'react-icons/lu';
+import { GrValidate } from "react-icons/gr";
+
 import "./match.css";
+import img from "../../assets/img(1).jpg"
+
+
+
 
 const Matchs = () => {
   const { currentUser } = useSelector((state) => state.user);
@@ -27,43 +33,49 @@ const Matchs = () => {
   }, [currentUser]);
 
   return (
-    <section className='match container section'>
+    <section className='mainmatch container section'>
+
+
+
       <div className='matchContent grid'>
         {userMatchs.length > 0 ? (
           userMatchs.map((match) => (
-            <div key={match._id} className="singleMatch">
-              <div className="imageMatch">
+            <div key={match.id} className="singlematch">
+              <div className="imageDiv">
                 <img src={match.picfield} alt={match.creator} />
               </div>
               <div className="matchInfo">
                 <h4 className="matchTitle">{match.creatorusername}</h4>
-                <span className='continentMatch flex'>
-                  <FaLocationDot className='matchIcon' />
-                  <span className="match">{match.field}</span>
+                <span className='matchcontinent flex'><FaLocationDot className='matchicon' />
+                  <span className="matchname">{match.field}</span>
                 </span>
-                <div className="matchFees flex">
-                  <div className="matchGrade">
-                    <span>Cost:</span>
+                <div className="matchfees flex">
+                  <div className="matchgrade">
+                    <span>Cost :</span>
                   </div>
-                  <div className="matchPrice">
+                  <div className="matchprice">
                     <h5>{match.fees}</h5>
                   </div>
                 </div>
-                <div className="matchDesc">
+                <div className="matchdesc">
                   <p>{match.description}</p>
+
                 </div>
-                <button className='btn flex'>
-                  Details <LuClipboardCheck className='icon' />
+                <button className='matchbtn flex'>
+                  <a className='ta'>Details <LuClipboardCheck className='matchicon' /></a>
                 </button>
+
               </div>
+
             </div>
+
           ))
         ) : (
-          <p>No matches available.</p>
+          <p>No posts available.</p>
         )}
       </div>
     </section>
-  );
+  )
 }
 
 export default Matchs;

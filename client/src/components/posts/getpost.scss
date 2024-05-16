@@ -15,13 +15,16 @@
     --mmm: hsl(155, 51%, 45%);
     --mmy: hsl(43, 100%, 43%);
     --mmr: hsl(0, 57%, 53%);
+    --blackColor2: hsl(198, 19%, 45%);
+    --whiteColordeam2: hsl(0, 60%, 99%);
+
 
 
 }
 
 .post {
     width: 10%;
-    transform: translate(43.6rem, 5.6rem);
+    transform: translate(43.4rem, 5.6rem);
 
 
 
@@ -33,15 +36,15 @@
 
 
         .singlepost {
-            height: 35rem;
+            height: flex;
             width: 38rem;
             row-gap: 10px;
             border-radius: 1.5rem;
             align-items: center;
-            background: var(--mm);
+            background: var(--whiteColordeam2);
             box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
             overflow: hidden;
-            border: 2px solid var(--whiteColor);
+            border: 2.4px solid var(--blackColor2);
 
             .postcrtpic {
 
@@ -50,7 +53,7 @@
                     height: 55px;
                     width: 55px;
                     transform: translate(0.65rem, 0.8rem);
-                    border: 2px solid var(--whiteColor);
+                    border: 2.4px solid var(--blackColor2);
 
                 }
 
@@ -58,27 +61,26 @@
 
             .postcreator {
                 transform: translate(4.6rem, -2.3rem);
-                font-size: 18px;
-                color: var(--whiteColor);
-                font-weight: 600;
+                font-size: 19px;
+                color: var(--blackColor);
+                font-weight: 500;
             }
 
             .contentdiv {
                 width: 39.9rem;
-                border-top:1px solid var(--greytext) ;
-                border-bottom:1px solid var(--greytext) ;
-                border-radius:0.11rem ;
-                background-color: var(mmm);
+                border-bottom: 1.5px solid var(--blackColor2);
+                border-radius: 0.11rem;
+                background-color: var(--whiteColordeam2);
 
-                height: 26.7rem;
+                height: flex;
                 transform: translate(0px, -11px);
 
                 .postpic {
 
                     .imgb {
-                        height: 24.5rem;
+                        height: 23rem;
                         width: 39.9rem;
-                        transform: translate(rem, 3rem);
+                        transform: translate(0rem, 0.5xrem);
 
                     }
 
@@ -87,49 +89,56 @@
 
                 .desc {
                     font-size: 17px;
-                    color: var(--whiteColor);
+                    color: var(--blackColor);
                     font-weight: 400;
                     padding-left: 1.5rem;
                     padding-right: 1.5rem;
-                    padding-top: 0.5rem;
-                    
+                    padding-top: 1rem;
+                    padding-bottom: 1.5rem;
 
 
                 }
             }
-            .postbtnsdiv{
+
+            .postbtnsdiv {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: row;
-                
+                height: 3rem;
 
-            .postbtns{
-                border-radius:50rem;
-                width: 2.9rem;
-                height: 2.9rem;
-                outline: none;
-                cursor: pointer;
-                background: var(--mm);
-                border: none;
-                margin: 7rem;
-                transform: translatey(-7.4rem);
-           
-                .postico{
-                    color: var(--whiteColor);
-                    font-size: 25px;
-                    &:hover{
-                        color: var(--mmr);
+
+                .postbtns {
+                    border-radius: 50rem;
+                    width: 2.9rem;
+                    height: 2.9rem;
+                    outline: none;
+                    cursor: pointer;
+                    background: var(--whiteColordeam2);
+                    border: none;
+                    margin: 7rem;
+
+
+                    .postico {
+                        color: var(--blackColor2);
+                        font-size: 25px;
+
+                        &:hover {
+                            color: var(--mmr);
+                        }
                     }
+
+                    .postico2 {
+                        color: var(--blackColor2);
+                        font-size: 25px;
+
+                        &:hover {
+                            color: var(--mm);
+                        }
+                    }
+
                 }
-                .postico2{color: var(--whiteColor);
-                    font-size: 25px;
-                    &:hover{
-                        color: var(--PrimaryColor);
-                    }}
-              
             }
-        }
 
 
 

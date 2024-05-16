@@ -1,0 +1,98 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 43%);
+  --SecondryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColordeam: hsl(0, 0%, 93%);
+  --greytext: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 225);
+  --mm: hsl(155, 70%, 30%);
+  --cardHover: rgba(255, 255, 255);
+  --mmm: hsl(155, 38%, 41%);
+  --blackColor2: hsl(198, 19%, 45%);
+}
+
+.creatematchsection {
+  transform: translateY(-3rem);
+}
+.creatematchsection .creatematchmain {
+  border: var(--whiteColor) 3px solid;
+  height: 23rem;
+  width: 45rem;
+  margin: 0 auto;
+  transform: translateY(5rem);
+  border-radius: 2rem;
+  background: var(--mmm);
+  box-shadow: 3px 3px 4px rgba(140, 140, 141, 0.549);
+}
+.creatematchsection .creatematchmain .txxt {
+  color: white;
+  padding-right: 1px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.creatematchsection .creatematchmain .matchname {
+  transform: translate(3rem, 2.1rem);
+}
+.creatematchsection .creatematchmain .matchname .matchnameinp {
+  border-radius: 1rem;
+  height: 2.5rem;
+  width: 13rem;
+  border: var(--whiteColor) solid 3px;
+}
+.creatematchsection .reservationdate {
+  transform: translate(20.5rem, -0.4rem);
+}
+.creatematchsection .reservationdate .reservationdat {
+  border-radius: 1rem;
+  height: 2.5rem;
+  width: 14.9rem;
+  border: var(--whiteColor) solid 3px;
+  color: gray;
+  font-weight: 400;
+  font-size: 17px;
+}
+.creatematchsection .chosefield {
+  transform: translate(3.5rem, 1rem);
+}
+.creatematchsection .chosefield .chosef {
+  border-radius: 1rem;
+  height: 2.5rem;
+  width: 32rem;
+  color: gray;
+  font-weight: 400;
+  font-size: 17px;
+  border: var(--whiteColor) solid 3px;
+}
+.creatematchsection .chosefield .chosef .fields {
+  color: var(--blackColor2);
+}
+.creatematchsection .descrip {
+  transform: translate(5rem, 0rem);
+}
+.creatematchsection .descrip .descripp {
+  width: 35rem;
+  height: 9rem;
+  border-radius: 0.5rem;
+}
+.creatematchsection .matchcrt {
+  padding: 0.6rem 1.5rem;
+  background: var(--gradientColor);
+  border-radius: 3rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  transform: translate(36.7rem, 12.1rem);
+  width: 7rem;
+  height: 2.6rem;
+}
+.creatematchsection .matchcrt:hover {
+  background: var(--PrimaryColor);
+}/*# sourceMappingURL=creatematch.css.map */

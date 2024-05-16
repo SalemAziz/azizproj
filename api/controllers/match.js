@@ -5,10 +5,10 @@ const cooldown = new Set();
 
 export const createMatch = async (req, res) => {
   try {
-    const { matchname,fees, field, description, reservationdate } = req.body;
+    const { matchname, field, description, reservationdate } = req.body;
 
     // Validate input
-    if (!fees || !field || !description || !reservationdate || !matchname) {
+    if (!field || !description || !reservationdate || !matchname) {
       throw new Error("All input fields are required");
     }
 
@@ -29,11 +29,11 @@ export const createMatch = async (req, res) => {
     // Remove user from cooldown after 10 seconds
     setTimeout(() => {
       cooldown.delete(userId);
-    }, 10000); // 10 seconds cooldown
+    }, 1); // 10 seconds cooldown
 
     // Create match
     const match = await Match.create({
-      fees,
+      
       creator: userId,
       creatorusername: username,
       field,
@@ -59,7 +59,6 @@ export const getmatchs = async (req, res, next) => {
       const matchs = await Match.find({
         ...(req.query.userId && { userId: req.query.userId }),
         ...(req.query.MatchId && { _id: req.query.matchId }),
-        ...(req.query.fees && { _id: req.query.fees}),
         ...(req.query.reservationdate && { _id: req.query.reservationdate}),
         ...(req.query.searchTerm && {
           $or: [

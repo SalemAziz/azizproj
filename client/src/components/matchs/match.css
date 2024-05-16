@@ -15,14 +15,15 @@
   --mmm: hsl(155, 51%, 45%);
 }
 
-.match {
-  width: 100%;
+.mainmatch {
+  width: 98%;
+  transform: translate(25px, 20px);
 }
-.match .matchContent {
+.mainmatch .matchContent {
   justify-content: center;
   gap: 1.5rem;
 }
-.match .matchContent .singleMatch {
+.mainmatch .matchContent .singlematch {
   height: 100%;
   display: grid;
   row-gap: 10px;
@@ -32,46 +33,46 @@
   box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
   overflow: hidden;
 }
-.match .matchContent .singleMatch:hover {
+.mainmatch .matchContent .singlematch:hover {
   background: var(--mmm);
   box-shadow: 1 4px 4px rgba(85, 85, 114, 0.549);
   transition: 0.3S ease;
 }
-.match .matchContent .singleMatch .imageMatch {
+.mainmatch .matchContent .singlematch .imageDiv {
   height: 180px;
   width: 100%;
   overflow: hidden;
 }
-.match .matchContent .singleMatch .imageMatch .img {
+.mainmatch .matchContent .singlematch .imageDiv .img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: 2s ease;
 }
-.match .matchContent .singleMatch .imageMatch:hover img {
+.mainmatch .matchContent .singlematch .imageDiv:hover img {
   transform: scale(1.1);
 }
-.match .matchContent .singleMatch .matchInfo {
+.mainmatch .matchContent .singlematch .matchInfo {
   padding: 1rem;
 }
-.match .matchContent .singleMatch .matchInfo .matchTitle {
+.mainmatch .matchContent .singlematch .matchInfo .matchTitle {
   color: var(--blackColor);
   font-size: 1.25rem;
 }
-.match .matchContent .singleMatch .matchInfo .continentMatch {
+.mainmatch .matchContent .singlematch .matchInfo .matchcontinent {
   gap: 0.5rem;
 }
-.match .matchContent .singleMatch .matchInfo .continentMatch .matchIcon {
+.mainmatch .matchContent .singlematch .matchInfo .matchcontinent .matchicon {
   color: var(--textColor);
   font-size: 18px;
 }
-.match .matchContent .singleMatch .matchInfo .continentMatch .name {
+.mainmatch .matchContent .singlematch .matchInfo .matchcontinent .matchname {
   color: var(--textColor);
   font-weight: 400;
   font-size: 14px;
 }
-.match .matchContent .singleMatch .matchInfo .matchFees {
+.mainmatch .matchContent .singlematch .matchInfo .matchfees {
   width: 100%;
   justify-content: space-between;
   padding: 1rem;
@@ -79,7 +80,7 @@
   border-top: 1.5px solid var(--greytext);
   border-bottom: 1.5px solid var(--greytext);
 }
-.match .matchContent .singleMatch .matchInfo .matchFees .matchGrade {
+.mainmatch .matchContent .singlematch .matchInfo .matchfees .matchgrade {
   color: var(--textColor);
   max-width: 100px;
   line-height: 20px;
@@ -89,23 +90,32 @@
   font-size: 20px;
   font-weight: 500;
 }
-.match .matchContent .singleMatch .matchInfo .matchPrice {
+.mainmatch .matchContent .singlematch .matchInfo .matchprice {
   font-size: 2rem;
   color: var(--blackColor);
 }
-.match .matchContent .singleMatch .matchDesc {
+.mainmatch .matchContent .singlematch .matchdesc {
   font-size: 13.5px;
   color: var(--textColor);
   font-weight: 500;
 }
-.match .matchContent .singleMatch .matchBtn {
+.mainmatch .matchContent .singlematch .matchbtn {
   margin-top: 1rem;
   color: var(--whiteColor);
-  font-weight: 600;
-  justify-content: space-between;
-  gap: 0.5rem;
+  font-weight: 700;
+  gap: 1.5rem;
+  border-radius: 2rem;
+  width: 7rem;
+  height: 2.5rem;
+  border: none;
+  background: var(--gradientColor);
+  transform: translatex(13rem);
 }
-.match .matchContent .singleMatch .matchBtn .matchIcon {
+.mainmatch .matchContent .singlematch .matchbtn .ta {
+  transform: translate(25px, -1px);
+}
+.mainmatch .matchContent .singlematch .matchbtn .ta .matchicon {
+  transform: translate(1px, 3px);
   align-self: center;
   font-size: 18px;
 }
@@ -114,7 +124,7 @@
   .matchContent {
     grid-template-columns: repeat(4, 1fr);
   }
-  .matchContent .singlematch {
+  .matchContent .singleDestination {
     height: auto;
   }
 }/*# sourceMappingURL=match.css.map */

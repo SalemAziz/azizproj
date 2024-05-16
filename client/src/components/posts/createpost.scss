@@ -13,7 +13,9 @@
     --mm: hsl(155, 51%, 45%);
     --mmm: hsl(155, 27%, 45%);
     --mmy: hsl(43, 100%, 43%);
+    --whiteColordeam2: hsl(0, 60%, 99%);
 
+    --blackColor2: hsl(198, 19%, 45%);
 
 }
 
@@ -21,13 +23,13 @@
 .createpostcard {
     box-shadow: 3px 3px 4px rgba(140, 140, 141, 0.549);
 
-    border: 1.7px solid var(--whiteColor);
+    border: 2.3px solid var(--blackColor2);
 
     transform: translate(28rem, 7rem);
     width: 38rem;
     height: 13.2rem;
     border-radius: 2.3rem;
-    background: var(--mm);
+    background: var(--whiteColordeam2);
 
     .postpicname {
         height: 4.5rem;
@@ -41,7 +43,7 @@
                 height: 50px;
                 width: 50px;
                 transform: translate(0.5rem, 1.1rem);
-                border: 2px solid var(--whiteColor);
+                border: 2.5px solid var(--blackColor2);
 
             }
         }
@@ -54,17 +56,18 @@
             width: 88%;
             border: none;
             height: 120px;
-            font-size: 16px;
+            font-size: 18px;
             resize: vertical;
             transform: translate(4.2rem, -2.81rem);
             box-sizing: border-box;
             border-radius: 0.5rem;
             outline: none;
-            background: var(--mm);
-            color: white;
+            background: var(--whiteColordeam2);
+            color: var(--blackColor);
             &::placeholder {
-                color: white;
+                color: var(--blackColor);
                 font-weight: 400;
+                font-size: 18px;
             }
 
 
@@ -76,7 +79,7 @@
         .picpost {
             font-size: 25px;
             transform: translate(28rem, 0.45rem);
-            color: var(--whiteColor);
+            color: var(--mm);
 
             cursor: pointer;
 
@@ -96,7 +99,7 @@
             color: white;
             font-weight: 600;
             font-size: 15px;
-            transform: translate(30.5rem, -2.1rem);
+            transform: translate(30.7rem, -2.1rem);
             width: 6rem;
             height: 2.4rem;
 
@@ -121,7 +124,7 @@
         width: 50px;
         height: 50px;
         transform: translate(24rem, -7.15rem);
-        border: dotted var(--whiteColor);
+        border: dotted var(--mm);
         border-radius: 1rem;
     }
 }
