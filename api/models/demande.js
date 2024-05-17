@@ -8,15 +8,13 @@ const DemandeSchema = new mongoose.Schema({
     },
     owner:{
         type: String,
-        required: true,
-        unique: true,
     },
     fees: {
         type: String,
         default: "50",
     },
     location: {
-        type: mongoose.Types.ObjectId,
+        type: String,
         ref: "user",
         required: true,
     },
@@ -26,7 +24,7 @@ const DemandeSchema = new mongoose.Schema({
         unique: true,
     },
 
-    field: {
+    fieldname: {
         type: String,
     },
     picfield: {
@@ -34,7 +32,7 @@ const DemandeSchema = new mongoose.Schema({
         default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXaPPnZ5cT6rU9Naf3wD0lkhBbfoyPMwxvbQ&usqp=CAU',
     },
     numtel: {
-        type: Array,
+        type: String,
     },
 
     description: {

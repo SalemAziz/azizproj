@@ -5,6 +5,8 @@ import userRoutes from './routes/user.js';
 import authRoutes from './routes/auth.js';
 import matchRoutes from './routes/match.js';
 import postRoutes  from './routes/post.js';
+import demandeRoutes  from './routes/demande.js';
+
 
 
 import cookieParser from 'cookie-parser';
@@ -35,6 +37,8 @@ app.use('/api/user', userRoutes);
 app.use("/api/auth", authRoutes)
 app.use("/api/match", matchRoutes)
 app.use('/api/post', postRoutes);
+app.use('/api/demande', demandeRoutes);
+
 
 
 
