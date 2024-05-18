@@ -1,21 +1,29 @@
 import mongoose from 'mongoose';
 
 const DemandeSchema = new mongoose.Schema({
+  
+    ownerfullname:{
+        type: String,
+    },
     email: {
         type: String,
         required: true,
         unique: true,
-    },
-    owner:{
+    },  
+     numtel: {
         type: String,
     },
     fees: {
         type: String,
         default: "50",
     },
-    location: {
+    adress: {
         type: String,
-        ref: "user",
+        
+        required: true,
+    },
+    code: {
+        type: String,
         required: true,
     },
     playerallowd:{
@@ -28,13 +36,10 @@ const DemandeSchema = new mongoose.Schema({
         type: String,
     },
     picfield: {
-        type: String,
+        type: Array,
         default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXaPPnZ5cT6rU9Naf3wD0lkhBbfoyPMwxvbQ&usqp=CAU',
     },
-    numtel: {
-        type: String,
-    },
-
+ 
     description: {
         type: String,
         required: true,

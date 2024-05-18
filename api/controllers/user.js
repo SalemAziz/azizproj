@@ -1,4 +1,8 @@
 import User from '../models/user.js';
+import Post from '../models/post.js';
+import Match from '../models/match.js';
+
+
 import { errorHandler } from '../middleware/error.js';
 import bcryptjs from 'bcryptjs';
 export const test = (req, res) => {
@@ -36,14 +40,30 @@ export const test = (req, res) => {
   };
 
   export const deleteUser = async (req, res, next) => {
-    if (req.user.id !== req.params.id) {
-      return next(errorHandler(401, 'You can delete only your account!'));
-    }
     try {
-      await User.findByIdAndDelete(req.params.id);
-      res.status(200).json('User has been deleted...');
+      if (String(req.user.id) !== String(req.params.id)) {
+        return next(errorHandler(401, 'You can delete only your account!'));
+      }
+  
+      const user = await User.findByIdAndDelete(req.params.id);
+  
+      if (!user) {
+        return next(errorHandler(404, 'User not found!'));
+      }
+  
+      const deleteResult = await Post.deleteMany({ userId: req.params.id });
+  
+   
+      console.log(`Deleted ${deleteResult.deletedCount} posts associated with user ${req.params.id}`);
+
+      const deleteMatch = await Match.deleteMany({ creator: req.params.id });
+
+      console.log(`Deleted ${deleteMatch.deletedCount} posts associated with user ${req.params.id}`);
+
+  
+      res.status(200).json({ message: 'User and associated posts have been deleted...' });
     } catch (error) {
+      console.error(`Error deleting user and posts: ${error.message}`);
       next(error);
     }
-  
-  }
+  };

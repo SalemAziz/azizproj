@@ -1,0 +1,120 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 43%);
+  --SecondryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColordeam: hsl(0, 0%, 93%);
+  --greytext: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 225);
+  --mm: hsl(155, 27%, 45%);
+  --cardHover: rgba(255, 255, 255);
+  --mmm: hsl(155, 51%, 45%);
+  --mmy: hsl(43, 100%, 43%);
+  --mmr: hsl(0, 57%, 53%);
+  --blackColor2: hsl(198, 19%, 45%);
+  --whiteColordeam2: hsl(0, 60%, 99%);
+  --blackColor3: hsl(153, 29%, 33%);
+}
+
+.demande {
+  border-top: solid white 2px;
+  transform: translateY(-2rem);
+  height: 200%;
+  height: 45.615rem;
+}
+.demande .selectedd {
+  height: 10rem;
+  width: 10rem;
+  transform: translate(50rem, -21rem);
+  display: inline;
+  margin-left: 2rem;
+  border-radius: 2rem;
+  border: 3px dotted white;
+}
+.demande .ttxt {
+  color: var(--whiteColor);
+  font-size: 22px;
+  font-family: 600;
+}
+.demande .titott {
+  font-size: 40px;
+  transform: translateY(10rem);
+  color: var(--mmy);
+  margin-bottom: 1rem;
+}
+.demande .orattrb {
+  border-radius: 0.7rem;
+  height: 2.2rem;
+  width: 15rem;
+  border: solid 2px var(--whiteColor);
+  margin-bottom: 1.5rem;
+  background: hsl(173, 82%, 24%);
+  color: white;
+}
+.demande .orattrb:focus {
+  border: solid 2px var(--mmy);
+  outline: none;
+}
+.demande .ownerattrb {
+  margin: 0 auto;
+  transform: translateY(12rem);
+  width: 80%;
+  height: 5rem;
+  border-radius: 1rem;
+  display: flex;
+  gap: 4rem;
+  margin-left: 1rem;
+  margin-bottom: 3rem;
+}
+.demande .fieldattrb {
+  transform: translateY(12rem);
+  margin-left: 1rem;
+  border-radius: 1rem;
+}
+.demande .fieldattrb .ttxtt {
+  color: var(--whiteColor);
+  font-size: 22px;
+  font-family: 600;
+  transform: translatey(30px);
+}
+.demande .fieldattrb .tagimgg {
+  font-size: 25px;
+  color: white;
+}
+.demande .fieldattrb .demandedesc {
+  width: 40rem;
+  height: 10rem;
+  margin-bottom: 3rem;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  background: hsl(173, 82%, 24%);
+  border: solid 2px var(--whiteColor);
+}
+.demande .fieldattrb .demandedesc:focus {
+  border: solid 2px var(--mmy);
+  outline: none;
+}
+.demande .fieldattrb .demandedesc .ttxtt {
+  transform: translateY(30px);
+}
+.demande .fieldattrb .btdemande {
+  transform: translate(50rem);
+  margin-bottom: 5rem;
+  width: 10rem;
+  height: 3rem;
+  background: var(--gradientColor);
+  border: solid 2px;
+  box-shadow: 1px 1px 4px var(--blackColor);
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.demande .fieldattrb .btdemande:hover {
+  background: var(--mm);
+}/*# sourceMappingURL=demande.css.map */

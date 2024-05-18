@@ -4,7 +4,7 @@ import About from './pages/About';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
-import AcountH from './pages/AcountH';  
+import Demande from './pages/Demande';  
 import './index.css'
 import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteA from './components/PrivateRouteA';
@@ -26,7 +26,7 @@ export default function App() {
         <Route element={<PrivateRoute />}>
         <Route path='/about' element={<About />} />
         <Route path='/profile' element={<Profile />} />
-        <Route path='/acounth' element={<AcountH />} />
+        <Route path='/demande' element={<Demande />} />
         <Route path='/postpage' element={<PostPage />} />
         <Route path='/matchpage' element={<MatchPage />} />
         <Route path='/managepost' element={<ManagePost />} />
