@@ -14,22 +14,24 @@
     --mmm: hsl(155, 27%, 45%);
     --mmy: hsl(43, 100%, 43%);
     --whiteColordeam2: hsl(0, 60%, 99%);
+    --blackColor3: hsl(153, 29%, 33%);
 
     --blackColor2: hsl(198, 19%, 45%);
 
 }
 
 .postsec{
+    
 .createpostcard {
     box-shadow: 3px 3px 4px rgba(140, 140, 141, 0.549);
 
-    border: 2.3px solid var(--blackColor2);
+    border: 2.3px solid var(--whiteColor);
 
     transform: translate(28rem, 7rem);
     width: 38rem;
-    height: 13.2rem;
+    height: 13.6rem;
     border-radius: 2.3rem;
-    background: var(--whiteColordeam2);
+    background: var(--blackColor3);
 
     .postpicname {
         height: 4.5rem;
@@ -43,7 +45,7 @@
                 height: 50px;
                 width: 50px;
                 transform: translate(0.5rem, 1.1rem);
-                border: 2.5px solid var(--blackColor2);
+                border: 2.1px solid var(--whiteColor);
 
             }
         }
@@ -62,10 +64,10 @@
             box-sizing: border-box;
             border-radius: 0.5rem;
             outline: none;
-            background: var(--whiteColordeam2);
-            color: var(--blackColor);
+            background: var(--blackColor3);
+            color: var(--whiteColor);
             &::placeholder {
-                color: var(--blackColor);
+                color: var(--whiteColor);
                 font-weight: 400;
                 font-size: 18px;
             }
@@ -73,15 +75,19 @@
 
         }
         .postpub{
-            border-top:solid 1px var(--greytext) ;
+            border-top:solid 1px var(--blackColor2) ;
             transform: translatey(-2.3rem);
             
         .picpost {
             font-size: 25px;
-            transform: translate(28rem, 0.45rem);
-            color: var(--mm);
+            transform: translate(28rem, 0.55rem);
+            color: var(--whiteColor);
 
             cursor: pointer;
+            &:hover{
+                color: var(--PrimaryColor
+                );
+            }
 
           
 
@@ -91,7 +97,7 @@
         .btnpost {
 
             padding: .6rem 1.5rem;
-            background: var(--gradientColor);
+            background: var(--mm);
             border-radius: 3rem;
             border: none;
             outline: none;
@@ -99,14 +105,15 @@
             color: white;
             font-weight: 600;
             font-size: 15px;
-            transform: translate(30.7rem, -2.1rem);
+            transform: translate(30.7rem, -2rem);
             width: 6rem;
             height: 2.4rem;
+            background: var(--gradientColor);
 
      
 
             &:hover {
-                background: var(--mm);
+                background: var(--PrimaryColor);
             }
 
         }

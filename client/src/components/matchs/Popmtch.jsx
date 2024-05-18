@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import CreateMatch from "./CreateMatch";
 import "./mtch.css";
+import { TbSoccerField } from "react-icons/tb";
+
 
 
 function Popmtch() {
@@ -13,7 +15,8 @@ function Popmtch() {
   return (
     <div>
       <button className='popmtch' onClick={toggleCreateMatch}>
-        {showCreateMatch ? 'Cancel' : 'Create Match'}
+        {showCreateMatch ? 'Cancel' : 'Create Match'} <TbSoccerField className='icoico' />
+
       </button>
       {showCreateMatch && <CreateMatch />}
     </div>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 
 
+
 function CreateMatch() {
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
@@ -41,7 +42,7 @@ function CreateMatch() {
         <div className='matchname'>
         <label className="txxt">name: </label>
 
-          <input type="text" id='matchname' className='matchnameinp' placeholder=' Match name'    onChange={(e) =>
+          <input type="text" id='matchname' className='matchnameinp'     onChange={(e) =>
               setFormData({ ...formData, matchname: e.target.value })
             }/>
         </div>

@@ -20,18 +20,24 @@
 
 
 .popmtch {
-    width: 20rem;
-    height: 5rem;
-    border-radius: 2rem;
+    width: 12rem;
+    height: 4rem;
+    border-radius: 50rem;
     color: white;
-    box-shadow: 3px 3px 4px rgba(140, 140, 141, 0.549);
-    border: 3px solid white;
+    border: 2px solid white;
     cursor: pointer;
     margin-top: 9rem;
-    transform: translate(73rem);
+    transform: translate(80.5rem);
     background: var(--gradientColor);
-    font-size: 27px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
+    .icoico{
+
+        font-size: 25px;
+        transform: rotate(90deg) translate(6px,-2px);
+        
+
+    }
 
     &:hover {
         background: var(--mm);

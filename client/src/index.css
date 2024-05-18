@@ -85,5 +85,6 @@ input{
 }
 
 body{
-    background: var(--whiteColor);
+    background: hsl(173, 82%, 24%);
+
 }

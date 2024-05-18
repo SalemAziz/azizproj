@@ -46,9 +46,7 @@ const NavUser = () => {
                 </div>
                 <div className={`navBar ${active ? 'activeNavbar' : ''}`}>
                     <ul className="navLists flex">
-                        <li className="navItem">
-                            <Link to="/Fields" className="navLink"></Link>
-                        </li>
+                    
                         <li className="navItem">
                             <Link to="/postpage" className="navLink">Posts</Link>
                         </li>
@@ -56,7 +54,7 @@ const NavUser = () => {
                             <Link to="/matchpage" className="navLink">Matchs</Link>
                         </li>
                         <li className="navItem">
-                            <Link to="/matchpage" className="navLink">Addfields</Link>
+                            <Link to="/demande" className="navLink">Demande</Link>
                         </li>
                         <li className="navItem">
                             <Link to="/Fields" className="navLink">Fields</Link>

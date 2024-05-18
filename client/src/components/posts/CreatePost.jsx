@@ -144,6 +144,8 @@ export default function CreatePost() {
           <img src={formData.image} alt='upload' className='selected' />
         )}
       </div>
+     
     </section>
+    
   );
 }

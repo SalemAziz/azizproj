@@ -28,7 +28,8 @@ function GetPost() {
   }, []);
 
   return (
-    <section className='post container section'>
+    <section className='post container section'>  
+  
       <div className='postContent grid'>
         {userPosts.length > 0 ? (
           userPosts.map((post) => (

@@ -18,15 +18,12 @@
 
 .bg {
   padding: 40px;
-  background: rgb(209, 226, 202);
 }
 .bg .log {
   padding: 90px;
   max-width: 38rem;
   margin: 0 auto;
-  background-color: var(--mmm);
   border-radius: 2rem;
-  border: 4px solid white;
 }
 .bg .log .logtext {
   margin-top: 1.75rem;
