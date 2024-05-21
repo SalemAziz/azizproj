@@ -1,0 +1,55 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 43%);
+  --SecondryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColordeam: hsl(0, 0%, 93%);
+  --greytext: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 225);
+  --mm: hsl(155, 27%, 45%);
+  --cardHover: rgba(255, 255, 255);
+  --mmm: hsl(155, 51%, 45%);
+  --mmy: hsl(43, 100%, 43%);
+  --mmr: hsl(0, 57%, 53%);
+  --blackColor2: hsl(198, 19%, 45%);
+  --whiteColordeam2: hsl(0, 60%, 99%);
+  --blackColor3: hsl(153, 29%, 33%);
+  --mmx: hsl(43, 50%, 57%);
+}
+
+.sidsection {
+  width: 100%;
+  height: 5rem;
+  background: var(--mmy);
+  margin-top: 4.9rem;
+  border-bottom-right-radius: 2rem;
+  transform: translate(0rem);
+}
+.sidsection .sidebaritems {
+  margin-left: 12rem;
+}
+.sidsection .sidebaritems .sidebaritemgroup {
+  margin-left: -2rem;
+  margin-right: 1rem;
+  margin-top: 1.6rem;
+  display: flex;
+}
+.sidsection .sidebaritems .sidebaritemgroup .sidebaritem {
+  margin-left: 4rem;
+  color: white;
+  font-size: 21px;
+}
+.sidsection .sidebaritems .sidebaritemgroup .sidebaritem:hover {
+  background: var(--mmx);
+  border-radius: 1rem;
+}
+.sidsection .sidebaritems .sidebaritemgroup .sidebaritem:hover .sidebarlabel {
+  color: white;
+  margin-left: 0.5rem;
+  font-size: 21px;
+  font-weight: 500;
+}/*# sourceMappingURL=dashside.css.map */

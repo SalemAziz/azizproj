@@ -12,7 +12,6 @@ import PrivateRouteAdmin from './components/PrivateRouteAdmin';
 
 import PostPage from './pages/internautepages/PostPage';
 import MatchPage from './pages/internautepages/MatchPage';
-import ManagePost from'./pages/internautepages/ManagePost';
 import MatchInfo from './pages/internautepages/MatchInfo';
 import MainAd from './pages/admin/MainAd';
 import Acount from './pages/Acount';
@@ -35,7 +34,7 @@ export default function App() {
         <Route path='/demande' element={<Demande />} />
         <Route path='/postpage' element={<PostPage />} />
         <Route path='/matchpage' element={<MatchPage />} />
-        <Route path='/managepost' element={<ManagePost />} />
+
         <Route path='/matchinfo/:matchId' element={<MatchInfo />} />
         <Route element={<PrivateRouteAdmin />}>
 

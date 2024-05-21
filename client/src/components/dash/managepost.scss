@@ -18,14 +18,17 @@
 .tabsec {
     padding: 0.75rem;
     table-layout: auto;
+    margin-top: 5rem;
+    margin-left: 1rem;
+
 
 
     .tabs {
         min-width: 100%;
         border:2px solid var(--whiteColor) ;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        border-radius: 0rem;
-        background: var(--bodyColor);
+        border-radius: 2rem;
+        background: var(--mm);
 
 
         .tabattrb {
@@ -33,20 +36,22 @@
             padding-bottom: 0.5rem;
             padding-left: 1rem;
             padding-right: 1rem;
-            border-bottom-width: 1px;
-            border: var(--whiteColor)  solid 2px;
+            border-bottom: solid white 2px;
+          
+           
 
         }
 
         .ms {
             border-bottom-width: 5px solid var(--blackColor);
+            
 
             .mrp {
                 padding-top: 0.5rem;
                 padding-bottom: 0.5rem;
                 padding-left: 1rem;
                 padding-right: 1rem;
-                border: var(--whiteColor)  solid 2px;
+                
 
                 .mrppic {
                     object-fit: cover;
@@ -62,10 +67,10 @@
 
                 .deltemrp {
                     font-weight: 500;
-                    color: #EF4444;
+                    color: var(--whiteColordeam);
                     cursor: pointer;
-                    margin-left:3rem;
-                    
+                    transform: translate(1rem);
+                  
 
                     :hover {
                         text-decoration: underline;
