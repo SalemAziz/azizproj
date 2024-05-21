@@ -25,6 +25,12 @@ const userSchema = new mongoose.Schema({
         default:
           'https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg',
       },
+      birthday:{
+        type: String,
+    },
+    phone:{
+        type: String,
+    },
 }, {timestamps: true});
 
 const User = mongoose.model('User', userSchema);

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { syncIndexes } from 'mongoose';
 
 const matchSchema = new mongoose.Schema({
     matchname: {
@@ -12,6 +12,11 @@ const matchSchema = new mongoose.Schema({
     },
     creator: {
         type: mongoose.Types.ObjectId,
+        ref: "user",
+        required: true,
+    },
+    creatorpic: {
+        type: String,
         ref: "user",
         required: true,
     },

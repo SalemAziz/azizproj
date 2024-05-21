@@ -28,12 +28,10 @@
             height: 100%;
             display: grid;
             row-gap: 10px;
-            border-radius: 15px;
+            border-radius: 18px;
             align-items: center;
             background: var(--cardBG);
-                box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
             overflow: hidden;
-            border: solid 1px var(--whiteColor);
 
             &:hover {
                 background: var(--mmm);
@@ -123,9 +121,9 @@
                     height: 2.5rem;
                     border: none;
                     background: var(--gradientColor);
-                    transform: translatex(13rem);
                     .ta{
                         transform: translate(25px,-1px);
+                        color: white;
                         .matchicon{
                         transform: translate(1px,3px);
                         align-self: center;
@@ -147,7 +145,7 @@
 @media screen and (min-width:500px) {
    
     .matchContent{
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(5,1fr);
         
         .singleDestination{
             height: auto;

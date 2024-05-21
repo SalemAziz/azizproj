@@ -1,0 +1,92 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 43%);
+  --SecondryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColordeam: hsl(0, 0%, 93%);
+  --greytext: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 225);
+  --mm: hsl(155, 27%, 45%);
+  --cardHover: rgba(255, 255, 255);
+  --mmm: hsl(155, 51%, 45%);
+  --mmy: hsl(43, 100%, 43%);
+  --mmr: hsl(0, 57%, 53%);
+  --blackColor2: hsl(198, 19%, 45%);
+  --whiteColordeam2: hsl(0, 60%, 99%);
+  --blackColor3: hsl(153, 29%, 33%);
+}
+
+.matchattrib .matchinfo {
+  transform: translateY(7rem);
+  width: 80%;
+  height: 10%;
+}
+.matchattrib .matchinfo .ffieldname {
+  color: var(--mmy);
+  font-size: 50px;
+  transform: translate(0.5rem, 2rem);
+  font-weight: 700;
+}
+.matchattrib .matchinfo .imgcreator {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50rem;
+  border: solid var(--mmy) 3px;
+  transform: translate(32.5rem, -1.7rem);
+}
+.matchattrib .matchinfo .createdby {
+  color: var(--blackColor);
+  font-size: 32px;
+  transform: translate(1.5rem, 1.5rem);
+  font-weight: 500;
+}
+.matchattrib .matchinfo .infomatch {
+  color: var(--whiteColor);
+  font-size: 25px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+.matchattrib .matchinfo .imgfield {
+  width: 20rem;
+  height: 12rem;
+  transform: translateX(10rem);
+  border: 2px solid white;
+  border-radius: 1rem;
+}
+.matchattrib .matchinfo .players {
+  width: 16rem;
+  height: 25rem;
+  transform: translate(73rem, -35rem);
+  margin-bottom: -25rem;
+  border-radius: 2rem;
+  border: 4px dotted white;
+}
+.matchattrib .matchinfo .players .infomatchh {
+  color: var(--whiteColor);
+  font-size: 25px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  transform: translateX(3.3rem);
+}
+.matchattrib .matchinfo .players .playernames {
+  margin: 0 auto;
+  color: var(--whiteColor);
+  font-weight: 500;
+  transform: translate(2rem, 1rem);
+}
+.matchattrib .joinbtn {
+  transform: translate(76.2rem, -14rem);
+  width: 10rem;
+  height: 2.5rem;
+  background: var(--PrimaryColor);
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 2rem;
+}
+.matchattrib .joinbtn:hover {
+  background: var(--SecondryColor);
+}/*# sourceMappingURL=matchinfo.css.map */

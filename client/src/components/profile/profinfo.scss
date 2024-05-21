@@ -1,0 +1,166 @@
+:root {
+    --PrimaryColor: hsl(199, 100%, 43%);
+    --SecondryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColordeam: hsl(0, 0%, 93%);
+    --greytext: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 240);
+    --cardBG: rgb(225, 225, 225);
+    --mm: hsl(155, 27%, 45%);
+    --cardHover: rgba(255, 255, 255);
+    --mmm: hsl(155, 51%, 45%);
+    --mmy: hsl(43, 100%, 43%);
+    --mmr: hsl(0, 57%, 53%);
+    --blackColor2: hsl(198, 19%, 45%);
+    --whiteColordeam2: hsl(0, 60%, 99%);
+    --blackColor3: hsl(153, 29%, 33%);
+
+
+
+
+}
+
+
+
+
+.accountinfo{
+    .accountinfffo{
+        transform: translate(2rem,8rem);
+
+    width: 95%;
+    height: flex;
+    border-radius:3rem ;
+    .topinfo{
+        height: 11rem;
+        
+        width: 80%;
+        border-bottom: solid 2px white;
+        transform: translate(8.5rem,1rem);
+
+        .profileeimg{
+           width: 9rem;
+           height: 9rem;
+           border:solid 4px white;
+           border-radius: 50%;
+           margin-top: 0.8rem;
+           margin-left: -7rem;
+        
+        }
+        .profnamme{
+            color: white;
+            font-size: 40px;
+            transform: translate(3rem,-7rem);
+           
+        }
+    }
+    .accounattrb{
+        border: white solid 3px;
+        box-shadow: 0 2px 1px gray(255, 255, 255, 0.904);
+
+
+        border-radius: 3rem;
+        width: 25%;
+        height: 25rem;
+        margin-left: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        .detailsprof{
+            margin-left: 2.5rem;
+            transform: translateY(1rem);
+            color: white;
+            margin-top: 2rem;
+            font-size: 15px;
+        }
+        .updtbtn{
+            background: hsl(173, 82%, 24%);
+            height: 2.5rem;
+            width: 12rem;
+            transform: translate(4rem,3rem);
+            border-radius:2rem ;
+            border: white dotted 4px;
+            .updd{
+                color: white;
+            }
+
+            
+        }
+
+    }
+
+    .pub{
+        border: solid 3px white;
+
+        width: 50rem;
+        transform: translate(30rem,-27rem);
+        height: flex;
+        border-radius: 3rem;
+        
+
+        .postContentt{
+            justify-content: center;
+            transform: translate(5.66rem);
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+            .singlepostt{
+                height: flex;
+                margin-top: 1.5rem;
+                width: 38rem;
+                row-gap: 10px;
+                border-radius: 1.5rem;
+                align-items: center;
+                box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+                overflow: hidden;
+                border: 2.35px solid var(--whiteColor);
+                .postcrtpicc{
+                    .imgaa{
+                        border-radius: 50%;
+                    height: 55px;
+                    width: 55px;
+                    transform: translate(0.65rem, 0.8rem);
+                    border: 2.2px solid var(--whiteColor);
+                    }
+                }
+                .postcreatorr{
+                    transform: translate(4.6rem, -2.3rem);
+                    font-size: 19px;
+                    color: var(--whiteColor);
+                    font-weight: 400
+                }
+                .contentdivv{
+                    width: 39.9rem;
+                border-bottom: 1.5px solid var(--whiteColor);
+                border-radius: 0.11rem;
+
+                height: flex;
+                transform: translate(0px, -11px);
+                .descc{
+                    font-size: 17px;
+                    color: var(--whiteColor);
+                    font-weight: 400;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                    padding-top: 1rem;
+                    padding-bottom: 1.5rem;
+
+
+                }
+                .postpicc{
+                    .imgbb{
+                        height: 23rem;
+                        width: 36rem;
+                        transform: translate(0.8rem, -1rem);
+                        border-radius:1.9rem ;
+
+                    }
+                }
+                }
+            }
+        }
+        
+    }
+}
+}

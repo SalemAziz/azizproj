@@ -26,6 +26,11 @@ export default function OAuth() {
           name: result.user.displayName,
           email: result.user.email,
           photo: result.user.photoURL,
+          phone: result.user.phone,
+          birthday: result.user.birthday,
+
+
+          
         }),
       });
       const data = await res.json();

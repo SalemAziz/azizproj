@@ -25,13 +25,12 @@
 .createpostcard {
     box-shadow: 3px 3px 4px rgba(140, 140, 141, 0.549);
 
-    border: 2.3px solid var(--whiteColor);
+    border: 2.5px solid var(--whiteColor);
 
     transform: translate(28rem, 7rem);
     width: 38rem;
     height: 13.6rem;
     border-radius: 2.3rem;
-    background: var(--blackColor3);
 
     .postpicname {
         height: 4.5rem;
@@ -64,7 +63,7 @@
             box-sizing: border-box;
             border-radius: 0.5rem;
             outline: none;
-            background: var(--blackColor3);
+            background: hsl(173, 82%, 24%);
             color: var(--whiteColor);
             &::placeholder {
                 color: var(--whiteColor);
@@ -75,7 +74,7 @@
 
         }
         .postpub{
-            border-top:solid 1px var(--blackColor2) ;
+            border-top:solid 1px white ;
             transform: translatey(-2.3rem);
             
         .picpost {

@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { FaLocationDot } from 'react-icons/fa6';
 import { LuClipboardCheck } from 'react-icons/lu';
 import { GrValidate } from "react-icons/gr";
+import { Link } from 'react-router-dom';
+
 
 import "./match.css";
 import img from "../../assets/img(1).jpg"
@@ -14,6 +16,7 @@ const Matchs = () => {
   const { currentUser } = useSelector((state) => state.user);
   const [userMatchs, setUserMatchs] = useState([]);
   console.log(userMatchs);
+  
 
   useEffect(() => {
     const fetchMatchs = async () => {
@@ -62,7 +65,7 @@ const Matchs = () => {
 
                 </div>
                 <button className='matchbtn flex'>
-                  <a className='ta'>Details <LuClipboardCheck className='matchicon' /></a>
+                  <Link to={`/matchinfo/${match._id}`} className='ta'>Details <LuClipboardCheck className='matchicon' /></Link>
                 </button>
 
               </div>

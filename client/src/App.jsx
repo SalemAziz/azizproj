@@ -3,15 +3,19 @@ import Home from './pages/Home';
 import About from './pages/About';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import Profile from './pages/Profile';
-import Demande from './pages/Demande';  
+import Profile from './pages/internautepages/Profile';
+import Demande from './pages/internautepages/Demande';  
 import './index.css'
 import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteA from './components/PrivateRouteA';
-import PostPage from './pages/PostPage';
-import MatchPage from './pages/MatchPage';
-import ManagePost from'./pages/ManagePost';
+import PrivateRouteAdmin from './components/PrivateRouteAdmin';
 
+import PostPage from './pages/internautepages/PostPage';
+import MatchPage from './pages/internautepages/MatchPage';
+import ManagePost from'./pages/internautepages/ManagePost';
+import MatchInfo from './pages/internautepages/MatchInfo';
+import MainAd from './pages/admin/MainAd';
+import Acount from './pages/Acount';
 
 
 export default function App() {
@@ -26,10 +30,18 @@ export default function App() {
         <Route element={<PrivateRoute />}>
         <Route path='/about' element={<About />} />
         <Route path='/profile' element={<Profile />} />
+        <Route path='/account' element={<Acount />} />
+
         <Route path='/demande' element={<Demande />} />
         <Route path='/postpage' element={<PostPage />} />
         <Route path='/matchpage' element={<MatchPage />} />
         <Route path='/managepost' element={<ManagePost />} />
+        <Route path='/matchinfo/:matchId' element={<MatchInfo />} />
+        <Route element={<PrivateRouteAdmin />}>
+
+        <Route path='/mainad' element={<MainAd />} />
+
+        </Route>
 
         </Route>
       </Routes>

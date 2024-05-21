@@ -1,9 +1,9 @@
-import NavUser from '../components/usercomp/NavUser'
+import NavUser from '../../components/usercomp/NavUser'
 import "./pagescss/demande.css"
 import { GrGallery } from "react-icons/gr";
 import React, { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { app } from '../firebase';
+import { app } from '../../firebase';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 
 

@@ -28,6 +28,9 @@ export const test = (req, res) => {
             email: req.body.email,
             password: req.body.password,
             profilePicture: req.body.profilePicture,
+            phone: req.body.phone,
+            birthday: req.body.birthday,
+
           },
         },
         { new: true }

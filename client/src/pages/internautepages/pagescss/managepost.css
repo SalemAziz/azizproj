@@ -16,23 +16,49 @@
 }
 
 .tabsec {
-  background-color: var(--whiteColordeam);
-  padding: 1rem;
+  padding: 0.75rem;
+  table-layout: auto;
 }
-.tabsec .tab {
-  width: 60rem;
-  padding: 2rem;
-  border-radius: 5rem;
+.tabsec .tabs {
+  min-width: 100%;
+  border: 2px solid var(--whiteColor);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  margin: 0 auto;
+  border-radius: 0rem;
+  background: var(--bodyColor);
 }
-.tabsec .tab .th {
+.tabsec .tabs .tabattrb {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
   border-bottom-width: 1px;
+  border: var(--whiteColor) solid 2px;
 }
-.tabsec .tab .m {
-  border-bottom-width: 1px;
+.tabsec .tabs .ms {
+  border-bottom-width: 5px solid var(--blackColor);
+}
+.tabsec .tabs .ms .mrp {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: var(--whiteColor) solid 2px;
+}
+.tabsec .tabs .ms .mrp .mrppic {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 2.5rem;
+}
+.tabsec .tabs .ms .mrp .mrpst {
+  font-weight: 500;
+  color: #111827;
+}
+.tabsec .tabs .ms .mrp .deltemrp {
+  font-weight: 500;
+  color: #EF4444;
+  cursor: pointer;
+  margin-left: 3rem;
+}
+.tabsec .tabs .ms .mrp .deltemrp :hover {
+  text-decoration: underline;
 }/*# sourceMappingURL=managepost.css.map */

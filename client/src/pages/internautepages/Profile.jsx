@@ -1,9 +1,9 @@
 import React from 'react'
-import NavUser from '../components/usercomp/NavUser'
+import NavUser from '../../components/usercomp/NavUser'
 import { useSelector } from 'react-redux';
 import "./pagescss/profile.css"
 import { useRef, useState, useEffect } from 'react';
-import { app } from '../firebase';
+import { app } from '../../firebase';
 import {
   getDownloadURL,
   getStorage,
@@ -13,7 +13,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { updateUserStart, updateUserFailure, updateUserSuccess,  deleteUserStart,
   deleteUserSuccess,
-  deleteUserFailure} from '../redux/user/userSlice';
+  deleteUserFailure} from '../../redux/user/userSlice';
 
 
 export default function Profile() {
@@ -110,7 +110,6 @@ export default function Profile() {
       <NavUser />
       <section className='profsec'>
         <div className='proff'>
-          <h1 className='proftit'>Profile Settings :</h1>
           <form onSubmit={handleSubmit} className='profform'>
             <input type="file" ref={fileRef} hidden accept='image/*'
               onChange={(e) => setImage(e.target.files[0])} />
@@ -146,6 +145,24 @@ export default function Profile() {
               className='profput'
               onChange={handleChange}
             />
+               <input
+              defaultValue={currentUser.phone}
+              type='tel'
+          id='phone'
+          placeholder='phone'
+
+          className='profput'
+          onChange={handleChange}
+             
+            />
+             <input
+              defaultValue={currentUser.birthday}
+              type='date'
+              id='birthday'
+              className='profput'
+              onChange={handleChange}
+            />
+            
             <input
               type='password'
               id='password'

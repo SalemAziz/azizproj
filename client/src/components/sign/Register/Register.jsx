@@ -59,6 +59,21 @@ const Register = () => {
           onChange={handleChange}
         />
         <input
+          type='date'
+          id='birthday'
+          className='inputtxt'
+          onChange={handleChange}
+        />
+
+        <input
+          type='tel'
+          id='phone'
+          placeholder='phone'
+
+          className='inputtxt'
+          onChange={handleChange}
+        />
+        <input
           type='password'
           placeholder='Password'
           id='password'

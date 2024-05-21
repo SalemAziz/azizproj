@@ -1,5 +1,6 @@
 import Match from '../models/match.js';
-import User from '../models/user.js'; // Import User model
+import User from '../models/user.js'; 
+
 
 const cooldown = new Set();
 
@@ -7,7 +8,6 @@ export const createMatch = async (req, res) => {
   try {
     const { matchname, field, description, reservationdate } = req.body;
 
-    // Validate input
     if (!field || !description || !reservationdate || !matchname) {
       throw new Error("All input fields are required");
     }
@@ -16,8 +16,8 @@ export const createMatch = async (req, res) => {
 
     const user = await User.findById(userId);
     const username = user.username;
+    const userphoto = user.profilePicture;
 
-    // Check cooldown
     if (cooldown.has(userId)) {
       throw new Error("You are posting too frequently. Please try again shortly.");
     }
@@ -33,16 +33,15 @@ export const createMatch = async (req, res) => {
       
       creator: userId,
       creatorusername: username,
+      creatorpic:userphoto,
       field,
       reservationdate,
       description,
       matchname
     });
 
-    // Return match details
     res.json(match);
   } catch (err) {
-    // Handle errors
     return res.status(400).json({ error: "Failed to create match", message: err.message });
   }
 };
@@ -86,4 +85,31 @@ export const getmatchs = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
+};
+
+export const JoinMatch = async (req, res, next) => {
+  try {
+    const match = await Match.findById(req.params.matchId);
+    if (!match) {
+      return next(errorHandler(404, 'Match not found'));
+    }
+    
+    const userId = req.user.id;
+    const user = await User.findById(userId);
+    const username = user.username;
+
+    const playerIndex = match.players.findIndex(player => player.username === username);
+    if (playerIndex === -1) {
+      match.numberOfPlayers += 1;
+      match.players.push({ username });
+    } else {
+      match.numberOfPlayers -= 1;
+      match.players.splice(playerIndex, 1);
+    }
+    
+    await match.save();
+    res.status(200).json(match);
+  } catch (error) {
+    next(error);
+  }
 };

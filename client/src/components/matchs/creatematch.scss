@@ -21,6 +21,7 @@
 
 .creatematchsection {
     transform: translateY(-3rem);
+    
 
     .creatematchmain {
         height: 24rem;
@@ -28,8 +29,9 @@
         margin: 0 auto;
         transform: translateY(5rem);
         border-radius: 2rem;
-        border: solid 2px white;
+        border: dotted 5px var(--mmy);
         box-shadow: 10px 2px 3px --blackColor(140, 140, 141, 0.549);
+        
 
        
 
@@ -111,10 +113,10 @@
 
     }
     .descrip{
-        transform: translate(5rem,0rem);
+        transform: translate(6.4rem,0rem);
         
         .descripp{
-            width: 35rem;
+            width: 32rem;
             height: 9rem;
             border-radius: 0.5rem;
             color: black;

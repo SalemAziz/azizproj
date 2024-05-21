@@ -17,14 +17,14 @@
 }
 
 .popmtch {
-  width: 12rem;
-  height: 4rem;
-  border-radius: 50rem;
+  width: 12%;
+  height: 3.5rem;
+  border-radius: 5rem;
   color: white;
   border: 2px solid white;
   cursor: pointer;
   margin-top: 9rem;
-  transform: translate(80.5rem);
+  transform: translate(81rem);
   background: var(--gradientColor);
   font-size: 15px;
   font-weight: 700;
