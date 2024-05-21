@@ -28,16 +28,15 @@
         border:2px solid var(--whiteColor) ;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         border-radius: 2rem;
-        background: var(--mm);
+        margin-top: 2rem;
 
 
         .tabattrb {
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
-            padding-left: 1rem;
             padding-right: 1rem;
             border-bottom: solid white 2px;
-          
+            color:  white;          
            
 
         }
@@ -49,8 +48,9 @@
             .mrp {
                 padding-top: 0.5rem;
                 padding-bottom: 0.5rem;
-                padding-left: 1rem;
+                padding-left: 4.5rem;
                 padding-right: 1rem;
+                color:white;
                 
 
                 .mrppic {
@@ -59,22 +59,16 @@
 
                 }
 
-                .mrpst {
-                    font-weight: 500;
-                    color: #111827;
-
-                }
+             
 
                 .deltemrp {
                     font-weight: 500;
-                    color: var(--whiteColordeam);
+                    color: orange;
                     cursor: pointer;
                     transform: translate(1rem);
                   
 
-                    :hover {
-                        text-decoration: underline;
-                    }
+           
 
                 }
 

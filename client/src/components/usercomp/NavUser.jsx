@@ -49,7 +49,7 @@ const NavUser = () => {
 
                     {currentUser?.role === 'admin' && (
                             <li className="navItem">
-                                <Link to="/mainad" className="navLink">Admin</Link>
+                                <Link to="/mainad?tab=Posts" className="navLink">Admin</Link>
                             </li>
                         )}
 

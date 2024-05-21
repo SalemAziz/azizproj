@@ -1,54 +1,55 @@
-import React from 'react';
+import React from 'react'
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import "./managepost.css"
 
 
-export default function DashPost() {
-    const { currentUser } = useSelector((state) => state.user);
-    const [userPosts, setUserPosts] = useState([]);
-    console.log(userPosts);
-    const handleDeletePost = async (postId) => {
+export default function DashMatch() {
+
+const { currentUser } = useSelector((state) => state.user);
+const [userMatchs, setUserMatchs] = useState([]);
+
+const handleDeleteMatch = async (matchId) => {
+  try {
+      const res = await fetch(`/api/match/deletematch/${matchId}`, {
+          method: 'DELETE',
+      });
+      const data = await res.json();
+      if (!res.ok) {
+          console.log(data.message);
+      } else {
+          setUserMatchs((prev) => prev.filter((match) => match._id !== matchId));
+      }
+  } catch (error) {
+      console.log(error.message);
+  }
+};
+
+  useEffect(() => {
+    const fetchMatchs = async () => {
         try {
-            const res = await fetch(`/api/post/deletepost/${postId}`, {
-                method: 'DELETE',
-            });
+            const res = await fetch(`/api/match/getmatch`);
             const data = await res.json();
-            if (!res.ok) {
-                console.log(data.message);
-            } else {
-                setUserPosts((prev) => prev.filter((post) => post._id !== postId));
+            if (res.ok) {
+                setUserMatchs(data.matchs);
             }
         } catch (error) {
             console.log(error.message);
         }
     };
 
-    useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const res = await fetch(`/api/post/getposts`);
-                const data = await res.json();
-                if (res.ok) {
-                    setUserPosts(data.posts);
-                }
-            } catch (error) {
-                console.log(error.message);
-            }
-        };
-
-        fetchPosts();
-    }, []);
+    fetchMatchs();
+}, []);
   return (
     <div className='tabsec'>
-    {userPosts.length > 0 ? (
+    {userMatchs.length > 0 ? (
         <table className='tabs'>
             <thead>
                 <tr>
                     <th className='tabattrb'>createdAt</th>
                     <th className='tabattrb'> creator</th>
                     <th className='tabattrb'>Post image</th>
+                    <th className='tabattrb'> Content</th>
                     <th className='tabattrb'> Content</th>
                     
 
@@ -57,32 +58,37 @@ export default function DashPost() {
                 </tr>
             </thead>
             <tbody>
-                {userPosts.map((post) => (
-                    <tr key={post._id} className='ms'>
+                {userMatchs.map((match) => (
+                    <tr key={match._id} className='ms'>
                         <td className='mrp'>
-                            {new Date(post.createdAt).toLocaleDateString()}
+                            {new Date(match.createdAt).toLocaleDateString()}
                         </td>
 
                         <td className='mrp'>
-                            {post.creatorpost}
+                            {match.creatorusername}
                         </td>
                         <td className='mrp'>
 
                             <img
-                                src={post.image}
+                                src={match.picfield}
                                 className='mrppic'
                             />
 
                         </td>
                         <td className='mrp'>
 
-                            {post.content}
+                            {match.field}
+
+                        </td>
+                        <td className='mrp'>
+
+                            {match.reservationdate}
 
                         </td>
 
                         <td className='mrp'>
                             <span
-                             onClick={() => handleDeletePost(post._id)}
+                             onClick={() => handleDeleteMatch(match._id)}
                                 className='deltemrp'
                             >
                                 Delete

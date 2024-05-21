@@ -24,22 +24,26 @@
 .sidsection {
   width: 100%;
   height: 5rem;
-  background: var(--mmy);
-  margin-top: 4.9rem;
+  transform: translateY(5rem);
+  border-right: solid white 2px;
+  border-top: solid white 2px;
+  border-bottom: solid white 2px;
   border-bottom-right-radius: 2rem;
-  transform: translate(0rem);
 }
 .sidsection .sidebaritems {
-  margin-left: 12rem;
+  margin-left: 1rem;
 }
 .sidsection .sidebaritems .sidebaritemgroup {
-  margin-left: -2rem;
+  margin-left: 1rem;
   margin-right: 1rem;
-  margin-top: 1.6rem;
+  margin-top: 1.5rem;
   display: flex;
 }
 .sidsection .sidebaritems .sidebaritemgroup .sidebaritem {
-  margin-left: 4rem;
+  margin-left: 0.2rem;
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+  width: 8rem;
   color: white;
   font-size: 21px;
 }

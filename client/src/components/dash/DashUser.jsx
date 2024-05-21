@@ -1,48 +1,47 @@
-import React from 'react';
+import React from 'react'
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import "./managepost.css"
 
+export default function DashUser() {
+ const { currentUser } = useSelector((state) => state.user);
+  const [userUsers, setUserUsers] = useState([]);
+ 
 
-export default function DashPost() {
-    const { currentUser } = useSelector((state) => state.user);
-    const [userPosts, setUserPosts] = useState([]);
-    console.log(userPosts);
-    const handleDeletePost = async (postId) => {
+  const handleDeleteUser = async (userId) => {
+      try {
+          const res = await fetch(`/api/user/delete/${userId}`, {
+              method: 'DELETE',
+          });
+          const data = await res.json();
+          if (!res.ok) {
+              console.log(data.message);
+          } else {
+              setUserUsers((prev) => prev.filter((user) => user._id !== userId));
+          }
+      } catch (error) {
+          console.log(error.message);
+      }
+  };
+
+  useEffect(() => {
+    const fetchUsers = async () => {
         try {
-            const res = await fetch(`/api/post/deletepost/${postId}`, {
-                method: 'DELETE',
-            });
+            const res = await fetch(`/api/user/getusers`);
             const data = await res.json();
-            if (!res.ok) {
-                console.log(data.message);
-            } else {
-                setUserPosts((prev) => prev.filter((post) => post._id !== postId));
+            if (res.ok) {
+                setUserUsers(data.users);
             }
         } catch (error) {
             console.log(error.message);
         }
     };
 
-    useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const res = await fetch(`/api/post/getposts`);
-                const data = await res.json();
-                if (res.ok) {
-                    setUserPosts(data.posts);
-                }
-            } catch (error) {
-                console.log(error.message);
-            }
-        };
-
-        fetchPosts();
-    }, []);
+    fetchUsers();
+}, []);
   return (
     <div className='tabsec'>
-    {userPosts.length > 0 ? (
+    {userUsers.length > 0 ? (
         <table className='tabs'>
             <thead>
                 <tr>
@@ -57,32 +56,32 @@ export default function DashPost() {
                 </tr>
             </thead>
             <tbody>
-                {userPosts.map((post) => (
-                    <tr key={post._id} className='ms'>
+                {userUsers.map((user) => (
+                    <tr key={user._id} className='ms'>
                         <td className='mrp'>
-                            {new Date(post.createdAt).toLocaleDateString()}
+                            {new Date(user.createdAt).toLocaleDateString()}
                         </td>
 
                         <td className='mrp'>
-                            {post.creatorpost}
+                            {user.username}
                         </td>
                         <td className='mrp'>
 
                             <img
-                                src={post.image}
+                                src={user.profilePicture}
                                 className='mrppic'
                             />
 
                         </td>
                         <td className='mrp'>
 
-                            {post.content}
+                            {user.role}
 
                         </td>
 
                         <td className='mrp'>
                             <span
-                             onClick={() => handleDeletePost(post._id)}
+                             onClick={() => handleDeleteUser(user._id)}
                                 className='deltemrp'
                             >
                                 Delete

@@ -9,7 +9,7 @@ export const createMatch = async (req, res) => {
     const { matchname, field, description, reservationdate } = req.body;
 
     if (!field || !description || !reservationdate || !matchname) {
-      throw new Error("All input fields are required");
+      throw new Error("All inputs are required");
     }
 
     const userId = req.user.id;
@@ -109,6 +109,20 @@ export const JoinMatch = async (req, res, next) => {
     
     await match.save();
     res.status(200).json(match);
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+export const deleteMatch = async (req, res, next) => {
+  if (req.user.role === 'admin' && req.user.id === req.params.userId) {
+    return next(errorHandler(403, 'You are not allowed to delete this match'));
+  }
+  
+  try {
+    await Match.findByIdAndDelete(req.params.matchId);
+    res.status(200).json({ message: 'The match has been deleted' });
   } catch (error) {
     next(error);
   }

@@ -2,9 +2,10 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import DashSidebar from '../../components/dash/DashSidebar';
-import DashProfile from '../../components/dash/DashProfile';
+import DashUser from '../../components/dash/DashUser';
 import NavUser from '../../components/usercomp/NavUser';
 import DashPost from '../../components/dash/DashPost';
+import DashMatch from '../../components/dash/DashMatch';
 
 export default function MainAd() {
   const location = useLocation();
@@ -20,14 +21,17 @@ export default function MainAd() {
     <>
     <NavUser />
 
-    <div className="min-h-screen flex flex-col md:flex-row">
-    <div className='md:w-56'>
+    <div className="mainadsec ">
+    <div className='classnaem'>
    
-      
-    </div>
     <DashSidebar />
-    {tab === 'profile' && <DashProfile />}
+    </div>
+    <div>
+   
+    {tab === 'User' && <DashUser />}
     {tab === 'Posts' && <DashPost />}
+    {tab === 'Matchs' && <DashMatch />}
+    </div>
   </div>
   </>
   )

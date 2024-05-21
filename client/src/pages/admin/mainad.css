@@ -1,0 +1,8 @@
+.mainadsec {
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+}
+.mainadsec .sidassh {
+  width: 14rem;
+}/*# sourceMappingURL=mainad.css.map */

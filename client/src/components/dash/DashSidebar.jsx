@@ -4,6 +4,12 @@ import { Link, useLocation } from 'react-router-dom';
 import "./dashside.css"
 import { useSelector, useDispatch } from 'react-redux';
 import { signOut } from '../../redux/user/userSlice';
+import { MdPostAdd } from "react-icons/md";
+import { GiSoccerBall } from "react-icons/gi";
+import { TbSoccerField } from "react-icons/tb";
+
+
+
 
 
 
@@ -39,28 +45,28 @@ export default function DashSidebar() {
       <div className="sidebaritems">
       
         <div className="sidebaritemgroup">
-          <Link to='/mainad?tab=profile'>
-            <div className={`sidebaritem ${tab === 'profile' ? 'active' : ''}`}>
+          <Link to='/mainad?tab=User'>
+            <div className={`sidebaritem ${tab === 'User' ? 'active' : ''}`}>
               <HiUser className="sidebaricon" />
-              <span className="sidebarlabel">Profile</span>
+              <span className="sidebarlabel">Users</span>
             </div>
           </Link>
           <Link to='/mainad?tab=Posts'>
             <div className={`sidebaritem ${tab === 'Posts' ? 'active' : ''}`}>
-              <HiUser className="sidebaricon" />
+              <MdPostAdd className="sidebaricon" />
               <span className="sidebarlabel">Posts</span>
             </div>
           </Link>
-          <Link to='/mainad?tab=profile'>
-            <div className={`sidebaritem ${tab === 'profile' ? 'active' : ''}`}>
-              <HiUser className="sidebaricon" />
-              <span className="sidebarlabel">Profile</span>
+          <Link to='/mainad?tab=Matchs'>
+            <div className={`sidebaritem ${tab === 'Matchs' ? 'active' : ''}`}>
+              <GiSoccerBall className="sidebaricon" />
+              <span className="sidebarlabel">Matchs</span>
             </div>
           </Link>
-          <Link to='/mainad?tab=profile'>
-            <div className={`sidebaritem ${tab === 'profile' ? 'active' : ''}`}>
-              <HiUser className="sidebaricon" />
-              <span className="sidebarlabel">Profile</span>
+          <Link to='/mainad?tab=Fields'>
+            <div className={`sidebaritem ${tab === 'Fields' ? 'active' : ''}`}>
+              <TbSoccerField className="sidebaricon" />
+              <span className="sidebarlabel">Fields</span>
             </div>
           </Link>
           <div className="sidebaritem cursor-pointer">
