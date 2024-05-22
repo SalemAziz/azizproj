@@ -25,12 +25,14 @@
 .createpostcard {
     box-shadow: 3px 3px 4px rgba(140, 140, 141, 0.549);
 
-    border: 2.5px solid var(--whiteColor);
+    border: 2.5px solid var(--mmy);
 
     transform: translate(28rem, 7rem);
     width: 38rem;
     height: 13.6rem;
     border-radius: 2.3rem;
+    background: rgb(39, 39, 39);
+
 
     .postpicname {
         height: 4.5rem;
@@ -63,7 +65,7 @@
             box-sizing: border-box;
             border-radius: 0.5rem;
             outline: none;
-            background: hsl(173, 82%, 24%);
+            background: rgb(39, 39, 39);
             color: var(--whiteColor);
             &::placeholder {
                 color: var(--whiteColor);

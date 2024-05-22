@@ -25,6 +25,7 @@
   width: 95%;
   height: flex;
   border-radius: 3rem;
+  background: rgb(39, 39, 39);
 }
 .accountinfo .accountinfffo .topinfo {
   height: 11rem;
@@ -48,6 +49,7 @@
 .accountinfo .accountinfffo .accounattrb {
   border: white solid 3px;
   box-shadow: 0 2px 1px gray(255, 255, 255, 0.904);
+  background: rgb(39, 39, 39);
   border-radius: 3rem;
   width: 25%;
   height: 25rem;
@@ -74,11 +76,11 @@
   color: white;
 }
 .accountinfo .accountinfffo .pub {
-  border: solid 3px white;
+  border-left: solid 3px white;
   width: 50rem;
   transform: translate(30rem, -27rem);
   height: flex;
-  border-radius: 3rem;
+  border-radius: 1rem;
 }
 .accountinfo .accountinfffo .pub .postContentt {
   justify-content: center;
@@ -96,6 +98,7 @@
   box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
   overflow: hidden;
   border: 2.35px solid var(--whiteColor);
+  background: rgb(39, 39, 39);
 }
 .accountinfo .accountinfffo .pub .postContentt .singlepostt .postcrtpicc .imgaa {
   border-radius: 50%;

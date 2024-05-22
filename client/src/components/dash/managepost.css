@@ -23,10 +23,11 @@
 }
 .tabsec .tabs {
   min-width: 100%;
-  border: 2px solid var(--whiteColor);
+  border: 3px solid rgb(39, 39, 39);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: 2rem;
   margin-top: 2rem;
+  background: rgb(39, 39, 39);
 }
 .tabsec .tabs .tabattrb {
   padding-top: 0.5rem;
@@ -52,7 +53,7 @@
 }
 .tabsec .tabs .ms .mrp .deltemrp {
   font-weight: 500;
-  color: orange;
+  color: red;
   cursor: pointer;
   transform: translate(1rem);
 }/*# sourceMappingURL=managepost.css.map */

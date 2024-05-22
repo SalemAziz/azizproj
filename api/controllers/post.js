@@ -14,7 +14,6 @@ export const create = async (req, res, next) => {
 
  const userId = req.user.id;
 
-    // Retrieve user details
     const user = await User.findById(userId);
     const username = user.username;
     const userprof = user.profilePicture;

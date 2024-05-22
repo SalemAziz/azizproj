@@ -11,7 +11,6 @@ const router = express.Router();
 router.post("/creatematch",verifyToken ,createMatch)
 router.get("/getmatch",verifyToken,getmatchs)
 router.put('/joinmatch/:matchId', verifyToken, JoinMatch);
-
 router.delete('/deletematch/:matchId', verifyToken, deleteMatch);
 
 

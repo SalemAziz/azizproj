@@ -45,7 +45,9 @@
             align-items: center;
             box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
             overflow: hidden;
-            border: 2.5px solid var(--whiteColor);
+            border: 2.5px solid var(--mmy);
+            background: rgb(39, 39, 39);
+
 
             .postcrtpic {
 
@@ -96,6 +98,8 @@
                     padding-right: 1.5rem;
                     padding-top: 1rem;
                     padding-bottom: 1.5rem;
+                    background: rgb(39, 39, 39);
+
 
 
                 }
@@ -115,7 +119,7 @@
                     height: 2.9rem;
                     outline: none;
                     cursor: pointer;
-                    background: hsl(173, 82%, 24%);
+                    background: rgb(39, 39, 39);
                     border: none;
                     margin: 7rem;
 

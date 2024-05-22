@@ -20,15 +20,18 @@
     table-layout: auto;
     margin-top: 5rem;
     margin-left: 1rem;
+    
 
 
 
     .tabs {
         min-width: 100%;
-        border:2px solid var(--whiteColor) ;
+        border:3px solid rgb(39, 39, 39) ;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         border-radius: 2rem;
         margin-top: 2rem;
+        background: rgb(39, 39, 39);
+
 
 
         .tabattrb {
@@ -63,7 +66,7 @@
 
                 .deltemrp {
                     font-weight: 500;
-                    color: orange;
+                    color: red;
                     cursor: pointer;
                     transform: translate(1rem);
                   
