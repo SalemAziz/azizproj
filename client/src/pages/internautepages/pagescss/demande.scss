@@ -25,8 +25,9 @@
 }
 .demande {
     border-top: solid white 2px;
-    transform: translateY(-2rem);
+    transform: translateY(-1rem);
     height: 200%;
+    background: hsl(173, 82%, 24%);
     .selectedd{ 
         height: 10rem;
         width: 10rem;
@@ -77,6 +78,7 @@
         
     }
     .ownerattrb {
+        background: hsl(173, 82%, 24%);
         
 
         margin: 0 auto;
@@ -95,9 +97,9 @@
     }
     .fieldattrb{
         transform: translateY(12rem);
-        margin-left: 1rem;
-    
+
         border-radius: 1rem;
+       background: hsl(173, 82%, 24%);
         
     .ttxtt{
         color: var(--whiteColor);
@@ -110,6 +112,8 @@
     .tagimgg{
         font-size: 25px;
         color: white;
+        transform: translateX(3rem);
+
      }
         .demandedesc{
             width: 40rem;

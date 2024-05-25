@@ -23,9 +23,10 @@
   max-width: 40rem;
   max-height: 45rem;
   margin: 0 auto;
-  transform: translate(-1rem, 14%);
+  transform: translate(-1rem, 8%);
   border-radius: 2rem;
-  border: 6px dotted white;
+  border: 4px solid white;
+  background: hsl(173, 82%, 24%);
 }
 .profsec .proff .profform {
   transform: translateY(-20PX);

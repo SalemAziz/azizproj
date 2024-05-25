@@ -15,6 +15,11 @@ const matchSchema = new mongoose.Schema({
         ref: "user",
         required: true,
     },
+    numberOfPlayers:{
+        type:Number,
+        default:0,
+    },
+
     creatorpic: {
         type: String,
         ref: "user",

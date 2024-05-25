@@ -42,8 +42,12 @@ export default function DashPost() {
     }, []);
   return (
     <div className='tabsec'>
+    
+        
     {userPosts.length > 0 ? (
+       
         <table className='tabs'>
+            
             <thead>
                 <tr>
                     <th className='tabattrb'>createdAt</th>
@@ -58,6 +62,7 @@ export default function DashPost() {
             </thead>
             <tbody>
                 {userPosts.map((post) => (
+                    
                     <tr key={post._id} className='ms'>
                         <td className='mrp'>
                             {new Date(post.createdAt).toLocaleDateString()}
@@ -96,6 +101,7 @@ export default function DashPost() {
     ) : (
         <p>You have no posts yet!</p>
     )}
+     
 </div>
   )
 }

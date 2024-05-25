@@ -36,25 +36,25 @@
   align-items: center;
   box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
   overflow: hidden;
-  border: 2.5px solid var(--mmy);
-  background: rgb(39, 39, 39);
+  border: 2.5px solid hsl(173, 82%, 24%);
+  background: white;
 }
 .post .postContent .singlepost .postcrtpic .imga {
   border-radius: 50%;
   height: 55px;
   width: 55px;
   transform: translate(0.65rem, 0.8rem);
-  border: 2.2px solid var(--whiteColor);
+  border: 3px solid hsl(173, 82%, 24%);
 }
 .post .postContent .singlepost .postcreator {
   transform: translate(4.6rem, -2.3rem);
   font-size: 19px;
-  color: var(--whiteColor);
-  font-weight: 400;
+  color: rgb(39, 39, 39);
+  font-weight: 500;
 }
 .post .postContent .singlepost .contentdiv {
   width: 39.9rem;
-  border-bottom: 1.5px solid var(--whiteColor);
+  border-bottom: 1.5px solid hsl(173, 82%, 24%);
   border-radius: 0.11rem;
   height: flex;
   transform: translate(0px, -11px);
@@ -67,13 +67,13 @@
 }
 .post .postContent .singlepost .contentdiv .desc {
   font-size: 17px;
-  color: var(--whiteColor);
+  color: rgb(39, 39, 39);
   font-weight: 400;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 1.5rem;
-  background: rgb(39, 39, 39);
+  background: white;
 }
 .post .postContent .singlepost .postbtnsdiv {
   display: flex;
@@ -88,7 +88,7 @@
   height: 2.9rem;
   outline: none;
   cursor: pointer;
-  background: rgb(39, 39, 39);
+  background: white;
   border: none;
   margin: 7rem;
 }

@@ -27,9 +27,9 @@
   margin: 0 auto;
   transform: translateY(5rem);
   border-radius: 2rem;
-  border: solid 5px var(--mmy);
+  border: solid 4px var(--mmy);
   box-shadow: 10px 2px 3px --blackColor(140, 140, 141, 0.549);
-  background: rgb(39, 39, 39);
+  background: hsl(173, 82%, 24%);
 }
 .creatematchsection .creatematchmain .txxt {
   color: white;

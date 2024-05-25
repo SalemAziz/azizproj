@@ -41,10 +41,21 @@ export default function DashSidebar() {
 
 
   return (
-    <div className="sidsection">
+    <div className="sidsection ">
       <div className="sidebaritems">
-      
+
         <div className="sidebaritemgroup">
+          <Link to='/account'>
+        <div>
+          <img src={currentUser.profilePicture} className='imgproff' />
+        </div>
+        </Link>
+        <Link to='/mainad?tab=Stat'>
+            <div className={`sidebaritem ${tab === 'Stat' ? 'active' : ''}`}>
+              <HiUser className="sidebaricon" />
+              <span className="sidebarlabel">Stat</span>
+            </div>
+          </Link>
           <Link to='/mainad?tab=User'>
             <div className={`sidebaritem ${tab === 'User' ? 'active' : ''}`}>
               <HiUser className="sidebaricon" />

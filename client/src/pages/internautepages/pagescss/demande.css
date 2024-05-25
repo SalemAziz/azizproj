@@ -22,8 +22,9 @@
 
 .demande {
   border-top: solid white 2px;
-  transform: translateY(-2rem);
+  transform: translateY(-1rem);
   height: 200%;
+  background: hsl(173, 82%, 24%);
   height: 45.615rem;
 }
 .demande .selectedd {
@@ -60,6 +61,7 @@
   outline: none;
 }
 .demande .ownerattrb {
+  background: hsl(173, 82%, 24%);
   margin: 0 auto;
   transform: translateY(12rem);
   width: 80%;
@@ -72,8 +74,8 @@
 }
 .demande .fieldattrb {
   transform: translateY(12rem);
-  margin-left: 1rem;
   border-radius: 1rem;
+  background: hsl(173, 82%, 24%);
 }
 .demande .fieldattrb .ttxtt {
   color: var(--whiteColor);
@@ -84,6 +86,7 @@
 .demande .fieldattrb .tagimgg {
   font-size: 25px;
   color: white;
+  transform: translateX(3rem);
 }
 .demande .fieldattrb .demandedesc {
   width: 40rem;

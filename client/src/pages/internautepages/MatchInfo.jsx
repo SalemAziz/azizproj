@@ -68,6 +68,7 @@ const MatchInfo = () => {
             <NavUser />
             <div className='matchattrib'>
                 <div className='matchinfo'>
+                    <div>
                     <h1 className='ffieldname'> {formData.matchname} </h1>
                     <h1 className='createdby'>Created by {formData.creatorusername}</h1>
                     <img src={formData.creatorpic} className='imgcreator' />
@@ -76,6 +77,7 @@ const MatchInfo = () => {
                     <h1 className='infomatch'>fees : {formData.fees} </h1>
                     <h1 className='infomatch'>description : {formData.description}</h1>
                     <img src={formData.picfield} className='imgfield' />
+                    </div>
                     <ul className='players'>
                     <h1 className='infomatchh'>players</h1>
 

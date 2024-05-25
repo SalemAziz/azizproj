@@ -6,6 +6,7 @@ import DashUser from '../../components/dash/DashUser';
 import NavUser from '../../components/usercomp/NavUser';
 import DashPost from '../../components/dash/DashPost';
 import DashMatch from '../../components/dash/DashMatch';
+import DashboardComp from '../../components/dash/DashboardComp';
 
 export default function MainAd() {
   const location = useLocation();
@@ -19,20 +20,19 @@ export default function MainAd() {
   }, [location.search]);
   return (
     <>
-    <NavUser />
-
-    <div className="mainadsec ">
-    <div className='classnaem'>
+   
+    
+    <div className='classnaem flex'>
    
     <DashSidebar />
     </div>
-    <div>
-   
+    <div className='aa grid'>
+    {tab === 'Stat' && <DashboardComp />}
     {tab === 'User' && <DashUser />}
     {tab === 'Posts' && <DashPost />}
     {tab === 'Matchs' && <DashMatch />}
     </div>
-  </div>
+ 
   </>
   )
 }

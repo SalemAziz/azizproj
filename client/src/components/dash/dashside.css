@@ -22,13 +22,11 @@
 }
 
 .sidsection {
-  width: 100%;
-  height: 5rem;
-  transform: translateY(5rem);
-  border-right: solid rgb(39, 39, 39) 2px;
-  border-top: solid white 2px;
-  border-bottom: solid rgb(39, 39, 39) 2px;
-  background: rgb(39, 39, 39);
+  width: 11.5%;
+  height: 46rem;
+  border-right: solid white 5px;
+  border-bottom: solid white 2px;
+  background: hsl(173, 82%, 24%);
   border-bottom-right-radius: 2rem;
 }
 .sidsection .sidebaritems {
@@ -38,18 +36,25 @@
   margin-left: 1rem;
   margin-right: 1rem;
   margin-top: 1.5rem;
-  display: flex;
+}
+.sidsection .sidebaritems .sidebaritemgroup .imgproff {
+  border: 4.5px solid white;
+  border-radius: 50rem;
+  width: 5.8rem;
+  transform: translate(-0.1rem, 0.5rem);
 }
 .sidsection .sidebaritems .sidebaritemgroup .sidebaritem {
-  margin-left: 0.2rem;
-  margin-right: 4rem;
+  display: flex;
+  margin-left: -0.5rem;
+  margin-right: 0rem;
+  margin-top: 3rem;
   margin-bottom: 2rem;
   width: 8rem;
   color: white;
   font-size: 21px;
 }
 .sidsection .sidebaritems .sidebaritemgroup .sidebaritem:hover {
-  background: var(--mmy);
+  background: var(--mmm);
   border-radius: 1rem;
 }
 .sidsection .sidebaritems .sidebaritemgroup .sidebaritem:hover .sidebarlabel {

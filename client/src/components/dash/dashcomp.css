@@ -1,0 +1,167 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 43%);
+  --SecondryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColordeam: hsl(0, 0%, 93%);
+  --greytext: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 225);
+  --mm: hsl(155, 27%, 45%);
+  --cardHover: rgba(255, 255, 255);
+  --mmm: hsl(155, 51%, 45%);
+  --mmy: hsl(43, 100%, 43%);
+  --mmr: hsl(0, 57%, 53%);
+  --blackColor2: hsl(198, 19%, 45%);
+  --whiteColordeam2: hsl(0, 60%, 99%);
+  --blackColor3: hsl(153, 29%, 33%);
+  --mmx: hsl(43, 50%, 57%);
+}
+
+.dashstatsection {
+  padding: 0.75rem;
+  transform: translate(10rem, -45REM);
+  width: 92%;
+  margin-left: -2.5REM;
+}
+.dashstatsection .usericon {
+  background-color: #319795;
+  /* Teal-600 color */
+  color: #fff;
+  /* White color */
+  border-radius: 9999px;
+  /* Fully rounded corners */
+  font-size: 3rem;
+  /* 5xl font size */
+  padding: 0.75rem;
+  /* Padding size */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.dashstatsection .matchicon {
+  background-color: #4f46e5; /* Tailwind's indigo-600 color */
+  color: #ffffff; /* White color */
+  border-radius: 9999px; /* Fully rounded corners */
+  font-size: 3rem; /* Assuming Tailwind's text-5xl corresponds to 3rem */
+  padding: 0.75rem; /* Assuming Tailwind's p-3 corresponds to 0.75rem */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.dashstatsection .posticon {
+  background-color: #84cc16; /* Tailwind's lime-600 color */
+  color: #ffffff; /* White color */
+  border-radius: 9999px; /* Fully rounded corners */
+  font-size: 3rem; /* Assuming Tailwind's text-5xl corresponds to 3rem */
+  padding: 0.75rem; /* Assuming Tailwind's p-3 corresponds to 0.75rem */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.dashstatsection .statsection {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.dashstatsection .statsection .total {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  background-color: white;
+  gap: 1rem;
+  width: 18rem;
+  width: 28%;
+  border-radius: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: hsl(173, 82%, 24%) solid 4px;
+}
+.dashstatsection .statsection .total .totala {
+  display: flex;
+  justify-content: space-between;
+}
+.dashstatsection .statsection .total .totala .totaltit {
+  color: #6b7280;
+  /* Tailwind's gray-500 color */
+  font-size: 1rem;
+  /* Assuming Tailwind's md corresponds to 1rem */
+  text-transform: uppercase;
+}
+.dashstatsection .statsection .total .totala .totaltit .totalnumber {
+  font-size: 1.5rem;
+}
+.dashstatsection .statsection .total .lm {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+.dashstatsection .statsection .total .lm .lmicon {
+  color: #10b981;
+  display: flex;
+  align-items: center;
+}
+.dashstatsection .statsection .total .lm .lmtit {
+  color: #6b7280;
+}
+.dashstatsection .viewsection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Adjust the gap size as needed */
+  padding-top: 0.75rem; /* Adjust the padding size as needed */
+  padding-bottom: 0.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.dashstatsection .viewsection .view {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 0.5rem;
+  border-radius: 3rem;
+  background-color: white;
+  border: hsl(173, 82%, 24%) solid 3px;
+}
+.dashstatsection .viewsection .view .viewattrb {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.dashstatsection .viewsection .view .viewattrb .recent {
+  text-align: center;
+  padding: 0.5rem;
+}
+.dashstatsection .viewsection .view .viewattrb .seeall {
+  border: none;
+  background: var(--mmy);
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
+.dashstatsection .viewsection .view .table {
+  table-layout: auto;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+.dashstatsection .viewsection .view .table .tableattrb {
+  border-radius: 3rem;
+}
+.dashstatsection .viewsection .view .table .tableattrb:hover {
+  background: var(--mmm);
+}
+.dashstatsection .viewsection .view .table .tableattrb .userprofileimg {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background-color: #718096;
+  margin-left: 1rem;
+}
+.dashstatsection .viewsection .view .table .tableattrb .imgpost {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50rem;
+  margin-right: 1rem;
+}/*# sourceMappingURL=dashcomp.css.map */

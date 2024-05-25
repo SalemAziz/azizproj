@@ -40,7 +40,7 @@ function CreateMatch() {
       <form onSubmit={handleSubmit}>
       <div className='creatematchmain'>
         <div className='matchname'>
-        <label className="txxt">name: </label>
+        <label className="txxt" placeholder='matchname'>name: </label>
 
           <input type="text" id='matchname' className='matchnameinp'     onChange={(e) =>
               setFormData({ ...formData, matchname: e.target.value })

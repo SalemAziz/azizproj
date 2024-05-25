@@ -20,12 +20,12 @@
 
 .postsec .createpostcard {
   box-shadow: 3px 3px 4px rgba(140, 140, 141, 0.549);
-  border: 2.5px solid var(--mmy);
+  border: 2.5px solid hsl(173, 82%, 24%);
   transform: translate(28rem, 7rem);
   width: 38rem;
   height: 13.6rem;
   border-radius: 2.3rem;
-  background: rgb(39, 39, 39);
+  background: white;
 }
 .postsec .createpostcard .postpicname {
   height: 4.5rem;
@@ -36,7 +36,7 @@
   height: 50px;
   width: 50px;
   transform: translate(0.5rem, 1.1rem);
-  border: 2.1px solid var(--whiteColor);
+  border: 3px solid hsl(173, 82%, 24%);
 }
 .postsec .createpostcard .formpost .posttext {
   width: 88%;
@@ -48,16 +48,16 @@
   box-sizing: border-box;
   border-radius: 0.5rem;
   outline: none;
-  background: rgb(39, 39, 39);
-  color: var(--whiteColor);
+  background: white;
+  color: rgb(39, 39, 39);
 }
 .postsec .createpostcard .formpost .posttext::-moz-placeholder {
-  color: var(--whiteColor);
+  color: rgb(39, 39, 39);
   font-weight: 400;
   font-size: 18px;
 }
 .postsec .createpostcard .formpost .posttext::placeholder {
-  color: var(--whiteColor);
+  color: rgb(39, 39, 39);
   font-weight: 400;
   font-size: 18px;
 }
@@ -68,7 +68,7 @@
 .postsec .createpostcard .formpost .postpub .picpost {
   font-size: 25px;
   transform: translate(28rem, 0.55rem);
-  color: var(--whiteColor);
+  color: hsl(173, 82%, 24%);
   cursor: pointer;
 }
 .postsec .createpostcard .formpost .postpub .picpost:hover {
