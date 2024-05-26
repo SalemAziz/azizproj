@@ -5,10 +5,7 @@ import React, { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { app } from '../../firebase';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-
-
-
-
+import video from "./../../assets/202760-918944267_small.mp4"
 
 export default function Demande() {
   const fileRef = useRef(null);
@@ -92,71 +89,63 @@ export default function Demande() {
 
   return (
     <>
-      <NavUser />
-      <div className='demande'>
-        <form onSubmit={handleSubmit} ><h1 className='titott'>Personal Contact:</h1>
+
+
+    <div className='demande'>
+       
+        <form onSubmit={handleSubmit} className='demandeform'>
+        <div className='vidm'>
+        <video src={video}className='vidmm'/>
+        </div>
 
           <div className='ownerattrb'>
 
             <div className=''>
-              <label className="ttxt">name: </label>
-              <input type="text" id='' className='orattrb' placeholder=' ' onChange={(e) =>
+              <input type="text" id='' className='orattrb' placeholder='Full name ' onChange={(e) =>
               setFormData({ ...formData, ownerfullname: e.target.value })
             }/> 
             </div>
             <div>
-              <label className="ttxt">numtel: </label>
-              <input type="text" id='' className='orattrb' placeholder=' 'onChange={(e) =>
+              <input type="text" id='' className='orattrb' placeholder='Phone'onChange={(e) =>
               setFormData({ ...formData, numtel: e.target.value })} />
             </div>
             <div className=''>
-              <label className="ttxt">email: </label>
-              <input type="text" id='' className='orattrb' placeholder=' ' onChange={(e) =>
+              <input type="text" id='' className='orattrb' placeholder='Email ' onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })}/>
             </div>
           </div>
-          <h1 className='titott'>General information about your space:</h1>
           <div className='fieldattrb'>
             <div className=''>
-              <label className="ttxt">field name: </label>
-              <input type="text" id='' className='orattrb' placeholder=' ' onChange={(e) =>
+              <input type="text" id='' className='fiettrb' placeholder='Field name ' onChange={(e) =>
               setFormData({ ...formData, fieldname: e.target.value })} />
             </div>
             <div className=''>
-              <label className="ttxt">adress: </label>
-              <input type="text" id='' className='orattrb' placeholder=' ' onChange={(e) =>
+              <input type="text" id='' className='fiettrb' placeholder='Adress' onChange={(e) =>
               setFormData({ ...formData, adress: e.target.value })} />
             </div>
             <div className=''>
-              <label className="ttxt">code: </label>
-              <input type="text" id='' className='orattrb' placeholder=' ' onChange={(e) =>
+              <input type="text" id='' className='fiettrb' placeholder='Code' onChange={(e) =>
               setFormData({ ...formData, code: e.target.value })}/>
             </div>
             <div className=''>
-              <label className="ttxt">player allowed: </label>
-              <input type="number" id="quantity" className="orattrb" min="50" max="60" onChange={(e) =>
+              <input type="number" id="quantity"  placeholder="Price" className="fiettrb" min="50" max="60" onChange={(e) =>
               setFormData({ ...formData, playerallowd: e.target.value })} />
             </div>
+            <div className='descrip'>
+              <input type="text" id='' className='fiettrbn' placeholder='Description ' onChange={(e) =>
+              setFormData({ ...formData, description: e.target.value })
+            }/> 
+            </div>
             <div className=''>
-              <input type="file" id='' className='orattrb' placeholder=' '  hidden ref={fileRef}  onChange={handleFileChange}
+              <input type="file" id='' className='' placeholder=' '  hidden ref={fileRef}  onChange={handleFileChange}
 />
-              <label className="ttxt">pic field: </label>
 
               <span className='tagimgg'onClick={() => fileRef.current.click()}><GrGallery /> </span>
 
             </div>
+        
 
-            <div className='descrip'>
-            <div className='ttxtt'> txt</div>
-
-
-              <textarea className='demandedesc'value={formData.description || ''}
-            onChange={(e) => {
-              setFormData({ ...formData, description: e.target.value });
-            }} ></textarea>
-            </div>
-
-
+        
             <button type='submit' className='btdemande'>Resrve</button>
           </div>
           {imageUploadError && <div className='error'>{imageUploadError}</div>}

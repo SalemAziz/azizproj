@@ -23,140 +23,221 @@
 
 
 }
+
 .demande {
-    border-top: solid white 2px;
-    transform: translateY(-1rem);
-    height: 200%;
-    background: hsl(173, 82%, 24%);
-    .selectedd{ 
+  width: 80%;
+  height: 100;
+
+    .selectedd {
         height: 10rem;
         width: 10rem;
-        transform: translate(50rem,-21rem);
+        transform: translate(29rem, -7rem);
         display: inline;
-        margin-left: 2rem;
         border-radius: 2rem;
-        border: 3px dotted white;
-
-    }
-  
-
-    .ttxt{
-        color: var(--whiteColor);
-        font-size: 22px;
-        font-family: 600;
+        border: 3px dotted var(--mm);
 
     }
 
-    height:45.615rem;
-    .titott{
-        font-size: 40px;
-        transform: translateY(10rem);
-        color: var(--mmy);
-        margin-bottom: 1rem;
-       
-        
-    }
-    .orattrb{
-       
-    
-        border-radius: 0.7rem;
-        height: 2.2rem;
-        width: 15rem;
-        border: solid 2px var(--whiteColor);
-        margin-bottom: 1.5rem;
-        background: hsl(173, 82%, 24%);
-        color: white;
+    .vidm {
+        position: absolute;
+        height: 100%;
+        width: 61rem;
+        overflow: hidden;
 
-       
-        &:focus{
-            border: solid 2px var(--mmy);
-            outline: none; 
-
-        }
-
-    
-        
-    }
-    .ownerattrb {
-        background: hsl(173, 82%, 24%);
-        
-
-        margin: 0 auto;
-        transform: translateY(12rem);
-        width: 80%;
-        height: 5rem;
-        border-radius: 1rem;
-        display: flex;
-        gap: 4rem;
-        margin-left: 1rem;
-        margin-bottom: 3rem;
-        
-        
-    
-
-    }
-    .fieldattrb{
-        transform: translateY(12rem);
-
-        border-radius: 1rem;
-       background: hsl(173, 82%, 24%);
-        
-    .ttxtt{
-        color: var(--whiteColor);
-        font-size: 22px;
-        font-family: 600;
-        transform: translatey(30px);
-        
-
-    }
-    .tagimgg{
-        font-size: 25px;
-        color: white;
-        transform: translateX(3rem);
-
-     }
-        .demandedesc{
-            width: 40rem;
-            height: 10rem;
-            margin-bottom: 3rem;
-            border-radius: 1rem;
-            margin-top: 3rem;
-
-            background: hsl(173, 82%, 24%);
-            border: solid 2px var(--whiteColor);
-           
-            &:focus{
-                border: solid 2px var(--mmy);
-                outline: none; 
-    
-            }
-            .ttxtt{
-                transform: translateY(30px);
-                
-            }
+        .vidmm {
+            position: absolute;
+            width: 22.4rem;
 
 
         }
-        .btdemande{
-            transform: translate(50rem,);
-            margin-bottom: 5rem;
+    }
+
+
+
+
+    .demandeform {
+        
+
+        width: 64rem;
+        height: 39.8rem;
+        background: white;
+        border-top-right-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+        box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+        transform: translate(15rem);
+
+
+
+
+
+        .orattrb {
             width: 10rem;
-            height: 3rem;
-            background: var(--gradientColor);
-            border: solid 2px ;
-            box-shadow: 1px 1px 4px var(--blackColor);
-            color: white;
-            font-weight: 600;
-            font-size: 18px;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            &:hover{
-                background: var(--mm);
+            border: 0;
+            border-bottom: 2px solid var(--greytext);
+            outline: 0;
+            font-size: 1.05rem;
+            color: black;
+            padding: 7px 0;
+            background: transparent;
+            transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+            transform: translate(23rem,-7rem);
+
+
+            &::placeholder {
+                color: gray;
+            }
+
+
+            &:focus {
+                padding-bottom: 6px;
+                font-weight: 400;
+                border-width: 3px;
+                border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                border-image-slice: 1;
             }
 
 
         }
 
+        .ownerattrb {
 
+
+            margin: 0 auto;
+            transform: translateY(9rem);
+            width: 70%;
+            height: 5rem;
+            border-radius: 1rem;
+            display: flex;
+            gap: 4rem;
+            margin-left: 1rem;
+            margin-top: 2rem;
+
+
+
+
+        }
+
+        .fieldattrb {
+            transform: translate(23rem,7.5rem);
+            margin-left: 1rem;
+
+            .fiettrb {
+                transform: translateY(-5rem);
+
+                width: 15rem;
+                border: 0;
+                border-bottom: 2px solid var(--greytext);
+                outline: 0;
+                font-size: 1.05rem;
+                color: black;
+                padding: 7px 0;
+                background: transparent;
+                transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+                margin-bottom: 2rem;
+
+                &::placeholder {
+                    color: gray;
+                }
+
+
+                &:focus {
+                    padding-bottom: 6px;
+                    font-weight: 400;
+                    border-width: 3px;
+                    border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                    border-image-slice: 1;
+                }
+
+            }
+            .fiettrbn{
+                transform: translateY(-5rem);
+
+                width: 37rem;
+                border: 0;
+                border-bottom: 2px solid var(--greytext);
+                outline: 0;
+                font-size: 1.05rem;
+                color: black;
+                padding: 7px 0;
+                background: transparent;
+                transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+
+                &::placeholder {
+                    color: gray;
+                }
+
+
+                &:focus {
+                    padding-bottom: 6px;
+                    font-weight: 400;
+                    border-width: 3px;
+                    border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                    border-image-slice: 1;
+                }
+            }
+
+
+            .ttxtt {
+                color: var(--whiteColor);
+                font-size: 22px;
+                font-family: 600;
+                transform: translatey(30px);
+
+
+            }
+
+            .tagimgg{
+                font-size: 25px;
+                color: hsl(173, 82%, 24%);
+
+            }
+
+            .demandedesc {
+                width: 40rem;
+                height: 10rem;
+                margin-bottom: 3rem;
+                border-radius: 1rem;
+                margin-top: 3rem;
+
+                background: hsl(173, 82%, 24%);
+                border: solid 2px var(--whiteColor);
+
+                &:focus {
+                    border: solid 2px var(--mmy);
+                    outline: none;
+
+                }
+
+                .ttxtt {
+                    transform: translateY(30px);
+
+                }
+
+
+            }
+
+            .btdemande {
+                transform: translate(27rem );
+                margin-bottom: 5rem;
+                width: 10rem;
+                height: 3rem;
+                border: none;
+                background: var(--gradientColor);
+                box-shadow: 1px 1px 4px var(--greytext);
+                color: white;
+                font-weight: 600;
+                font-size: 18px;
+                border-radius: 2rem;
+                cursor: pointer;
+
+                &:hover {
+                    background: var(--mm);
+                }
+
+
+            }
+
+
+        }
     }
 }
