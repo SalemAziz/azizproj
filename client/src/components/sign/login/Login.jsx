@@ -9,6 +9,7 @@ import {
 } from '../../../redux/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import OAth from '../oath/OAth';
+import video from "../../../assets/212642_small.mp4"
 
 
 const Login = () => {
@@ -52,6 +53,9 @@ const Login = () => {
   };
   return (
     <section className='bgl'>
+      <div className='viddd'>
+      <video src={ video}className='videolog' muted autoPlay loop type='video/mp4'/>
+      </div>
     <div className='logl'>
       <h1 className='logtextl'>Sign In</h1>
       <form  onSubmit={handleSubmit} className='formtxtl'>

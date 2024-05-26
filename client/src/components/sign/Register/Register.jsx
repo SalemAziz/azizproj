@@ -3,6 +3,8 @@ import './register.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import OAth from '../oath/OAth';
+import video from "../../../assets/212642_small.mp4"
+
 
 
 const Register = () => {
@@ -41,6 +43,9 @@ const Register = () => {
   };
   return (
     <section className='bg'>
+      <div className='vidddd'>
+      <video src={ video}className='videologg' muted autoPlay loop type='video/mp4'/>
+      </div>
     <div className='log'>
       <h1 className='logtext'>Sign Up</h1>
       <form  onSubmit={handleSubmit} className='formtxt'>

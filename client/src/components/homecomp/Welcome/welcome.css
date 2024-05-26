@@ -38,6 +38,8 @@
   bottom: 0;
   -o-object-fit: cover;
      object-fit: cover;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 .welcome .welcomeContent {
   width: 100%;

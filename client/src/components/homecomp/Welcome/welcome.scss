@@ -29,6 +29,7 @@
         bottom: 0;
         z-index: 1;
         mix-blend-mode: hard-light;
+     
     }
     .video {
         position: absolute;
@@ -37,6 +38,8 @@
         top: 0;
         bottom: 0;
         object-fit: cover;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius:0.5rem;
     }
     .welcomeContent{
         width: 100%;

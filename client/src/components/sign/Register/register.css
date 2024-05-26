@@ -17,15 +17,23 @@
 }
 
 .bg {
-  padding: 30px;
-  background: hsl(173, 82%, 24%);
-  margin-bottom: -10;
+  margin-left: -2.5rem;
+}
+.bg .vidddd {
+  position: absolute;
+  height: 100%;
+  width: 62rem;
+  overflow: hidden;
+}
+.bg .vidddd .videologg {
+  position: absolute;
+  width: 82rem;
 }
 .bg .log {
-  padding: 90px;
+  padding: 113px;
   max-width: 38rem;
-  margin: 0 auto;
-  border-radius: 2rem;
+  height: 41.5rem;
+  transform: translate(60.5rem, 2rem);
 }
 .bg .log .logtext {
   margin-top: 1.75rem;
@@ -34,7 +42,7 @@
   line-height: 2.25rem;
   font-weight: 600;
   text-align: center;
-  color: white;
+  color: var(--mm);
   transform: translateY(-65px);
 }
 .bg .log .formtxt {
@@ -44,11 +52,29 @@
   gap: 1rem;
 }
 .bg .log .formtxt .inputtxt {
-  padding: 0.8rem;
-  border-radius: 1.5rem;
-  outline: none;
-  background: var(--whiteColor);
-  border: none;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid var(--greytext);
+  outline: 0;
+  font-size: 1.05rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+}
+.bg .log .formtxt .inputtxt::-moz-placeholder {
+  color: grey;
+}
+.bg .log .formtxt .inputtxt::placeholder {
+  color: grey;
+}
+.bg .log .formtxt .inputtxt:focus {
+  padding-bottom: 6px;
+  font-weight: 400;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+     border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+  border-image-slice: 1;
 }
 .bg .log .formtxt .btnlog {
   padding: 0.75rem;
@@ -61,6 +87,7 @@
   color: var(--whiteColor);
   border: none;
   outline: none;
+  transform: translateY(0.5rem);
   cursor: pointer;
 }
 .bg .log .formtxt .btnlog:hover.btnlog {
@@ -74,5 +101,5 @@
   transform: translateX(100px);
 }
 .bg .log .formtxt .txtsig span {
-  color: var(--yyy);
+  color: var(--mm);
 }/*# sourceMappingURL=register.css.map */
