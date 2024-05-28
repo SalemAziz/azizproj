@@ -18,6 +18,7 @@
   --blackColor2: hsl(198, 19%, 45%);
   --whiteColordeam2: hsl(0, 60%, 99%);
   --blackColor3: hsl(153, 29%, 33%);
+  --cardBG2: rgb(156, 154, 154);
 }
 
 .post {
@@ -36,8 +37,7 @@
   align-items: center;
   box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
   overflow: hidden;
-  border: 2.5px solid hsl(173, 82%, 24%);
-  background: white;
+  background: var(--cardBG);
 }
 .post .postContent .singlepost .postcrtpic .imga {
   border-radius: 50%;
@@ -47,17 +47,17 @@
   border: 3px solid hsl(173, 82%, 24%);
 }
 .post .postContent .singlepost .postcreator {
-  transform: translate(4.6rem, -2.3rem);
+  transform: translate(4.6rem, -2.5rem);
   font-size: 19px;
   color: rgb(39, 39, 39);
-  font-weight: 500;
+  font-weight: 600;
 }
 .post .postContent .singlepost .contentdiv {
   width: 39.9rem;
-  border-bottom: 1.5px solid hsl(173, 82%, 24%);
+  border-bottom: 1.5px solid gray;
   border-radius: 0.11rem;
   height: flex;
-  transform: translate(0px, -11px);
+  transform: translate(0px, -7px);
 }
 .post .postContent .singlepost .contentdiv .postpic .imgb {
   height: 23rem;
@@ -73,7 +73,7 @@
   padding-right: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 1.5rem;
-  background: white;
+  background: var(--cardBG);
 }
 .post .postContent .singlepost .postbtnsdiv {
   display: flex;
@@ -88,19 +88,19 @@
   height: 2.9rem;
   outline: none;
   cursor: pointer;
-  background: white;
+  background: var(--cardBG);
   border: none;
   margin: 7rem;
 }
 .post .postContent .singlepost .postbtnsdiv .postbtns .postico {
-  color: var(--whiteColor);
+  color: gray;
   font-size: 25px;
 }
 .post .postContent .singlepost .postbtnsdiv .postbtns .postico:hover {
   color: var(--mmr);
 }
 .post .postContent .singlepost .postbtnsdiv .postbtns .postico2 {
-  color: var(--whiteColor);
+  color: gray;
   font-size: 25px;
 }
 .post .postContent .singlepost .postbtnsdiv .postbtns .postico2:hover {

@@ -87,7 +87,7 @@ export const getmatchs = async (req, res, next) => {
     }
 };
 
-export const JoinMatch = async (req, res, next) => {
+export const JoinMatchteam1 = async (req, res, next) => {
   try {
     const match = await Match.findById(req.params.matchId);
     if (!match) {
@@ -98,13 +98,39 @@ export const JoinMatch = async (req, res, next) => {
     const user = await User.findById(userId);
     const username = user.username;
 
-    const playerIndex = match.players.findIndex(player => player.username === username);
-    if (playerIndex === -1) {
-      match.numberOfPlayers += 1;
-      match.players.push({ username });
+    const team1Index = match.team1.findIndex(team1 => team1.username === username);
+    if (team1Index === -1) {
+      match.numberOfTeam1 += 1;
+      match.team1.push({ username });
     } else {
-      match.numberOfPlayers -= 1;
-      match.players.splice(playerIndex, 1);
+      match.numberOfTeam1-= 1;
+      match.team1.splice(team1Index, 1);
+    }
+    
+    await match.save();
+    res.status(200).json(match);
+  } catch (error) {
+    next(error);
+  }
+};
+export const JoinMatchteam2 = async (req, res, next) => {
+  try {
+    const match = await Match.findById(req.params.matchId);
+    if (!match) {
+      return next(errorHandler(404, 'Match not found'));
+    }
+    
+    const userId = req.user.id;
+    const user = await User.findById(userId);
+    const username = user.username;
+
+    const team2Index = match.team2.findIndex(team2 => team2.username === username);
+    if (team2Index === -1) {
+      match.numberOfTeam2 += 1;
+      match.team2.push({ username });
+    } else {
+      match.numberOfTeam2-= 1;
+      match.team2.splice(team2Index, 1);
     }
     
     await match.save();

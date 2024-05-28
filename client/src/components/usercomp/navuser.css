@@ -18,7 +18,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--whiteColor);
+  background-color: rgb(40, 40, 40);
   width: 100%;
   height: 11%;
   padding: 1rem;
@@ -26,7 +26,7 @@ header {
   box-shadow: 0 3px 4px rgba(2, 15, 29, 0.242);
 }
 header .logo {
-  color: var(--blackColor);
+  color: var(--whiteColor);
   font-weight: 600;
   cursor: pointer;
   align-items: center;
@@ -34,7 +34,7 @@ header .logo {
 }
 header .logo .icon {
   font-size: 25px;
-  color: var(--blackColor);
+  color: var(--whiteColor);
   transform: translateY(5px);
 }
 @media screen and (max-width: 768px) {
@@ -119,7 +119,7 @@ header .toggleNavbar:hover.icon {
     flex-direction: row;
   }
   .header .navBar .navLists .navItem .navLink {
-    color: var(--textColor);
+    color: var(--whiteColor);
     padding: 0 2.6rem;
     font-size: 0.9rem;
     font-weight: 500;

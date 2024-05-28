@@ -29,7 +29,7 @@
   border-radius: 2rem;
   border: solid 4px var(--mmy);
   box-shadow: 10px 2px 3px --blackColor(140, 140, 141, 0.549);
-  background: hsl(173, 82%, 24%);
+  background: rgb(56, 56, 56);
 }
 .creatematchsection .creatematchmain .txxt {
   color: white;
@@ -41,70 +41,94 @@
   transform: translate(3rem, 2.1rem);
 }
 .creatematchsection .creatematchmain .matchname .matchnameinp {
-  border-radius: 1rem;
-  height: 2.5rem;
   width: 13rem;
-  border: var(--whiteColor) solid 3px;
+  border: 0;
+  border-bottom: 2px solid var(--greytext);
+  outline: 0;
+  font-size: 1.05rem;
   color: black;
-  background: var(--whiteColor);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+}
+.creatematchsection .creatematchmain .matchname .matchnameinp::-moz-placeholder {
+  color: gray;
+}
+.creatematchsection .creatematchmain .matchname .matchnameinp::placeholder {
+  color: gray;
 }
 .creatematchsection .creatematchmain .matchname .matchnameinp:focus {
-  border: solid 2px var(--mmy);
-  outline: none;
+  padding-bottom: 6px;
+  font-weight: 400;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+     border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+  border-image-slice: 1;
 }
 .creatematchsection .reservationdate {
   transform: translate(20.5rem, -0.4rem);
 }
 .creatematchsection .reservationdate .reservationdat {
-  border-radius: 1rem;
-  height: 2.5rem;
-  width: 14.9rem;
-  border: var(--whiteColor) solid 3px;
-  font-weight: 400;
-  font-size: 17px;
-  color: black;
-  background: var(--whiteColor);
+  width: 13rem;
+  border: 0;
+  border-bottom: 2px solid var(--greytext);
+  outline: 0;
+  font-size: 1.05rem;
+  color: gray;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
 }
 .creatematchsection .reservationdate .reservationdat:focus {
-  border: solid 2px var(--mmy);
-  outline: none;
+  padding-bottom: 6px;
+  font-weight: 400;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+     border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+  border-image-slice: 1;
 }
-.creatematchsection .chosefield {
+
+.chosefield {
   transform: translate(3.5rem, 1rem);
 }
-.creatematchsection .chosefield .chosef {
-  border-radius: 1rem;
-  height: 2.5rem;
-  width: 32rem;
+.chosefield .chosef {
+  width: 30rem;
+  border: 0;
+  border-bottom: 2px solid var(--greytext);
+  outline: 0;
+  font-size: 1.05rem;
+  color: gray;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+}
+.chosefield .chosef:focus {
+  padding-bottom: 6px;
   font-weight: 400;
-  font-size: 17px;
-  border: var(--whiteColor) solid 3px;
-  color: black;
-  background: var(--whiteColor);
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+     border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+  border-image-slice: 1;
 }
-.creatematchsection .chosefield .chosef:focus {
-  border: solid 2px var(--mmy);
-  outline: none;
+
+.descrip {
+  transform: translate(5.5rem, 0rem);
 }
-.creatematchsection .chosefield .chosef .fields {
-  color: var(--blackColor2);
-}
-.creatematchsection .descrip {
-  transform: translate(6.4rem, 0rem);
-}
-.creatematchsection .descrip .descripp {
+.descrip .descripp {
   width: 32rem;
   height: 9rem;
   border-radius: 0.5rem;
-  color: black;
+  color: white;
   border: var(--whiteColor) solid 3px;
-  background: var(--whiteColor);
+  font-size: 15px;
+  background: rgb(56, 56, 56);
 }
-.creatematchsection .descrip .descripp:focus {
+.descrip .descripp:focus {
   border: solid 2px var(--mmy);
   outline: none;
 }
-.creatematchsection .matchcrt {
+
+.matchcrt {
   padding: 0.6rem 1.5rem;
   background: var(--gradientColor);
   border-radius: 3rem;
@@ -118,6 +142,6 @@
   width: 7rem;
   height: 2.6rem;
 }
-.creatematchsection .matchcrt:hover {
+.matchcrt:hover {
   background: var(--PrimaryColor);
 }/*# sourceMappingURL=creatematch.css.map */

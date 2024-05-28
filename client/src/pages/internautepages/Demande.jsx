@@ -92,6 +92,7 @@ export default function Demande() {
 
 
     <div className='demande'>
+      <NavUser/>
        
         <form onSubmit={handleSubmit} className='demandeform'>
         <div className='vidm'>
@@ -101,18 +102,19 @@ export default function Demande() {
           <div className='ownerattrb'>
 
             <div className=''>
-              <input type="text" id='' className='orattrb' placeholder='Full name ' onChange={(e) =>
+              <input type="text" id='' className='orattrb' placeholder='Owner name ' onChange={(e) =>
               setFormData({ ...formData, ownerfullname: e.target.value })
             }/> 
-            </div>
-            <div>
-              <input type="text" id='' className='orattrb' placeholder='Phone'onChange={(e) =>
-              setFormData({ ...formData, numtel: e.target.value })} />
             </div>
             <div className=''>
               <input type="text" id='' className='orattrb' placeholder='Email ' onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })}/>
             </div>
+            <div>
+              <input type="text" id='' className='orattrb' placeholder='Phone'onChange={(e) =>
+              setFormData({ ...formData, numtel: e.target.value })} />
+            </div>
+          
           </div>
           <div className='fieldattrb'>
             <div className=''>
@@ -137,11 +139,8 @@ export default function Demande() {
             }/> 
             </div>
             <div className=''>
-              <input type="file" id='' className='' placeholder=' '  hidden ref={fileRef}  onChange={handleFileChange}
-/>
-
+              <input type="file" id='' className='' placeholder=' '  hidden ref={fileRef}  onChange={handleFileChange}/>
               <span className='tagimgg'onClick={() => fileRef.current.click()}><GrGallery /> </span>
-
             </div>
         
 

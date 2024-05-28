@@ -20,111 +20,114 @@
   --blackColor3: hsl(153, 29%, 33%);
 }
 
+.accountinfo {
+  transform: translate(0, 5rem);
+  width: 100%;
+}
 .accountinfo .accountinfffo {
-  transform: translate(6rem, 7rem);
-  width: 95%;
+  width: 100%;
   height: flex;
   border-radius: 3rem;
-  margin-left: -1.5rem;
 }
 .accountinfo .accountinfffo .topinfo {
   height: 11rem;
-  width: 72%;
+  width: 70rem;
   border: solid 4px white;
-  transform: translate(8.5rem, 1rem);
+  transform: translate(14rem, 1rem);
   background: hsl(173, 82%, 24%);
   border-radius: 3rem;
+  margin-bottom: 2rem;
 }
 .accountinfo .accountinfffo .topinfo .profileeimg {
-  width: 10rem;
-  height: 10rem;
+  width: 11rem;
+  height: 11rem;
   border: solid 5px hsl(173, 82%, 24%);
   border-radius: 50%;
   margin-top: 0.8rem;
   margin-left: -9rem;
-  transform: translate(2rem, -0.3rem);
+  transform: translate(2rem, -1.2rem);
 }
 .accountinfo .accountinfffo .topinfo .profnamme {
   color: white;
-  font-size: 40px;
-  transform: translate(4.2rem, -8rem);
+  font-size: 60px;
+  transform: translate(4.5rem, -10rem);
   font-weight: 600;
 }
-.accountinfo .accountinfffo .accounattrb {
-  border: hsl(173, 82%, 24%) solid 4px;
-  box-shadow: 0 2px 1px gray(255, 255, 255, 0.904);
-  background: white;
+.accountinfo .accountinfffo .mainaccount {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+}
+.accountinfo .accountinfffo .mainaccount .accounattrb {
+  box-shadow: 0 3px 4px rgba(2, 15, 29, 0.242);
+  background: rgb(40, 40, 40);
+  margin-left: 3rem;
   border-radius: 3rem;
-  width: 28%;
+  width: 27rem;
   height: 25rem;
-  margin-left: 2rem;
   margin-top: 3rem;
   margin-bottom: 2rem;
-  transform: translateX(2rem);
 }
-.accountinfo .accountinfffo .accounattrb .detailsprof {
-  margin-left: 2.5rem;
-  transform: translate(1rem, 1rem);
+.accountinfo .accountinfffo .mainaccount .accounattrb .detailsprof {
+  transform: translate(1.5rem, 1rem);
   color: hsl(173, 82%, 24%);
   margin-top: 2rem;
   font-size: 15px;
 }
-.accountinfo .accountinfffo .accounattrb .updtbtn {
+.accountinfo .accountinfffo .mainaccount .accounattrb .updtbtn {
   background: var(--mmy);
   height: 2.5rem;
   width: 12rem;
-  transform: translate(5.5rem, 3rem);
+  transform: translate(3.5rem, 4rem);
   border-radius: 2rem;
-  border: white dotted 4px;
+  border: white solid 2px;
 }
-.accountinfo .accountinfffo .accounattrb .updtbtn .updd {
+.accountinfo .accountinfffo .mainaccount .accounattrb .updtbtn .updd {
   color: white;
 }
-.accountinfo .accountinfffo .pub {
+.accountinfo .accountinfffo .mainaccount .pub {
   width: 50rem;
-  transform: translate(29rem, -27rem);
   height: flex;
   border-radius: 1rem;
+  margin-top: 1.5rem;
 }
-.accountinfo .accountinfffo .pub .postContentt {
+.accountinfo .accountinfffo .mainaccount .pub .postContentt {
   justify-content: center;
-  transform: translate(5.66rem);
   gap: 1.5rem;
   margin-bottom: 5rem;
 }
-.accountinfo .accountinfffo .pub .postContentt .singlepostt {
+.accountinfo .accountinfffo .mainaccount .pub .postContentt .singlepostt {
   height: flex;
   margin-top: 1.5rem;
-  width: 38rem;
+  width: 35rem;
   row-gap: 10px;
   border-radius: 1.5rem;
   align-items: center;
   box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
   overflow: hidden;
-  border: 3px solid hsl(173, 82%, 24%);
-  background: white;
+  background: var(--cardBG);
 }
-.accountinfo .accountinfffo .pub .postContentt .singlepostt .postcrtpicc .imgaa {
+.accountinfo .accountinfffo .mainaccount .pub .postContentt .singlepostt .postcrtpicc .imgaa {
   border-radius: 50%;
-  height: 55px;
-  width: 55px;
+  height: 45px;
+  width: 45px;
   transform: translate(0.65rem, 0.8rem);
   border: 3px solid hsl(173, 82%, 24%);
 }
-.accountinfo .accountinfffo .pub .postContentt .singlepostt .postcreatorr {
+.accountinfo .accountinfffo .mainaccount .pub .postContentt .singlepostt .postcreatorr {
   transform: translate(4.6rem, -2.3rem);
   font-size: 19px;
   color: rgb(39, 39, 39);
   font-weight: 500;
 }
-.accountinfo .accountinfffo .pub .postContentt .singlepostt .contentdivv {
+.accountinfo .accountinfffo .mainaccount .pub .postContentt .singlepostt .contentdivv {
   width: 39.9rem;
   border-bottom: 1.5px solid var(--whiteColor);
   border-radius: 0.11rem;
   height: flex;
   transform: translate(0px, -11px);
 }
-.accountinfo .accountinfffo .pub .postContentt .singlepostt .contentdivv .descc {
+.accountinfo .accountinfffo .mainaccount .pub .postContentt .singlepostt .contentdivv .descc {
   font-size: 17px;
   color: rgb(39, 39, 39);
   font-weight: 400;
@@ -133,9 +136,39 @@
   padding-top: 1rem;
   padding-bottom: 1.5rem;
 }
-.accountinfo .accountinfffo .pub .postContentt .singlepostt .contentdivv .postpicc .imgbb {
+.accountinfo .accountinfffo .mainaccount .pub .postContentt .singlepostt .contentdivv .postpicc .imgbb {
   height: 23rem;
   width: 36rem;
   transform: translate(0.8rem, -1rem);
   border-radius: 1.9rem;
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount {
+  transform: translateY(3rem);
+  width: 38rem;
+  margin-left: -3rem;
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount {
+  width: 23rem;
+  border-radius: 1.5rem;
+  background: rgb(40, 40, 40);
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tabthead {
+  color: white;
+  height: 5.5rem;
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tabthead .tabhhead {
+  transform: translate(0rem);
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tbodyy {
+  height: 5rem;
+  transform: translate(1.5rem);
+  color: white;
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tbodyy .linkk {
+  color: white;
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tbodyy .imgaccc {
+  border-radius: 50rem;
+  width: 5rem;
+  height: 5rem;
 }/*# sourceMappingURL=profinfo.css.map */

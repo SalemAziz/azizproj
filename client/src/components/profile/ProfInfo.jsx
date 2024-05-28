@@ -18,6 +18,24 @@ import { FaBirthdayCake } from "react-icons/fa";
 export default function ProfInfo() {
     const { currentUser } = useSelector((state) => state.user);
     const [userPosts, setUserPosts] = useState([]);
+    const [userMatchs, setUserMatchs] = useState([]);
+    
+    useEffect(() => {
+      const fetchMatchs = async () => {
+        try {
+          const res = await fetch(`/api/match/getmatch?creator=${currentUser._id}`);
+          const data = await res.json();
+          if (res.ok) {
+            setUserMatchs(data.matchs);
+          }
+        } catch (error) {
+          console.log(error.message);
+        }
+      };
+      if (currentUser && currentUser._id) {
+        fetchMatchs();
+      }
+    }, [currentUser]);
 
     useEffect(() => {
       const fetchPosts = async () => {
@@ -43,6 +61,7 @@ export default function ProfInfo() {
                 <img  className="profileeimg"src={currentUser.profilePicture} />
                 <div className=' profnamme'>{currentUser.username}</div>          
         </div> 
+        <div className='mainaccount'>
         <div className='accounattrb'>
           <div className='detailsprof'><FaUserAlt /> {currentUser.role}</div>
           <div className='detailsprof'><IoMail /> {currentUser.email}</div>
@@ -87,7 +106,39 @@ export default function ProfInfo() {
       </div>
 
         </div>
-        
+        <div className='matchaccount'>
+      {userMatchs.length > 0 ? (
+  <table className='tablematchaccount'>
+    <thead className='tabthead'>
+      <tr className='tabhhead'> 
+        <th>Image</th>
+        <th>Username</th>
+        <th>Location</th>
+
+      </tr>
+    </thead>
+    <tbody className='tbodyy'>
+      {userMatchs.map((match) => (
+        <tr key={match.id}>
+          <td>
+            <img src={match.picfield} alt={match.creator} className='imgaccc' />
+          </td>
+          <td><Link className="linkk" to={`/matchinfo/${match._id}`}>{match.creatorusername}</Link></td>
+          <td>
+            <span className='matchcontinent flex'>
+              <span className="matchname">{match.field}</span>
+            </span>
+          </td>
+
+        </tr>
+      ))}
+    </tbody>
+  </table>
+) : (
+  <p>No matches found.</p>
+)}
+      </div>
+        </div>
         </div>
 
     </section>

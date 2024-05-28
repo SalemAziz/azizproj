@@ -30,7 +30,7 @@
   border-radius: 10px;
   align-items: center;
   background: var(--cardBG);
-  box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+  box-shadow: 1 2px 2px rgba(140, 140, 141, 0.549);
   overflow: hidden;
 }
 .mainmatch .matchContent .singlematch:hover {
@@ -59,6 +59,7 @@
 .mainmatch .matchContent .singlematch .matchInfo .matchTitle {
   color: var(--blackColor);
   font-size: 1.25rem;
+  margin-top: -1rem;
 }
 .mainmatch .matchContent .singlematch .matchInfo .matchcontinent {
   gap: 0.5rem;
@@ -96,6 +97,7 @@
 }
 .mainmatch .matchContent .singlematch .matchdesc {
   font-size: 13.5px;
+  height: 5rem;
   color: var(--textColor);
   font-weight: 500;
 }

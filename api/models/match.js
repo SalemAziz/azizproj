@@ -37,8 +37,12 @@ const matchSchema = new mongoose.Schema({
         type: String,
         default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXaPPnZ5cT6rU9Naf3wD0lkhBbfoyPMwxvbQ&usqp=CAU',
     },
-    players: {
+    team1: {
         type: Array,
+    },
+    team2:{
+        type: Array,
+
     },
     reservationdate: {
         type: String,

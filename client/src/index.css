@@ -85,6 +85,8 @@ input{
 }
 
 body{
-    background: var(--whiteColordeam);
+    background: rgb(56,56,56)
+
+    ;
 
 }

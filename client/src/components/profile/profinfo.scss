@@ -27,156 +27,202 @@
 
 
 
-.accountinfo{
+.accountinfo {
+    transform: translate(0, 5rem);
+    width: 100%;
 
-    .accountinfffo{
-        transform: translate(6rem,7rem);
+    .accountinfffo {
 
-    width: 95%;
-    height: flex;
-    border-radius:3rem ;
-    margin-left:-1.5rem ;
-    
-          
-
-    .topinfo{
-        height: 11rem;
-        
-        width: 72%;
-        border: solid 4px white;
-        transform: translate(8.5rem,1rem);
-        background: hsl(173, 82%, 24%);
-        border-radius: 3rem;
-        
-
-        .profileeimg{
-           width: 10rem;
-           height: 10rem;
-           border:solid 5px hsl(173, 82%, 24%);
-           border-radius: 50%;
-           margin-top: 0.8rem;
-           margin-left: -9rem;
-           transform: translate(2rem,-0.3rem);
-
-        
-        }
-        .profnamme{
-            color: white;
-            font-size: 40px;
-            transform: translate(4.2rem,-8rem);
-            font-weight: 600;
-           
-        }
-    }
-    .accounattrb{
-        border: hsl(173, 82%, 24%) solid 4px;
-        box-shadow: 0 2px 1px gray(255, 255, 255, 0.904);
-        background:white;
-
-
-        border-radius: 3rem;
-        width: 28%;
-        height: 25rem;
-        margin-left: 2rem;
-        margin-top: 3rem;
-        margin-bottom: 2rem;
-        transform:translateX(2rem);
-        .detailsprof{
-            margin-left: 2.5rem;
-            transform: translate(1rem,1rem);
-            color: hsl(173, 82%, 24%);
-            margin-top: 2rem;
-            font-size: 15px;
-        }
-        .updtbtn{
-            background: var(--mmy);
-            height: 2.5rem;
-            width: 12rem;
-            transform: translate(5.5rem,3rem);
-            border-radius:2rem ;
-            border: white dotted 4px;
-            .updd{
-                color: white;
-            }
-
-            
-        }
-
-    }
-
-    .pub{
-      
-
-        width: 50rem;
-        transform: translate(29rem,-27rem);
+        width: 100%;
         height: flex;
-        border-radius: 1rem;
-        
-        
+        border-radius: 3rem;
 
-        .postContentt{
-            justify-content: center;
-            transform: translate(5.66rem);
-            gap: 1.5rem;
-            margin-bottom: 5rem;
-            .singlepostt{
+
+
+        .topinfo {
+            height: 11rem;
+            width: 70rem;
+            border: solid 4px white;
+            transform: translate(14rem, 1rem);
+            background: hsl(173, 82%, 24%);
+            border-radius: 3rem;
+            margin-bottom: 2rem;
+
+
+            .profileeimg {
+                width: 11rem;
+                height: 11rem;
+                border: solid 5px hsl(173, 82%, 24%);
+                border-radius: 50%;
+                margin-top: 0.8rem;
+                margin-left: -9rem;
+                transform: translate(2rem, -1.2rem);
+
+
+            }
+
+            .profnamme {
+                color: white;
+                font-size: 60px;
+                transform: translate(4.5rem, -10rem);
+                font-weight: 600;
+
+            }
+        }
+
+        .mainaccount {
+            display: flex;
+            gap: 3rem;
+            width: 100%;
+
+            .accounattrb {
+                box-shadow: 0 3px 4px rgba(2, 15, 29, 0.242);
+                background: rgb(40, 40, 40);
+                margin-left: 3rem;
+
+                border-radius: 3rem;
+                width: 27rem;
+                height: 25rem;
+                margin-top: 3rem;
+                margin-bottom: 2rem;
+
+                .detailsprof {
+                    transform: translate(1.5rem, 1rem);
+                    color: hsl(173, 82%, 24%);
+                    margin-top: 2rem;
+                    font-size: 15px;
+                }
+
+                .updtbtn {
+                    background: var(--mmy);
+                    height: 2.5rem;
+                    width: 12rem;
+                    transform: translate(3.5rem, 4rem);
+                    border-radius: 2rem;
+                    border: white solid 2px;
+
+                    .updd {
+                        color: white;
+                    }
+
+
+                }
+
+            }
+
+            .pub {
+
+
+                width: 50rem;
                 height: flex;
+                border-radius: 1rem;
                 margin-top: 1.5rem;
+
+                .postContentt {
+                    justify-content: center;
+                    gap: 1.5rem;
+                    margin-bottom: 5rem;
+
+                    .singlepostt {
+                        height: flex;
+                        margin-top: 1.5rem;
+                        width: 35rem;
+                        row-gap: 10px;
+                        border-radius: 1.5rem;
+                        align-items: center;
+                        box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+                        overflow: hidden;
+                        background: var(--cardBG);
+
+                        .postcrtpicc {
+                            .imgaa {
+                                border-radius: 50%;
+                                height: 45px;
+                                width: 45px;
+                                transform: translate(0.65rem, 0.8rem);
+                                border: 3px solid hsl(173, 82%, 24%);
+                            }
+                        }
+
+                        .postcreatorr {
+                            transform: translate(4.6rem, -2.3rem);
+                            font-size: 19px;
+                            color: rgb(39, 39, 39);
+                            font-weight: 500
+                        }
+
+                        .contentdivv {
+                            width: 39.9rem;
+                            border-bottom: 1.5px solid var(--whiteColor);
+                            border-radius: 0.11rem;
+
+                            height: flex;
+                            transform: translate(0px, -11px);
+
+                            .descc {
+                                font-size: 17px;
+                                color: rgb(39, 39, 39);
+                                font-weight: 400;
+                                padding-left: 1.5rem;
+                                padding-right: 1.5rem;
+                                padding-top: 1rem;
+                                padding-bottom: 1.5rem;
+
+
+                            }
+
+                            .postpicc {
+                                .imgbb {
+                                    height: 23rem;
+                                    width: 36rem;
+                                    transform: translate(0.8rem, -1rem);
+                                    border-radius: 1.9rem;
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .matchaccount {
+                transform: translateY(3rem);
                 width: 38rem;
-                row-gap: 10px;
-                border-radius: 1.5rem;
-                align-items: center;
-                box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
-                overflow: hidden;
-                border: 3px solid hsl(173, 82%, 24%);
-                background: white;
+                margin-left: -3rem;
 
-                .postcrtpicc{
-                    .imgaa{
-                        border-radius: 50%;
-                    height: 55px;
-                    width: 55px;
-                    transform: translate(0.65rem, 0.8rem);
-                    border: 3px solid hsl(173, 82%, 24%);
+                .tablematchaccount {
+                    width: 23rem;
+                    border-radius: 1.5rem;
+                    background: rgb(40,40,40);
+
+
+                    .tabthead {
+                        color: white;
+                        height: 5.5rem;
+                        
+
+
+                        .tabhhead {
+                            transform: translate(0rem);
+                        }
                     }
-                }
-                .postcreatorr{
-                    transform: translate(4.6rem, -2.3rem);
-                    font-size: 19px;
-                    color: rgb(39, 39, 39);
-                    font-weight: 500
-                }
-                .contentdivv{
-                    width: 39.9rem;
-                border-bottom: 1.5px solid var(--whiteColor);
-                border-radius: 0.11rem;
+                    .tbodyy{
+                        height: 5rem;
+                        transform: translate(1.5rem);
+                        color: white;
+                        .linkk{
+                            color: white;
+                        }
+                        .imgaccc{
+                            border-radius: 50rem;
+                            width: 5rem;
+                            height: 5rem;
+                        }
 
-                height: flex;
-                transform: translate(0px, -11px);
-                .descc{
-                    font-size: 17px;
-                    color: rgb(39, 39, 39);
-                    font-weight: 400;
-                    padding-left: 1.5rem;
-                    padding-right: 1.5rem;
-                    padding-top: 1rem;
-                    padding-bottom: 1.5rem;
-
-
-                }
-                .postpicc{
-                    .imgbb{
-                        height: 23rem;
-                        width: 36rem;
-                        transform: translate(0.8rem, -1rem);
-                        border-radius:1.9rem ;
-
-                    }
-                }
+                             }
                 }
             }
         }
-        
     }
-}
 }

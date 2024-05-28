@@ -21,77 +21,126 @@
 }
 
 .matchattrib {
-  background: hsl(173, 82%, 24%);
-  transform: translateY(5rem);
-  height: 40.6rem;
+  transform: translateY(7rem);
+  margin-left: -3rem;
+  height: flex;
 }
 .matchattrib .matchinfo {
-  width: 80%;
-  height: 100%;
+  width: 45rem;
+  height: 35rem;
+  margin-left: 2rem;
+  background: var(--whiteColordeam);
+  border-radius: 2rem;
+  transform: translate(2.5rem, 1rem);
+  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
 }
 .matchattrib .matchinfo .ffieldname {
   color: var(--mmy);
   font-size: 50px;
   transform: translate(0.5rem, 2rem);
   font-weight: 700;
+  margin-left: 1rem;
 }
 .matchattrib .matchinfo .imgcreator {
   height: 3rem;
   width: 3rem;
   border-radius: 50rem;
   border: solid var(--mmy) 3px;
-  transform: translate(26.5rem, -1.5rem);
+  transform: translate(25rem, -1rem);
 }
 .matchattrib .matchinfo .createdby {
   color: var(--blackColor);
-  font-size: 32px;
-  transform: translate(1.5rem, 1.5rem);
+  font-size: 28px;
+  transform: translate(1.5rem, 2rem);
   font-weight: 500;
 }
 .matchattrib .matchinfo .infomatch {
-  color: var(--whiteColor);
-  font-size: 25px;
+  color: var(--blackColor);
+  font-size: 21px;
   margin-bottom: 1rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
+  font-weight: 400;
 }
 .matchattrib .matchinfo .imgfield {
   width: 20rem;
   height: 12rem;
-  transform: translateX(10rem);
+  transform: translate(22rem, -1rem);
   border: 2px solid white;
   border-radius: 1rem;
 }
-.matchattrib .matchinfo .players {
-  width: 16rem;
-  height: 25rem;
-  transform: translate(73rem, -35rem);
+.matchattrib .players {
+  width: 20rem;
+  height: 35rem;
+  transform: translate(51rem, -34rem);
   margin-bottom: -25rem;
-  border-radius: 2rem;
-  background: white;
-  border: 4px dotted hsl(173, 82%, 24%);
+  border-radius: 3.5rem;
+  background: var(--mmm);
+  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+  border: solid var(--whiteColor) 4px;
 }
-.matchattrib .matchinfo .players .infomatchh {
-  color: hsl(173, 82%, 24%);
-  font-size: 29px;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  transform: translateX(3.3rem);
+.matchattrib .players .infomatchh {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 2rem;
+  margin-left: 0.5rem;
+  transform: translate(5rem, 0.5rem);
 }
-.matchattrib .matchinfo .players .playernames {
+.matchattrib .players .playernames {
   margin: 0 auto;
   color: rgb(39, 39, 39);
   font-weight: 500;
-  transform: translate(2rem, 1rem);
+  border: solid var(--blackColor) 2px;
+  width: 15rem;
+  height: flex;
+  margin-top: 0.5rem;
 }
 .matchattrib .joinbtn {
-  transform: translate(76.2rem, -14rem);
+  transform: translate(56rem, -13rem);
   width: 10rem;
   height: 2.5rem;
-  background: var(--PrimaryColor);
+  background: var(--gradientColor);
   border: 2.5px solid white;
   color: white;
   border-radius: 2rem;
 }
 .matchattrib .joinbtn:hover {
-  background: var(--SecondryColor);
+  background: var(--mmy);
+}
+.matchattrib .joinbtn2 {
+  transform: translate(77.5rem, -25.5rem);
+  width: 10rem;
+  height: 2.5rem;
+  background: var(--gradientColor);
+  border: 2.5px solid white;
+  color: white;
+  border-radius: 2rem;
+}
+.matchattrib .joinbtn2:hover {
+  background: var(--mmy);
+}
+.matchattrib .players2 {
+  width: 20rem;
+  height: 35rem;
+  transform: translate(72rem, -46.5rem);
+  margin-bottom: -25rem;
+  border-radius: 3.5rem;
+  background: var(--mmr);
+  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+  border: solid var(--whiteColor) 4px;
+}
+.matchattrib .players2 .infomatchh2 {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 2rem;
+  margin-left: 0.5rem;
+  transform: translate(5rem, 0.5rem);
+}
+.matchattrib .players2 .playernames2 {
+  margin: 0 auto;
+  color: rgb(39, 39, 39);
+  font-weight: 500;
+  border: solid var(--blackColor) 2px;
+  width: 15rem;
+  height: flex;
+  margin-top: 0.5rem;
 }/*# sourceMappingURL=matchinfo.css.map */
