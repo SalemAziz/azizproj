@@ -15,6 +15,7 @@ import MatchPage from './pages/internautepages/MatchPage';
 import MatchInfo from './pages/internautepages/MatchInfo';
 import MainAd from './pages/admin/MainAd';
 import Acount from './pages/Acount';
+import Fields from './pages/internautepages/Fields';
 
 
 export default function App() {
@@ -25,13 +26,14 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/demande' element={<Demande />} />
+
         </Route>
         <Route element={<PrivateRoute />}>
         <Route path='/about' element={<About />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/account' element={<Acount />} />
-
-        <Route path='/demande' element={<Demande />} />
+        <Route path='/fields' element={<Fields />} />
         <Route path='/postpage' element={<PostPage />} />
         <Route path='/matchpage' element={<MatchPage />} />
 

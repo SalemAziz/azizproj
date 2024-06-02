@@ -1,50 +1,51 @@
 import mongoose, { syncIndexes } from 'mongoose';
 
-const matchSchema = new mongoose.Schema({
-    matchname: {
+const fieldSchema = new mongoose.Schema({
+    name: {
         type: String,
         required: true,
         unique: true,
     },
-    fees: {
+    location: {
         type: String,
-        default: "50",
+        required: true,
+        unique: true,
+
+
     },
     userId: {
         type: mongoose.Types.ObjectId,
         ref: "user",
-        required: true,
     },
-    numberOfPlayers:{
-        type:Number,
-        default:0,
+    ownerPhone:{
+        type:String,
+        required: true,
+
+    },
+    adminFieldAdder: { 
+        type: String,
+        required: true,
     },
 
-    creatorpic: {
+    ownerName: {
         type: String,
         ref: "user",
         required: true,
     },
-    creatorusername: {
+    feesf: {
         type: String,
-        ref: "user",
         required: true,
+
+      
     },
-    field: {
-        type: String,
-    },
+
     picfield: {
         type: String,
         default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXaPPnZ5cT6rU9Naf3wD0lkhBbfoyPMwxvbQ&usqp=CAU',
-    },
-    team1: {
-        type: Array,
-    },
-    team2:{
-        type: Array,
 
     },
-    reservationdate: {
+    
+    workhour: {
         type: String,
         required: true,
     },
@@ -54,6 +55,6 @@ const matchSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-const Match = mongoose.model('Match', matchSchema);
+const Field = mongoose.model('Field', fieldSchema);
 
-export default Match;
+export default Field;

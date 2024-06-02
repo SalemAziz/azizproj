@@ -1,4 +1,3 @@
-import NavUser from '../../components/usercomp/NavUser'
 import "./pagescss/demande.css"
 import { GrGallery } from "react-icons/gr";
 import React, { useRef, useState } from 'react';
@@ -6,6 +5,8 @@ import { useSelector } from 'react-redux';
 import { app } from '../../firebase';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import video from "./../../assets/202760-918944267_small.mp4"
+import Navbar from '../../components/homecomp/Navbar/Navbar';
+import Footer from "../../components/homecomp/Footer/Footer";
 
 export default function Demande() {
   const fileRef = useRef(null);
@@ -92,7 +93,7 @@ export default function Demande() {
 
 
     <div className='demande'>
-      <NavUser/>
+      <Navbar/>
        
         <form onSubmit={handleSubmit} className='demandeform'>
         <div className='vidm'>
@@ -158,6 +159,7 @@ export default function Demande() {
 
         </form>
       </div>
+      <Footer/>
 
 
     </>
