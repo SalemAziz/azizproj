@@ -30,14 +30,7 @@ export default function DashSidebar() {
     }
   }, [location.search]);
   
-  const handleSignOut = async () => {
-    try {
-        await fetch('/api/auth/signout');
-        dispatch(signOut())
-    } catch (error) {
-        console.log(error);
-    }
-};
+
 
 
   return (
@@ -80,10 +73,7 @@ export default function DashSidebar() {
               <span className="sidebarlabel">Fields</span>
             </div>
           </Link>
-          <div className="sidebaritem cursor-pointer">
-            <HiArrowSmRight className="sidebaricon" />
-            <span onClick={handleSignOut} className="sidebarlabel">SignOut</span>
-          </div>
+
         </div>
       </div>
     </div>

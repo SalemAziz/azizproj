@@ -22,10 +22,8 @@
 }
 
 .dashstatsection {
-  padding: 0.75rem;
-  transform: translate(10rem, -45REM);
-  width: 92%;
-  margin-left: -2.5REM;
+  width: 84rem;
+  margin-left: -2rem;
 }
 .dashstatsection .usericon {
   background-color: #319795;
@@ -33,11 +31,8 @@
   color: #fff;
   /* White color */
   border-radius: 9999px;
-  /* Fully rounded corners */
   font-size: 3rem;
-  /* 5xl font size */
   padding: 0.75rem;
-  /* Padding size */
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 .dashstatsection .matchicon {

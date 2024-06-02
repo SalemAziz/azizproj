@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import DashSidebar from '../../components/dash/DashSidebar';
 import DashUser from '../../components/dash/DashUser';
-import NavUser from '../../components/usercomp/NavUser';
 import DashPost from '../../components/dash/DashPost';
 import DashMatch from '../../components/dash/DashMatch';
 import DashboardComp from '../../components/dash/DashboardComp';
+import "../admin/mainad.css"
 
 export default function MainAd() {
   const location = useLocation();
@@ -21,7 +21,7 @@ export default function MainAd() {
   return (
     <>
    
-    
+    <div className='postionnn'>
     <div className='classnaem flex'>
    
     <DashSidebar />
@@ -32,7 +32,8 @@ export default function MainAd() {
     {tab === 'Posts' && <DashPost />}
     {tab === 'Matchs' && <DashMatch />}
     </div>
- 
+    </div>
   </>
+  
   )
 }
