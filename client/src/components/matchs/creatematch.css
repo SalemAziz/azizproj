@@ -46,7 +46,7 @@
   border-bottom: 2px solid var(--greytext);
   outline: 0;
   font-size: 1.05rem;
-  color: black;
+  color: white;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;

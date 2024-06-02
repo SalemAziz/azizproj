@@ -31,7 +31,7 @@ export const createMatch = async (req, res) => {
     // Create match
     const match = await Match.create({
       
-      creator: userId,
+      userId: userId,
       creatorusername: username,
       creatorpic:userphoto,
       field,

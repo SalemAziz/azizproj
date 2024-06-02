@@ -4,12 +4,12 @@ import "./profinfo.css"
 import { IoMail } from "react-icons/io5";
 import { FaUserAlt } from "react-icons/fa";
 import { IoCreate } from "react-icons/io5";
-import { FaRegHeart } from "react-icons/fa";
-import { FaRegComment } from "react-icons/fa";
 import  {  useEffect, useState  } from 'react';
 import { Link } from 'react-router-dom';
 import { FaPhone } from "react-icons/fa6";
 import { FaBirthdayCake } from "react-icons/fa";
+import { GrUserSettings } from "react-icons/gr";
+
 
 
 
@@ -23,7 +23,7 @@ export default function ProfInfo() {
     useEffect(() => {
       const fetchMatchs = async () => {
         try {
-          const res = await fetch(`/api/match/getmatch?creator=${currentUser._id}`);
+          const res = await fetch(`/api/match/getmatch?userId=${currentUser._id}`);
           const data = await res.json();
           if (res.ok) {
             setUserMatchs(data.matchs);
@@ -59,8 +59,10 @@ export default function ProfInfo() {
     
         <div className='topinfo'>
                 <img  className="profileeimg"src={currentUser.profilePicture} />
-                <div className=' profnamme'>{currentUser.username}</div>          
+                <label className=' profnamme'>{currentUser.username}</label>  
         </div> 
+        <button className='updatebtnnprof'><Link to="/profile">Update <GrUserSettings /></Link></button>        
+
         <div className='mainaccount'>
         <div className='accounattrb'>
           <div className='detailsprof'><FaUserAlt /> {currentUser.role}</div>
@@ -70,7 +72,6 @@ export default function ProfInfo() {
           <div className='detailsprof'><IoCreate /> {currentUser.createdAt}</div>
 
 
-          <button className='updtbtn'><Link className='updd' to="/profile"> Update Info</Link></button>
         </div>
         <div className='pub'>
         <div className='postContentt '>

@@ -4,20 +4,16 @@ import { errorHandler } from '../middleware/error.js';
 
 
 export const createDemande = async (req, res, next) => {
-    if (!req.user) {
-      return next(errorHandler(403, 'You are not allowed to create a post'));
-    }
+
    
       
 
 
- const userId = req.user.id;
 
 
   
     const newDemande = new Demande({
       ...req.body,
-      owner: req.user.id,
      
 
 

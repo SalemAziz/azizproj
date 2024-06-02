@@ -61,7 +61,7 @@ const NavUser = () => {
                         </li>
                      
                             <li className="navItem">
-                                <Link to="/demande" className="navLink">demande</Link>
+                                <Link to="/" className="navLink">demande</Link>
                             </li>
                         
                         <li className="navItem">

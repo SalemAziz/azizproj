@@ -38,13 +38,13 @@ const Navbar = () => {
                 <div className={`navBar ${active ? 'activeNavbar' : ''}`}>
                     <ul className="navLists flex">
                         <li className="navItem">
-                            <h1 className="navLink" onClick={scrollToTop}> Home</h1>
+                        <Link to="/" className="navLink" > Home</Link>
                         </li>
                         <li className="navItem">
-                            <Link to="/Fields" className="navLink">Fields</Link>
+                            <Link to="/demande" className="navLink">collab</Link>
                         </li>
                         <li className="navItem">
-                            <h1 className="navLink" onClick={scrollToFooter}>About us</h1>
+                            <h1 className="navLink" >About us</h1>
                         </li>
                         <li className="navItem">
                             <h1 className="navLink" onClick={scrollToFooter}>Contact us</h1>

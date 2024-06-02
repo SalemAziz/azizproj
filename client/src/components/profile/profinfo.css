@@ -21,7 +21,7 @@
 }
 
 .accountinfo {
-  transform: translate(0, 5rem);
+  transform: translate(0, 7rem);
   width: 100%;
 }
 .accountinfo .accountinfffo {
@@ -29,29 +29,43 @@
   height: flex;
   border-radius: 3rem;
 }
+.accountinfo .accountinfffo .updatebtnnprof {
+  background: var(--mmy);
+  height: 2.5rem;
+  width: 12rem;
+  border-radius: 2rem;
+  margin-top: -5rem;
+  transform: translate(77rem, -8.2rem);
+  border: white solid 2px;
+  font-size: 1.1rem;
+}
+.accountinfo .accountinfffo .updatebtnnprof:hover {
+  background: var(--mm);
+}
 .accountinfo .accountinfffo .topinfo {
-  height: 11rem;
-  width: 70rem;
-  border: solid 4px white;
-  transform: translate(14rem, 1rem);
-  background: hsl(173, 82%, 24%);
-  border-radius: 3rem;
+  height: 10rem;
+  width: 95%;
+  background: rgb(40, 40, 40);
   margin-bottom: 2rem;
+  border-radius: 4rem;
+  display: flex;
+  margin-left: 2.25rem;
 }
 .accountinfo .accountinfffo .topinfo .profileeimg {
-  width: 11rem;
-  height: 11rem;
-  border: solid 5px hsl(173, 82%, 24%);
+  width: 8.5rem;
+  height: 8.5rem;
+  border: solid 5px var(--cardBG);
   border-radius: 50%;
   margin-top: 0.8rem;
-  margin-left: -9rem;
-  transform: translate(2rem, -1.2rem);
+  transform: translate(2rem, 0rem);
+  margin-right: 3.5rem;
 }
 .accountinfo .accountinfffo .topinfo .profnamme {
   color: white;
-  font-size: 60px;
-  transform: translate(4.5rem, -10rem);
+  font-size: 50px;
   font-weight: 600;
+  transform: translateY(2rem);
+  margin-right: 30rem;
 }
 .accountinfo .accountinfffo .mainaccount {
   display: flex;
@@ -64,26 +78,15 @@
   margin-left: 3rem;
   border-radius: 3rem;
   width: 27rem;
-  height: 25rem;
+  height: 22rem;
   margin-top: 3rem;
   margin-bottom: 2rem;
 }
 .accountinfo .accountinfffo .mainaccount .accounattrb .detailsprof {
-  transform: translate(1.5rem, 1rem);
+  transform: translate(1.9rem, 1rem);
   color: hsl(173, 82%, 24%);
   margin-top: 2rem;
   font-size: 15px;
-}
-.accountinfo .accountinfffo .mainaccount .accounattrb .updtbtn {
-  background: var(--mmy);
-  height: 2.5rem;
-  width: 12rem;
-  transform: translate(3.5rem, 4rem);
-  border-radius: 2rem;
-  border: white solid 2px;
-}
-.accountinfo .accountinfffo .mainaccount .accounattrb .updtbtn .updd {
-  color: white;
 }
 .accountinfo .accountinfffo .mainaccount .pub {
   width: 50rem;
@@ -148,7 +151,7 @@
   margin-left: -3rem;
 }
 .accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount {
-  width: 23rem;
+  width: 24rem;
   border-radius: 1.5rem;
   background: rgb(40, 40, 40);
 }
@@ -169,6 +172,6 @@
 }
 .accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tbodyy .imgaccc {
   border-radius: 50rem;
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
 }/*# sourceMappingURL=profinfo.css.map */
