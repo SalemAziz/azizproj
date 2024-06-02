@@ -6,6 +6,7 @@ import authRoutes from './routes/auth.js';
 import matchRoutes from './routes/match.js';
 import postRoutes  from './routes/post.js';
 import demandeRoutes  from './routes/demande.js';
+import fieldRoutes  from './routes/fields.js';
 
 
 
@@ -38,6 +39,8 @@ app.use("/api/auth", authRoutes)
 app.use("/api/match", matchRoutes)
 app.use('/api/post', postRoutes);
 app.use('/api/demande', demandeRoutes);
+app.use('/api/field',fieldRoutes );
+
 
 
 

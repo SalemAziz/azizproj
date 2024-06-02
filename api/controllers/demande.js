@@ -5,13 +5,6 @@ import { errorHandler } from '../middleware/error.js';
 
 export const createDemande = async (req, res, next) => {
 
-   
-      
-
-
-
-
-  
     const newDemande = new Demande({
       ...req.body,
      
