@@ -5,7 +5,6 @@ import { LuClipboardCheck } from 'react-icons/lu';
 import { GrValidate } from "react-icons/gr";
 import { Link } from 'react-router-dom';
 import "./match.css";
-import img from "../../assets/img(1).jpg";
 import { IoSearch } from "react-icons/io5";
 
 

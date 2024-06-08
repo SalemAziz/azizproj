@@ -22,6 +22,39 @@
 
     .secTitlef{
         transform: translateY(-10px);
+        .icosearchh{
+            margin-left: -1.8rem;
+            margin-bottom: -0.5rem;
+            font-size: 1.5rem;
+            color: hsl(173, 82%, 24%),;
+        }
+        .searchInput{
+            width: 23rem;
+            margin-bottom: 3rem;
+            margin-left: 2rem;
+            height: 2.5rem;
+            border: 0;
+                    border-bottom: 2px solid var(--greytext);
+                    outline: 0;
+                    font-size: 1.05rem;
+                    color: black;
+                    padding: 7px 0;
+                    background: transparent;
+                    transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+                 
+    
+                    &::placeholder {
+                        color: gray;
+                    }
+    
+            
+                    &:focus {
+                        padding-bottom: 6px;
+                        font-weight: 400;
+                        border-width: 3px;
+                        border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                        border-image-slice: 1;}
+        }
         .titlef{
             position: relative;
             width: max-content;
@@ -94,6 +127,7 @@
             }
             .cardInfof{
                 padding: 1rem;
+                width: 15rem;
                 .destTitlef{
                     color: var(--blackColor);
                     font-size: 1.25rem;
@@ -102,19 +136,21 @@
                 .continentf{
                     gap: .5rem;
 
-                    .iconf{
-                        color: var(--textColor);
-                        font-size: 18px;
-                    }
+                  
                     .namef{
                         color: var(--textColor);
                         font-weight: 400;
                         font-size: 14px;
+                        display: flex;
+                        .iconf{
+                            color: var(--textColor);
+                            font-size: 18px;
+                        }
                         
                     }
                 }
                 .feesf{
-                    width: 100%;
+                    width: 20rem;
                     justify-content: space-between;
                     padding: 1rem;
                     margin: 1rem 0;
@@ -145,6 +181,11 @@
                     font-size: 13.5px;
                     color: var(--textColor);
                     font-weight: 500 ;
+                    word-wrap: break-word;
+                    word-break: break-all;
+                    white-space: normal;
+                    height: 5rem;
+                    margin-right: -6rem;
                 }
                 .btn{
                     margin-top: 1rem;

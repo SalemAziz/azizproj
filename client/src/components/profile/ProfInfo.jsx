@@ -77,7 +77,7 @@ export default function ProfInfo() {
         <div className='postContentt '>
         {userPosts.length > 0 ? (
           userPosts.map((post) => (
-            <div key={post.id} className="singlepostt">
+            <div key={post._id} className="singlepostt">
 
               <div className='postcrtpicc'>
                 <img src={post.creatorpic} alt='Creator' className='imgaa' />

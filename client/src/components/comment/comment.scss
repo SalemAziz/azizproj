@@ -1,0 +1,104 @@
+:root {
+    --PrimaryColor: hsl(199, 100%, 43%);
+    --SecondryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColordeam: hsl(0, 0%, 93%);
+    --greytext: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 240);
+    --cardBG: rgb(225, 225, 225);
+    --mm: hsl(155, 51%, 45%);
+    --mmm: hsl(155, 27%, 45%);
+    --mmy: hsl(43, 100%, 43%);
+    --whiteColordeam2: hsl(0, 60%, 99%);
+    --blackColor3: hsl(153, 29%, 33%);
+    --cardBG2: rgb(239, 238, 238);
+
+
+    --blackColor2: hsl(198, 19%, 45%);
+
+}
+
+.commentsec{
+    margin-top: 1rem;
+    .createcomment{
+        display: flex;
+        .createimg{
+            border-radius: 50rem;
+            width: 2.3rem;
+            height: 2.3rem;
+            margin-left: 0.3rem;
+
+        }
+    .commenttype{
+        border: gray solid 1px;
+        margin-top: 0.2rem;
+
+        width: 90%;
+        margin-left: 0.3rem;
+        color: black;
+        background: var(--cardBG2);
+       height: 4rem;
+       border-radius:0.5rem ;
+    }
+}
+.commenticon{
+    transform: translate(35rem,-1.8rem);
+    font-size: 20px;
+    border: none;
+    color: var(--mmm);
+    margin-left:0.2rem ;
+    background: transparent;
+    &:hover{
+        color: var(--PrimaryColor);
+    }
+}
+.commentit{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+}
+.commentt{
+    .commentaire{
+        transform: translateY(-2rem);
+        margin-bottom: 0.8rem;
+        .commentaireinfo{
+            display: flex;
+            .commentaireinfoimg{
+                border-radius: 50rem;
+                width: 2.3rem;
+                height: 2.3rem;
+                margin-right: 0.4rem;
+            }
+            .commentairecontent{
+                border-radius: 1.5rem;
+                width: 90%;
+                background: white;
+                height: auto;
+                .commentairecontentt{
+                    margin-bottom:0.5rem ;
+                    margin-left: 0.5rem;
+                }
+            .commentaireinfoname{
+                margin-left: 0.5rem;
+                font-weight: 500;
+
+
+                margin-top: 0.3rem;
+            }
+        }
+            
+        }
+    }
+    .commenttt{
+        font-size: 13px;
+        display: flex;
+        font-weight: 500;
+        transform: translate(31.5rem,-11.5rem);
+    }
+
+}
+}

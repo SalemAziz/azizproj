@@ -7,11 +7,15 @@ const fieldSchema = new mongoose.Schema({
         unique: true,
     },
     location: {
-        type: String,
-        required: true,
-        unique: true,
-
-
+       state:{
+        type:String,
+       },
+       city:{
+        type:String,
+       },
+       town:{
+        type:String,
+       }
     },
     userId: {
         type: mongoose.Types.ObjectId,
