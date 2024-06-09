@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { IoSend } from "react-icons/io5";
+import { FaThumbsUp } from 'react-icons/fa';
+
 
 import './comment.css'
 
@@ -39,6 +41,34 @@ export default function Comment({ postId }) {
       setCommentError(error.message);
     }
   };
+  const handleLike = async (commentId) => {
+    try {
+      if (!currentUser) {
+        navigate('/sign-in');
+        return;
+      }
+      const res = await fetch(`/api/comment/likeComment/${commentId}`, {
+        method: 'PUT',
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setComments(
+          comments.map((comment) =>
+            comment._id === commentId
+              ? {
+                  ...comment,
+                  likes: data.likes,
+                  numberOfLikes: data.likes.length,
+                }
+              : comment
+          )
+        );
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   
   useEffect(() => {
     const getComments = async () => {
@@ -87,7 +117,8 @@ export default function Comment({ postId }) {
             </div>
           </div>
           {comments.map((comment) => (
-            <div key={comment._id}  className='commentaire' >
+            <div key={comment._id}                 
+            className='commentaire' >
               <div className='commentaireinfo'>
 
                 <img  className="commentaireinfoimg"src={comment.creatorpiccom} />
@@ -103,7 +134,9 @@ export default function Comment({ postId }) {
               
               
               </div>
-              
+              <button onClick={() => handleLike(comment._id)} className="commentlikebtn" type='button'>
+                Like  {comment.numberOfLikes}
+              </button>
              
             </div>
           ))}

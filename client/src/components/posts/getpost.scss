@@ -127,10 +127,25 @@
                     height: 2.4rem;
                     outline: none;
                     cursor: pointer;
-                    background: var(--cardBG);
+                    background: transparent;
                     border: none;
-                    margin: 7.1rem;
-                    transform: translateY(0.2rem);
+                    margin: 6.5rem;
+                    transform: translateY(0.3rem);
+                    display: flex;
+                    .likesnumber{
+                        color: gray;
+                        font-size: 23px;
+                        font-weight: 400;
+                        margin-top: -0.2rem;
+                        margin-left: .1rem;
+                        &:hover {
+                            color: var(--mmr);
+                        }
+
+
+
+                    }
+                    
 
 
 

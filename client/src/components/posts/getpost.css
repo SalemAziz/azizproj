@@ -91,10 +91,21 @@
   height: 2.4rem;
   outline: none;
   cursor: pointer;
-  background: var(--cardBG);
+  background: transparent;
   border: none;
-  margin: 7.1rem;
-  transform: translateY(0.2rem);
+  margin: 6.5rem;
+  transform: translateY(0.3rem);
+  display: flex;
+}
+.post .postContent .singlepost .postbtnsdiv .postbtns .likesnumber {
+  color: gray;
+  font-size: 23px;
+  font-weight: 400;
+  margin-top: -0.2rem;
+  margin-left: 0.1rem;
+}
+.post .postContent .singlepost .postbtnsdiv .postbtns .likesnumber:hover {
+  color: var(--mmr);
 }
 .post .postContent .singlepost .postbtnsdiv .postbtns .postico {
   color: gray;

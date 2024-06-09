@@ -1,6 +1,7 @@
 import { errorHandler } from '../middleware/error.js';
 import Post from '../models/post.js';
 import User from '../models/user.js';
+import Comment from '../models/comment.js';
 
 
 export const create = async (req, res, next) => {
@@ -84,10 +85,36 @@ export const create = async (req, res, next) => {
       }
       
       try {
-        await Post.findByIdAndDelete(req.params.postId);
-        res.status(200).json({ message: 'The post has been deleted' });
+        const post = await Post.findByIdAndDelete(req.params.postId);
+        if (!post) {
+          return res.status(404).json({ message: 'Post not found' });
+        }
+        
+        await Comment.deleteMany({ postId: req.params.postId });
+        
+        res.status(200).json({ message: 'The post and its comments have been deleted' });
       } catch (error) {
         next(error);
       }
     };
     
+    export const likePost = async (req, res, next) => {
+      try {
+        const post = await Post.findById(req.params.postId);
+        if (!post) {
+          return next(errorHandler(404, 'Comment not found'));
+        }
+        const userIndex = post.likes.indexOf(req.user.id);
+        if (userIndex === -1) {
+          post.numberOfLikes += 1;
+          post.likes.push(req.user.id);
+        } else {
+          post.numberOfLikes -= 1;
+          post.likes.splice(userIndex, 1);
+        }
+        await post.save();
+        res.status(200).json(post);
+      } catch (error) {
+        next(error);
+      }
+    };

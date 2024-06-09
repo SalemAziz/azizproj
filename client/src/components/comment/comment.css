@@ -57,9 +57,22 @@
   margin-bottom: 1rem;
   margin-top: -1rem;
 }
+.commentsec .commentt {
+  margin-bottom: -2rem;
+}
 .commentsec .commentt .commentaire {
   transform: translateY(-2rem);
-  margin-bottom: 0.8rem;
+  margin-bottom: -0.5rem;
+  margin-left: 0.5rem;
+}
+.commentsec .commentt .commentaire .commentlikebtn {
+  border: none;
+  background: transparent;
+  color: var(--blackColor2);
+  transform: translate(33rem, -1.5rem);
+}
+.commentsec .commentt .commentaire .commentlikebtn:hover {
+  color: var(--mmr);
 }
 .commentsec .commentt .commentaire .commentaireinfo {
   display: flex;

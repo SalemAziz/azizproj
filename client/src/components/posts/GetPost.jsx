@@ -10,6 +10,35 @@ function GetPost() {
   const [visibleCommentPostId, setVisibleCommentPostId] = useState(null);
   console.log(userPosts)
 
+  const handleLike = async (postId) => {
+    try {
+      if (!currentUser) {
+        navigate('/sign-in');
+        return;
+      }
+      const res = await fetch(`/api/post/likePost/${postId}`, {
+        method: 'PUT',
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setUserPosts(
+          userPosts.map((post) =>
+            post._id === postId
+              ? {
+                  ...post,
+                  likes: data.likes,
+                  numberOfLikes: data.likes.length,
+                }
+              : post
+          )
+        );
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -55,10 +84,10 @@ function GetPost() {
                 )}
               </div>
               <div className='postbtnsdiv flex'>
-                <button className='postbtns'><FaRegHeart className='postico'/></button>
+                <button  onClick={() => handleLike(post._id)} className='postbtns'><FaRegHeart  className='postico'/><h1 className='likesnumber'> {post.numberOfLikes}</h1></button>
                 <button 
                   className='postbtns' 
-                  onClick={() => handleCommentClick(post._id)} // Fix the post ID here
+                  onClick={() => handleCommentClick(post._id)} 
                 >
                   <FaRegComment className='postico2'/>
                 </button>
