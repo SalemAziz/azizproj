@@ -72,6 +72,9 @@ const Matchs = () => {
                     </div>
                   </div>
                   <div className="matchdesc">
+                    <p>{match.dayofthweek}-{match.houroflocation}</p>
+                  </div>
+                  <div className="matchdesc">
                     <p>"{match.description}"</p>
                   </div>
                 </div>

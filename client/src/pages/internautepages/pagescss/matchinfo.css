@@ -23,39 +23,34 @@
 .matchattrib {
   transform: translateY(7rem);
   margin-left: -3rem;
-  height: flex;
+  height: auto;
+  display: flex;
+  gap: 5rem;
 }
 .matchattrib .matchinfo {
-  width: 45rem;
-  height: 35rem;
-  margin-left: 2rem;
-  background: var(--whiteColordeam);
+  width: 25rem;
+  height: 37rem;
+  margin-left: 1rem;
   border-radius: 2rem;
-  transform: translate(2.5rem, 1rem);
-  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+  border: var(--mmy) solid 5px;
+  margin-top: 1rem;
 }
 .matchattrib .matchinfo .ffieldname {
   color: var(--mmy);
-  font-size: 50px;
-  transform: translate(0.5rem, 2rem);
+  font-size: 55px;
+  transform: translate(0.5rem, 1rem);
   font-weight: 700;
   margin-left: 1rem;
 }
-.matchattrib .matchinfo .imgcreator {
-  height: 3rem;
-  width: 3rem;
-  border-radius: 50rem;
-  border: solid var(--mmy) 3px;
-  transform: translate(25rem, -1rem);
-}
 .matchattrib .matchinfo .createdby {
-  color: var(--blackColor);
+  color: var(--whiteColor);
   font-size: 28px;
   transform: translate(1.5rem, 2rem);
   font-weight: 500;
+  margin-bottom: 3rem;
 }
 .matchattrib .matchinfo .infomatch {
-  color: var(--blackColor);
+  color: var(--whiteColor);
   font-size: 21px;
   margin-bottom: 1rem;
   margin-left: 2rem;
@@ -64,83 +59,109 @@
 .matchattrib .matchinfo .imgfield {
   width: 20rem;
   height: 12rem;
-  transform: translate(22rem, -1rem);
+  transform: translate(2rem, 0rem);
   border: 2px solid white;
   border-radius: 1rem;
 }
-.matchattrib .players {
-  width: 20rem;
+.matchattrib .teamTables {
+  display: flex;
+  gap: 2rem;
+  margin-left: 3.5rem;
+}
+.matchattrib .teamTables .caption {
+  color: var(--mmy);
+  font-size: 37px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.matchattrib .teamTables .teamTable {
+  width: 24rem;
+  border-collapse: collapse;
+  overflow: hidden;
+  background: var(--whiteColordeam2);
+  border-radius: 1rem;
+}
+.matchattrib .teamTables .teamTable th, .matchattrib .teamTables .teamTable td {
+  padding: 1rem;
+  text-align: left;
+}
+.matchattrib .teamTables .teamTable th {
+  background: hsl(173, 82%, 24%);
+  color: var(--whiteColor);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+.matchattrib .teamTables .teamTable td {
+  background: var(--whiteColor);
+  color: var(--textColor);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.matchattrib .teamTables .teamTable td:nth-child(2) {
+  text-align: center;
+}
+.matchattrib .teamTables .teamTable tr:nth-child(even) {
+  background: var(--inputColor);
+}
+.matchattrib .teamTables .teamTable .tabtitrole, .matchattrib .teamTables .teamTable .tabtitname {
+  height: 2rem;
+  width: auto;
+}
+.matchattrib .teams {
+  margin-top: 2rem;
+  margin-left: 4rem;
+  border-right: dotted var(--cardBG) 5px;
   height: 35rem;
-  transform: translate(51rem, -34rem);
-  margin-bottom: -25rem;
-  border-radius: 3.5rem;
-  background: var(--mmm);
-  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
-  border: solid var(--whiteColor) 4px;
 }
-.matchattrib .players .infomatchh {
-  color: white;
-  font-size: 40px;
-  margin-bottom: 2rem;
-  margin-left: 0.5rem;
-  transform: translate(5rem, 0.5rem);
+.matchattrib .teams .teamslect {
+  display: flex;
+  gap: 4rem;
 }
-.matchattrib .players .playernames {
-  margin: 0 auto;
-  color: rgb(39, 39, 39);
-  font-weight: 500;
-  border: solid var(--blackColor) 2px;
-  width: 15rem;
-  height: flex;
-  margin-top: 0.5rem;
-}
-.matchattrib .joinbtn {
-  transform: translate(56rem, -13rem);
-  width: 10rem;
+.matchattrib .teams .teamslect .selctroleteam {
+  width: 25rem;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
   height: 2.5rem;
-  background: var(--gradientColor);
-  border: 2.5px solid white;
-  color: white;
-  border-radius: 2rem;
+  border: 0;
+  border-bottom: 2px solid var(--greytext);
+  outline: 0;
+  font-size: 1.05rem;
+  color: gray;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+  transform: translateY(0.1rem);
 }
-.matchattrib .joinbtn:hover {
-  background: var(--mmy);
+.matchattrib .teams .teamslect .selctroleteam::-moz-placeholder {
+  color: gray;
 }
-.matchattrib .joinbtn2 {
-  transform: translate(77.5rem, -25.5rem);
-  width: 10rem;
-  height: 2.5rem;
-  background: var(--gradientColor);
-  border: 2.5px solid white;
-  color: white;
-  border-radius: 2rem;
+.matchattrib .teams .teamslect .selctroleteam::placeholder {
+  color: gray;
 }
-.matchattrib .joinbtn2:hover {
-  background: var(--mmy);
+.matchattrib .teams .teamslect .selctroleteam:focus {
+  padding-bottom: 6px;
+  font-weight: 400;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+     border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+  border-image-slice: 1;
 }
-.matchattrib .players2 {
-  width: 20rem;
-  height: 35rem;
-  transform: translate(72rem, -46.5rem);
-  margin-bottom: -25rem;
-  border-radius: 3.5rem;
-  background: var(--mmr);
-  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
-  border: solid var(--whiteColor) 4px;
+.matchattrib .teams .teamslect .teambtnsjoin {
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
 }
-.matchattrib .players2 .infomatchh2 {
-  color: white;
-  font-size: 40px;
-  margin-bottom: 2rem;
-  margin-left: 0.5rem;
-  transform: translate(5rem, 0.5rem);
+.matchattrib .teams .teamslect .teambtnsjoin .joinbtn {
+  width: 12rem;
+  margin-top: 1rem;
+  background: transparent;
+  border: none;
+  color: hsl(173, 82%, 24%);
+  font-size: 20px;
+  font-weight: 700;
 }
-.matchattrib .players2 .playernames2 {
-  margin: 0 auto;
-  color: rgb(39, 39, 39);
-  font-weight: 500;
-  border: solid var(--blackColor) 2px;
-  width: 15rem;
-  height: flex;
-  margin-top: 0.5rem;
+.matchattrib .teams .teamslect .teambtnsjoin .joinbtn:hover {
+  color: var(--mmr);
 }/*# sourceMappingURL=matchinfo.css.map */

@@ -38,7 +38,7 @@
   font-size: 16px;
 }
 .creatematchsection .creatematchmain .matchname {
-  transform: translate(3rem, 2.1rem);
+  transform: translate(1.5rem, 2.1rem);
 }
 .creatematchsection .creatematchmain .matchname .matchnameinp {
   width: 13rem;
@@ -66,7 +66,7 @@
   border-image-slice: 1;
 }
 .creatematchsection .reservationdate {
-  transform: translate(20.5rem, -0.4rem);
+  transform: translate(15.5rem, -0.4rem);
 }
 .creatematchsection .reservationdate .reservationdat {
   width: 13rem;
@@ -87,12 +87,32 @@
      border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
   border-image-slice: 1;
 }
+.creatematchsection .reservationdate .reservationdatt {
+  width: 13rem;
+  border: 0;
+  border-bottom: 2px solid var(--greytext);
+  outline: 0;
+  font-size: 1.05rem;
+  color: gray;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+  margin-left: 1rem;
+}
+.creatematchsection .reservationdate .reservationdatt:focus {
+  padding-bottom: 6px;
+  font-weight: 400;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+     border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+  border-image-slice: 1;
+}
 
 .chosefield {
   transform: translate(3.5rem, 1rem);
 }
 .chosefield .chosef {
-  width: 30rem;
+  width: 35rem;
   border: 0;
   border-bottom: 2px solid var(--greytext);
   outline: 0;
