@@ -6,9 +6,9 @@ const cooldown = new Set();
 
 export const createMatch = async (req, res) => {
   try {
-    const { matchname, field, description, reservationdate } = req.body;
+    const { matchname, field, description, reservationdate, dayofthweek,houroflocation } = req.body;
 
-    if (!field || !description || !reservationdate || !matchname) {
+    if (!field || !description  || !matchname || !dayofthweek || !houroflocation) {
       throw new Error("All inputs are required");
     }
 
@@ -35,9 +35,10 @@ export const createMatch = async (req, res) => {
       creatorusername: username,
       creatorpic:userphoto,
       field,
-      reservationdate,
+      dayofthweek,
       description,
-      matchname
+      matchname, houroflocation, 
+      reservationdate
     });
 
     res.json(match);
@@ -97,22 +98,54 @@ export const JoinMatchteam1 = async (req, res, next) => {
     const userId = req.user.id;
     const user = await User.findById(userId);
     const username = user.username;
+    const role = req.body.role; // Get the role from the request body
 
-    const team1Index = match.team1.findIndex(team1 => team1.username === username);
-    if (team1Index === -1) {
-      match.numberOfTeam1 += 1;
-      match.team1.push({ username });
-    } else {
-      match.numberOfTeam1-= 1;
-      match.team1.splice(team1Index, 1);
+    // Check if the user is already in team2
+    const isInTeam2 = match.team2.some(player => player.username === username);
+    if (isInTeam2) {
+      return next(errorHandler(400, 'User is already in Team 2'));
     }
-    
+
+    // Check if the user is already in team1
+    const team1Index = match.team1.findIndex(player => player.username === username);
+    if (team1Index !== -1) {
+      // If the user is already in team1
+      if (role) {
+        // If a role is selected, update the user's role
+        match.team1[team1Index].role = role;
+        await match.save();
+        return res.status(200).json(match);
+      } else {
+        // If no role is selected, remove the user from team1
+        match.numberOfTeam1 -= 1;
+        match.team1.splice(team1Index, 1);
+        await match.save();
+        return res.status(200).json(match);
+      }
+    }
+
+    if (!role) {
+      // If no role is selected, do nothing and return
+      return res.status(200).json(match);
+    }
+
+    // Check if the team1 already has 6 players
+    if (match.team1.length >= 6) {
+      return next(errorHandler(400, 'Team 1 is full'));
+    }
+
+    // Add the user to team1 with the selected role
+    match.numberOfPlayers += 1;
+    match.team1.push({ username, role });
     await match.save();
     res.status(200).json(match);
   } catch (error) {
     next(error);
   }
 };
+
+
+
 export const JoinMatchteam2 = async (req, res, next) => {
   try {
     const match = await Match.findById(req.params.matchId);
@@ -123,22 +156,54 @@ export const JoinMatchteam2 = async (req, res, next) => {
     const userId = req.user.id;
     const user = await User.findById(userId);
     const username = user.username;
+    const role = req.body.role; // Get the role from the request body
 
-    const team2Index = match.team2.findIndex(team2 => team2.username === username);
-    if (team2Index === -1) {
-      match.numberOfTeam2 += 1;
-      match.team2.push({ username });
-    } else {
-      match.numberOfTeam2-= 1;
-      match.team2.splice(team2Index, 1);
+    // Check if the user is already in team1
+    const isInTeam1 = match.team1.some(player => player.username === username);
+    if (isInTeam1) {
+      return next(errorHandler(400, 'User is already in Team 1'));
     }
-    
+
+    // Check if the user is already in team2
+    const team2Index = match.team2.findIndex(player => player.username === username);
+    if (team2Index !== -1) {
+      // If the user is already in team2
+      if (role) {
+        // If a role is selected, update the user's role
+        match.team2[team2Index].role = role;
+        await match.save();
+        return res.status(200).json(match);
+      } else {
+        // If no role is selected, remove the user from team2
+        match.numberOfPlayers -= 1;
+        match.team2.splice(team2Index, 1);
+        await match.save();
+        return res.status(200).json(match);
+      }
+    }
+
+    if (!role) {
+      // If no role is selected, do nothing and return
+      return res.status(200).json(match);
+    }
+
+    // Check if the team2 already has 6 players
+    if (match.team2.length >= 6) {
+      return next(errorHandler(400, 'Team 2 is full'));
+    }
+
+    // Add the user to team2 with the selected role
+    match.numberOfTeam2 += 1;
+    match.team2.push({ username, role });
     await match.save();
     res.status(200).json(match);
   } catch (error) {
     next(error);
   }
 };
+
+
+
 
 
 export const deleteMatch = async (req, res, next) => {

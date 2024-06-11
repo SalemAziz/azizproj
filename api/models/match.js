@@ -37,17 +37,32 @@ const matchSchema = new mongoose.Schema({
         type: String,
         default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXaPPnZ5cT6rU9Naf3wD0lkhBbfoyPMwxvbQ&usqp=CAU',
     },
-    team1: {
-        type: Array,
-    },
-    team2:{
-        type: Array,
+    team1: [
+        {
+          username: String,
+          role: String,
+        },
+      ],
+    team2: [
+        {
+          username: String,
+          role: String,
+        },
+      ],
+   
+        dayofthweek:{
+            type:String,
+            require:true,
+    
+        },
+        houroflocation:{
+            type:String,
+            require:true,
+            unique:true,
 
-    },
-    reservationdate: {
-        type: String,
-        required: true,
-    },
+        },
+  
+
     description: {
         type: String,
         required: true,
