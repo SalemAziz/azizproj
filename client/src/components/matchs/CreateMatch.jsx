@@ -89,7 +89,7 @@ function CreateMatch() {
               setFormData({ ...formData, matchname: e.target.value })
             } />
           </div>
-      
+
           <div className='reservationdate'>
             <select className='reservationdat' onChange={(e) =>
               setFormData({ ...formData, dayofthweek: e.target.value })
@@ -109,12 +109,17 @@ function CreateMatch() {
             </select>
           </div>
           <div className='chosefield'>
-            <select className='chosef' onChange={(e) =>
-              setFormData({ ...formData, field: e.target.value })
-            }>
+            <select
+              className='chosef'
+              onChange={(e) =>
+                setFormData({ ...formData, fieldId: e.target.value })
+              }
+            >
               <option value="">Select Field</option>
-              {Array.from(new Set(fields.map(field => field.name))).map(town => (
-                <option key={town} value={town}>{town}</option>
+              {fields.map(field => (
+                <option key={field._id} value={field._id}>
+                  {field.name}
+                </option>
               ))}
             </select>
           </div>

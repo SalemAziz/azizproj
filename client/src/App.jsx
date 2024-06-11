@@ -9,13 +9,13 @@ import './index.css'
 import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteA from './components/PrivateRouteA';
 import PrivateRouteAdmin from './components/PrivateRouteAdmin';
-
 import PostPage from './pages/internautepages/PostPage';
 import MatchPage from './pages/internautepages/MatchPage';
 import MatchInfo from './pages/internautepages/MatchInfo';
 import MainAd from './pages/admin/MainAd';
 import Acount from './pages/Acount';
 import Fields from './pages/internautepages/Fields';
+import FieldInfo from './pages/internautepages/FieldInfo';
 
 
 export default function App() {
@@ -36,10 +36,9 @@ export default function App() {
         <Route path='/fields' element={<Fields />} />
         <Route path='/postpage' element={<PostPage />} />
         <Route path='/matchpage' element={<MatchPage />} />
-
         <Route path='/matchinfo/:matchId' element={<MatchInfo />} />
+        <Route path='/fieldinfo/:fieldId' element={<FieldInfo />} />
         <Route element={<PrivateRouteAdmin />}>
-
         <Route path='/mainad' element={<MainAd />} />
 
         </Route>

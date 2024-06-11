@@ -6,6 +6,7 @@ import { GrValidate } from "react-icons/gr";
 import NavUser from '../../components/usercomp/NavUser';
 import { useSelector } from 'react-redux';
 import { IoSearch } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 export default function Fields() {
   const { currentUser } = useSelector((state) => state.user);
@@ -103,8 +104,8 @@ export default function Fields() {
                 <div className="descf">
                   <p>{field.description}</p>
                 </div>
-                <button className='btn flex'>
-                  Details <LuClipboardCheck className='iconf' />
+                <button className='btn flex'> <Link to={`/fieldinfo/${field._id}`} key={field._id}>
+                  Details <LuClipboardCheck className='iconf' /></Link>
                 </button>
               </div>
             </div>

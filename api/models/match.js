@@ -30,9 +30,13 @@ const matchSchema = new mongoose.Schema({
         ref: "user",
         required: true,
     },
-    field: {
+    fieldId: {
         type: String,
     },
+    fieldname: {
+        type: String,
+    },
+    
     picfield: {
         type: String,
         default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXaPPnZ5cT6rU9Naf3wD0lkhBbfoyPMwxvbQ&usqp=CAU',

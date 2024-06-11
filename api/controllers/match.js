@@ -1,14 +1,15 @@
 import Match from '../models/match.js';
 import User from '../models/user.js'; 
+import Field from '../models/field.js'; 
 
 
 const cooldown = new Set();
 
 export const createMatch = async (req, res) => {
   try {
-    const { matchname, field, description, reservationdate, dayofthweek,houroflocation } = req.body;
+    const { matchname, fieldId, description, reservationdate, dayofthweek,houroflocation} = req.body;
 
-    if (!field || !description  || !matchname || !dayofthweek || !houroflocation) {
+    if (!fieldId || !description  || !matchname || !dayofthweek || !houroflocation) {
       throw new Error("All inputs are required");
     }
 
@@ -17,6 +18,12 @@ export const createMatch = async (req, res) => {
     const user = await User.findById(userId);
     const username = user.username;
     const userphoto = user.profilePicture;
+    
+    const field= await Field.findById(fieldId);
+    const fieldn = field.name;
+
+    
+
 
     if (cooldown.has(userId)) {
       throw new Error("You are posting too frequently. Please try again shortly.");
@@ -34,11 +41,12 @@ export const createMatch = async (req, res) => {
       userId: userId,
       creatorusername: username,
       creatorpic:userphoto,
-      field,
+      fieldId,
       dayofthweek,
       description,
       matchname, houroflocation, 
-      reservationdate
+      reservationdate,
+      fieldname:fieldn,
     });
 
     res.json(match);
@@ -56,6 +64,7 @@ export const getmatchs = async (req, res, next) => {
         const matchs = await Match.find({
             ...(req.query.userId && { userId: req.query.userId }),
             ...(req.query.matchId && { _id: req.query.matchId }),
+            ...(req.query.fieldId && { fieldId: req.query.fieldId }),
             ...(req.query.reservationdate && { reservationdate: req.query.reservationdate }),
             ...(req.query.searchTerm && {
                 $or: [
