@@ -29,31 +29,46 @@
   height: flex;
   border-radius: 3rem;
 }
-.accountinfo .accountinfffo .updatebtnnprof {
-  background: var(--mmy);
-  height: 2.5rem;
-  width: 12rem;
-  border-radius: 2rem;
-  margin-top: -5rem;
-  transform: translate(77rem, -8.2rem);
-  border: white solid 2px;
-  font-size: 1.1rem;
+.accountinfo .accountinfffo .filter {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  transform: translate(85rem, -8.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.192);
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.021);
+  transition: all 0.3s;
+  background: var(--mmm);
 }
-.accountinfo .accountinfffo .updatebtnnprof:hover {
-  background: var(--mm);
+.accountinfo .accountinfffo .filter svg {
+  height: 16px;
+  fill: white;
+  transition: all 0.3s;
+}
+.accountinfo .accountinfffo .filter:hover {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.11);
+  background-color: white;
+}
+.accountinfo .accountinfffo .filter:hover svg {
+  fill: rgb(77, 77, 77);
 }
 .accountinfo .accountinfffo .topinfo {
   height: 10rem;
   width: 95%;
   background: rgb(40, 40, 40);
+  box-shadow: 7px 7px 10px 10px rgba(140, 140, 141, 0.549);
+  border: 3px white solid;
   margin-bottom: 2rem;
   border-radius: 4rem;
   display: flex;
   margin-left: 2.25rem;
 }
 .accountinfo .accountinfffo .topinfo .profileeimg {
-  width: 8.5rem;
-  height: 8.5rem;
+  width: 8.3rem;
+  height: 8.3rem;
   border: solid 5px var(--cardBG);
   border-radius: 50%;
   margin-top: 0.8rem;
@@ -71,9 +86,10 @@
   display: flex;
   gap: 3rem;
   width: 100%;
+  transform: translateY(-3.5rem);
 }
 .accountinfo .accountinfffo .mainaccount .accounattrb {
-  box-shadow: 0 3px 4px rgba(2, 15, 29, 0.242);
+  box-shadow: 5px 5px 7px 7px rgba(140, 140, 141, 0.549);
   background: rgb(40, 40, 40);
   margin-left: 3rem;
   border-radius: 3rem;
@@ -84,7 +100,7 @@
 }
 .accountinfo .accountinfffo .mainaccount .accounattrb .detailsprof {
   transform: translate(1.9rem, 1rem);
-  color: hsl(173, 82%, 24%);
+  color: white;
   margin-top: 2rem;
   font-size: 15px;
 }
@@ -93,6 +109,53 @@
   height: flex;
   border-radius: 1rem;
   margin-top: 1.5rem;
+}
+.accountinfo .accountinfffo .mainaccount .pub .postbtnsdiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 2.9rem;
+  border-bottom: solid gray 1.5px;
+  border-top: solid gray 1.5px;
+  width: 95%;
+  margin: 0 auto;
+}
+.accountinfo .accountinfffo .mainaccount .pub .postbtnsdiv .postbtns {
+  border-radius: 50rem;
+  width: 2.9rem;
+  height: 2.4rem;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  margin: 6.5rem;
+  transform: translateY(0.3rem);
+  display: flex;
+}
+.accountinfo .accountinfffo .mainaccount .pub .postbtnsdiv .postbtns .likesnumber {
+  color: gray;
+  font-size: 23px;
+  font-weight: 400;
+  margin-top: -0.2rem;
+  margin-left: 0.1rem;
+}
+.accountinfo .accountinfffo .mainaccount .pub .postbtnsdiv .postbtns .likesnumber:hover {
+  color: var(--mmr);
+}
+.accountinfo .accountinfffo .mainaccount .pub .postbtnsdiv .postbtns .postico {
+  color: gray;
+  font-size: 25px;
+}
+.accountinfo .accountinfffo .mainaccount .pub .postbtnsdiv .postbtns .postico:hover {
+  color: var(--mmr);
+}
+.accountinfo .accountinfffo .mainaccount .pub .postbtnsdiv .postbtns .postico2 {
+  color: gray;
+  font-size: 25px;
+}
+.accountinfo .accountinfffo .mainaccount .pub .postbtnsdiv .postbtns .postico2:hover {
+  color: var(--mm);
 }
 .accountinfo .accountinfffo .mainaccount .pub .postContentt {
   justify-content: center;
@@ -106,9 +169,9 @@
   row-gap: 10px;
   border-radius: 1.5rem;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+  box-shadow: 7px 7px 10px 10px rgba(140, 140, 141, 0.549);
   overflow: hidden;
-  background: var(--cardBG);
+  background: var(--whiteColor);
 }
 .accountinfo .accountinfffo .mainaccount .pub .postContentt .singlepostt .postcrtpicc .imgaa {
   border-radius: 50%;
@@ -141,8 +204,8 @@
 }
 .accountinfo .accountinfffo .mainaccount .pub .postContentt .singlepostt .contentdivv .postpicc .imgbb {
   height: 23rem;
-  width: 36rem;
-  transform: translate(0.8rem, -1rem);
+  width: 32rem;
+  transform: translate(1.5rem, -1rem);
   border-radius: 1.9rem;
 }
 .accountinfo .accountinfffo .mainaccount .matchaccount {

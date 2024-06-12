@@ -173,10 +173,9 @@ export default function Profile() {
             <button className='probtn'>
               {loading ? 'Loading...' : 'Update'}
             </button>
-          </form>
-          <div className="proft">
             <button onClick={handleDeleteAccount} className='proftx'>Delete Account</button>
-          </div>
+          </form>
+        
           <p className='uper'>{error && 'Something went wrong!'}</p>
           <p className='uper'> {updateSuccess && 'User is updated successfully!'}
           </p>

@@ -3,7 +3,7 @@
   --SecondryColor: hsl(187, 85%, 43%);
   --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
   --whiteColor: hsl(0, 0%, 100%);
-  --blackColor: hsl(201, 33%, 16%);
+  --blackColor: hsl(200, 27%, 30%);
   --textColor: hsl(240, 4%, 36%);
   --whiteColordeam: hsl(0, 0%, 93%);
   --greytext: rgb(190, 190, 190);
@@ -13,11 +13,12 @@
   --mm: hsl(155, 70%, 30%);
   --cardHover: rgba(255, 255, 255);
   --mmm: hsl(155, 51%, 45%);
+  --blackColor5: hsl(200, 21%, 40%);
 }
 
 .mainmatch {
   width: 98%;
-  transform: translate(25px, 3rem);
+  transform: translate(25px);
 }
 .mainmatch .searchBar {
   width: 23rem;
@@ -60,16 +61,16 @@
 .mainmatch .matchContent .singlematch {
   height: 3rem;
   width: 90%;
-  margin-left: 5rem;
+  margin: 0 auto;
   margin-bottom: 1rem;
   border-radius: 2rem;
   align-items: center;
-  background: var(--cardBG);
-  box-shadow: 1 2px 2px rgba(140, 140, 141, 0.549);
+  background: hsl(173, 82%, 24%);
+  box-shadow: 5 5px 5px rgba(140, 140, 141, 0.549);
   display: flex;
 }
 .mainmatch .matchContent .singlematch:hover {
-  background: var(--mmm);
+  background: var(--blackColor5);
   box-shadow: 1 4px 4px rgba(85, 85, 114, 0.549);
   transition: 0.3S ease;
 }
@@ -85,7 +86,7 @@
   gap: 4rem;
 }
 .mainmatch .matchContent .singlematch .matchInfo .matchTitle {
-  color: var(--blackColor);
+  color: var(--whiteColor);
   font-size: 1.5rem;
   margin-top: 1.8rem;
   margin-left: 1rem;
@@ -96,11 +97,11 @@
   margin-right: 3rem;
 }
 .mainmatch .matchContent .singlematch .matchInfo .matchcontinent .matchicon {
-  color: var(--textColor);
+  color: var(--whiteColor);
   font-size: 1.25rem;
 }
 .mainmatch .matchContent .singlematch .matchInfo .matchcontinent .matchname {
-  color: var(--textColor);
+  color: var(--whiteColor);
   font-weight: 400;
   font-size: 1.25rem;
 }
@@ -111,7 +112,7 @@
   gap: 1rem;
 }
 .mainmatch .matchContent .singlematch .matchInfo .matchfees .matchgrade {
-  color: var(--textColor);
+  color: var(--whiteColor);
   max-width: 100px;
   line-height: 20px;
   display: flex;
@@ -122,12 +123,12 @@
 }
 .mainmatch .matchContent .singlematch .matchInfo .matchprice {
   font-size: 1.75rem;
-  color: var(--blackColor);
+  color: var(--whiteColor);
 }
 .mainmatch .matchContent .singlematch .matchdesc {
   font-size: 13.5px;
   height: 5rem;
-  color: var(--textColor);
+  color: var(--whiteColor);
   font-weight: 500;
   transform: translateY(2.3rem);
   margin-left: 2rem;

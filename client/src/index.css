@@ -85,6 +85,6 @@ input{
 }
 
 body{
-    background: rgb(56,56,56) ;
+    background: var(--cardBG) ;
 
 }

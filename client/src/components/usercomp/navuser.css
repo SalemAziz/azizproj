@@ -132,8 +132,7 @@ header .toggleNavbar:hover.icon {
     border-radius: 50%;
     height: 48px;
     width: 48px;
-    transform: translateY(3px);
-    border: 3px solid var(--mmm);
+    transform: translateY(4px);
   }
   .header .navBar .navLists .logoutico {
     font-size: 25px;

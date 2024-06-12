@@ -99,6 +99,8 @@ function CreateMatch() {
                 <option key={index} value={day}>{day}</option>
               ))}
             </select>
+            </div>
+            <div className='reservationdate'>
             <select className='reservationdatt' onChange={(e) =>
               setFormData({ ...formData, houroflocation: e.target.value })
             }>
@@ -123,15 +125,16 @@ function CreateMatch() {
               ))}
             </select>
           </div>
-
-          <button type='submit' className='matchcrt'>Reserve</button>
-          <div className='descrip'>
-            <textarea className='descripp' value={formData.description || ''}
-              onChange={(e) => {
-                setFormData({ ...formData, description: e.target.value });
-              }}></textarea>
+            <div className='descrip'>
+        <input type="text" id='description' className='descripp' placeholder='description' onChange={(e) =>
+              setFormData({ ...formData, description: e.target.value })
+            } />
           </div>
+
+          <button type='submit' className='matchcrt'><span>Reserve</span></button>
+       
         </div>
+      
       </form>
     </div>
   )

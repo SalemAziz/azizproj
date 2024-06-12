@@ -95,11 +95,11 @@ export default function CreatePost() {
     <section className='postsec'>
       <div className='createpostcard'>
         <div className='postpicname'>
-        <Link className="propic" to='/profile'>
-          {currentUser && (
-            <img className='rm' src={currentUser.profilePicture} alt='profile' />
-          )}
-        </Link>
+          <Link className="propic" to='/profile'>
+            {currentUser && (
+              <img className='rm' src={currentUser.profilePicture} alt='profile' />
+            )}
+          </Link>
         </div>
         <form className='formpost' onSubmit={handleSubmit}>
           <textarea
@@ -112,26 +112,40 @@ export default function CreatePost() {
             }}
           />
           <div className='postpub'>
-          <div className='picpost'>
-            <input
-              type='file'
-              accept='image/*'
-              hidden
-              ref={fileRef}
-              onChange={handleFileChange}
-            />
-            <span
+            <div className='picpost'>
+              <input
+                type='file'
+                accept='image/*'
+                hidden
+                ref={fileRef}
+                onChange={handleFileChange}
+              />
 
-              className='tagimg'
-              onClick={() => fileRef.current.click()}>
-              <GrGallery />
+              <button className='tagimg'
+                onClick={() => fileRef.current.click()} title="filter" >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125" stroke="#fffffff" stroke-width="2"></path>
+                  <path d="M17 15V18M17 21V18M17 18H14M17 18H20" stroke="#fffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                ADD FILE
+              </button>
 
-            </span>
 
-          </div>
-          <button type='submit' className='btnpost'>
-            <a className='a'>Publish</a>
-          </button>
+
+
+
+            </div>
+            <button type='submit' className='btnpost'>
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                  </svg>
+                </div>
+              </div>
+              <span>Send</span>
+            </button>
           </div>
 
         </form>
@@ -144,8 +158,8 @@ export default function CreatePost() {
           <img src={formData.image} alt='upload' className='selected' />
         )}
       </div>
-     
+
     </section>
-    
+
   );
 }

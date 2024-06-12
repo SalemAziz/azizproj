@@ -81,6 +81,7 @@ export default function Fields() {
 
         <div className='secContentf grid'>
           {filteredFields.map((field) => (
+            <Link to={`/fieldinfo/${field._id}`} key={field._id}>
             <div key={field._id} className="singleDestinationf">
               <div className="imageDivf">
                 <img src={field.picfield} alt={field.name} />
@@ -104,11 +105,10 @@ export default function Fields() {
                 <div className="descf">
                   <p>{field.description}</p>
                 </div>
-                <button className='btn flex'> <Link to={`/fieldinfo/${field._id}`} key={field._id}>
-                  Details <LuClipboardCheck className='iconf' /></Link>
-                </button>
+              
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </section>

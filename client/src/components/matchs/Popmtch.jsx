@@ -15,7 +15,9 @@ function Popmtch() {
   return (
     <div>
       <button className='popmtch' onClick={toggleCreateMatch}>
-        {showCreateMatch ? 'Cancel' : 'Create Match'} <TbSoccerField className='icoico' />
+        <span>
+        {showCreateMatch ? 'Cancel' : 'Create Match'} 
+        </span>
 
       </button>
       {showCreateMatch && <CreateMatch />}

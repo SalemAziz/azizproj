@@ -20,18 +20,17 @@
 }
 
 .creatematchsection {
-    transform: translateY(-3rem);
-    
+    margin-bottom: -12rem;
 
     .creatematchmain {
         height: 24rem;
-        width: 45rem;
-        margin: 0 auto;
-        transform: translateY(5rem);
+        width: 30rem;
+        transform: translate(5rem,5rem);
         border-radius: 2rem;
-        border: solid 4px var(--mmy);
         box-shadow: 10px 2px 3px --blackColor(140, 140, 141, 0.549);
-        background: rgb(56,56,56);
+        display: flex;
+        gap: 2rem;
+
 
         
 
@@ -47,10 +46,9 @@
 
 
         .matchname{
-            transform: translate(1.5rem,2.1rem);
             .matchnameinp{
 
-           width: 13rem;
+           width: 15rem;
                 border: 0;
                 border-bottom: 2px solid var(--greytext);
                 outline: 0;
@@ -79,7 +77,6 @@
     }
 
     .reservationdate{
-        transform: translate(15.5rem,-0.40rem);
         .reservationdat{
             width: 13rem;
             border: 0;
@@ -133,9 +130,8 @@
 
     }
     .chosefield{
-        transform: translate(3.5rem,1rem);
         .chosef{
-            width: 35rem;
+            width: 13rem;
             border: 0;
             border-bottom: 2px solid var(--greytext);
             outline: 0;
@@ -161,40 +157,57 @@
 
     
     .descrip{
-        transform: translate(5.5rem,0rem);
         
         .descripp{
-            width: 32rem;
-            height: 9rem;
-            border-radius: 0.5rem;
+            width: 15rem;
+            border: 0;
+            border-bottom: 2px solid var(--greytext);
+            outline: 0;
+            font-size: 1.05rem;
             color: white;
-            border: var(--whiteColor) solid 3px;
-            font-size: 15px;
+            padding: 7px 0;
+            background: transparent;
+            transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+         
 
-            background: rgb(56,56,56);
-            &:focus{
-                border: solid 2px var(--mmy);
-                outline: none; 
-    
+            &::placeholder {
+                color: gray;
             }
 
+    
+            &:focus {
+                padding-bottom: 6px;
+                font-weight: 400;
+                border-width: 3px;
+                border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                border-image-slice: 1;}
+
 
         }
+    
     }
     .matchcrt{
-        padding: .6rem 1.5rem;
-        background: var(--gradientColor);
-        border-radius: 3rem;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        color: white;
-        font-weight: 600;
-        font-size: 15px;
-        transform: translate(36.9rem, 12.7rem);
-        width: 7rem;
-        height: 2.6rem;
-        &:hover{
-            background:var(--PrimaryColor) ;
+        padding: 12.5px 30px;
+        border: 0;
+        height: 3rem;
+        border-radius: 100px;
+        background-color: hsl(173, 82%, 24%),;
+        color: #ffffff;
+        font-weight: bold;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+      
+        &:hover {
+          background-color: var(--mmy);
+          box-shadow: 0 0 20px #6fc5ff50;
+          transform: scale(1.1);
         }
-    }
+      
+        &:active {
+          background-color: #3d94cf;
+          transition: all 0.25s;
+          -webkit-transition: all 0.25s;
+          box-shadow: none;
+          transform: scale(0.98);
+        }
+}

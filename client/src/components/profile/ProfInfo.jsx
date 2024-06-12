@@ -8,7 +8,8 @@ import  {  useEffect, useState  } from 'react';
 import { Link } from 'react-router-dom';
 import { FaPhone } from "react-icons/fa6";
 import { FaBirthdayCake } from "react-icons/fa";
-import { GrUserSettings } from "react-icons/gr";
+import { FaRegHeart, FaRegComment } from "react-icons/fa";
+import Comment from '../comment/Comment'; 
 
 
 
@@ -19,6 +20,40 @@ export default function ProfInfo() {
     const { currentUser } = useSelector((state) => state.user);
     const [userPosts, setUserPosts] = useState([]);
     const [userMatchs, setUserMatchs] = useState([]);
+    const [visibleCommentPostId, setVisibleCommentPostId] = useState(null);
+  console.log(userPosts)
+
+  const handleLike = async (postId) => {
+    try {
+      if (!currentUser) {
+        navigate('/sign-in');
+        return;
+      }
+      const res = await fetch(`/api/post/likePost/${postId}`, {
+        method: 'PUT',
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setUserPosts(
+          userPosts.map((post) =>
+            post._id === postId
+              ? {
+                  ...post,
+                  likes: data.likes,
+                  numberOfLikes: data.likes.length,
+                }
+              : post
+          )
+        );
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  const handleCommentClick = (postId) => {
+    setVisibleCommentPostId(visibleCommentPostId === postId ? null : postId);
+  };
+
     
     useEffect(() => {
       const fetchMatchs = async () => {
@@ -61,7 +96,15 @@ export default function ProfInfo() {
                 <img  className="profileeimg"src={currentUser.profilePicture} />
                 <label className=' profnamme'>{currentUser.username}</label>  
         </div> 
-        <button className='updatebtnnprof'><Link to="/profile">Update <GrUserSettings /></Link></button>        
+        <Link to={"/profile"}><button title="filter" class="filter">
+  <svg viewBox="0 0 512 512" height="1em">
+    <path
+      d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"
+    ></path>
+  </svg>
+  
+</button>
+</Link>
 
         <div className='mainaccount'>
         <div className='accounattrb'>
@@ -96,8 +139,22 @@ export default function ProfInfo() {
                   </div>
                 )}
               </div>
-
+              <div className='postbtnsdiv flex'>
+                <button  onClick={() => handleLike(post._id)} className='postbtns'><FaRegHeart  className='postico'/><h1 className='likesnumber'> {post.numberOfLikes}</h1></button>
+                <button 
+                  className='postbtns' 
+                  onClick={() => handleCommentClick(post._id)} 
+                >
+                  <FaRegComment className='postico2'/>
+                </button>
+              </div>
+              {visibleCommentPostId === post._id && (
+                <div className="commentSection">
+                  <Comment postId={post._id} /> 
+                </div>
+              )}
             </div>
+
 
           ))
         ) : (
