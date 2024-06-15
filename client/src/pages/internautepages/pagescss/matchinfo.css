@@ -112,7 +112,7 @@
 .matchattrib .teams {
   margin-top: 2rem;
   margin-left: 4rem;
-  border-right: dotted var(--cardBG) 5px;
+  border-right: dotted var(--blackColor) 5px;
   height: 35rem;
 }
 .matchattrib .teams .teamslect {

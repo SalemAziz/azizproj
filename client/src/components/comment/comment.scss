@@ -66,7 +66,8 @@
     .commentaire{
         transform: translateY(-2rem);
         margin-bottom: -0.5rem;
-        margin-left: 0.5rem;
+        margin-left:0.5rem ;
+        
         .commentlikebtn{
 border: none;     
 background: transparent;  
@@ -87,7 +88,7 @@ transform: translate(33rem,-1.5rem);
             .commentairecontent{
                 border-radius: 1.5rem;
                 width: 90%;
-                background: white;
+                background: var(--cardBG);
                 height: auto;
                 .commentairecontentt{
                     margin-bottom:0.5rem ;

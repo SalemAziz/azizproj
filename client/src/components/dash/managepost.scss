@@ -26,7 +26,7 @@
         width:80rem;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         border-radius: 2rem;
-        background: var(--cardBG);
+        background: var(--whiteColor);
 
 
 
@@ -63,10 +63,65 @@
              
 
                 .deltemrp {
-                    font-weight: 500;
-                    color: red;
-                    cursor: pointer;
-                    transform: translate(1rem);
+                    width: 150px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: #e62222; // using single declaration for background
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  position: relative; // added for absolute positioning inside
+  transition: background 200ms; // combined transition for button and children
+
+  .text {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+    transition: color 200ms, transform 200ms; // added transition
+  }
+
+  .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 200ms, transform 200ms, border-left 200ms; // added transition
+  }
+
+  svg {
+    width: 15px;
+    fill: #eee;
+  }
+
+  &:hover {
+    background: #ff3636;
+
+    .text {
+      color: transparent;
+    }
+
+    .icon {
+      width: 150px;
+      border-left: none;
+      transform: translateX(0);
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    .icon svg {
+      transform: scale(0.8);
+    }
+  }
                   
 
            

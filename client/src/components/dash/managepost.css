@@ -23,7 +23,7 @@
   width: 80rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: 2rem;
-  background: var(--cardBG);
+  background: var(--whiteColor);
 }
 .tabsec .tabs .tabattrb {
   padding-top: 0.5rem;
@@ -49,8 +49,53 @@
   transform: translateX(-2rem);
 }
 .tabsec .tabs .ms .mrp .deltemrp {
-  font-weight: 500;
-  color: red;
+  width: 150px;
+  height: 50px;
   cursor: pointer;
-  transform: translate(1rem);
+  display: flex;
+  align-items: center;
+  background: #e62222;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transition: background 200ms;
+}
+.tabsec .tabs .ms .mrp .deltemrp .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+  transition: color 200ms, transform 200ms;
+}
+.tabsec .tabs .ms .mrp .deltemrp .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 200ms, transform 200ms, border-left 200ms;
+}
+.tabsec .tabs .ms .mrp .deltemrp svg {
+  width: 15px;
+  fill: #eee;
+}
+.tabsec .tabs .ms .mrp .deltemrp:hover {
+  background: #ff3636;
+}
+.tabsec .tabs .ms .mrp .deltemrp:hover .text {
+  color: transparent;
+}
+.tabsec .tabs .ms .mrp .deltemrp:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+}
+.tabsec .tabs .ms .mrp .deltemrp:focus {
+  outline: none;
+}
+.tabsec .tabs .ms .mrp .deltemrp:active .icon svg {
+  transform: scale(0.8);
 }/*# sourceMappingURL=managepost.css.map */

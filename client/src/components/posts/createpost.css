@@ -88,6 +88,7 @@
 }
 .postsec .createpostcard .formpost .postpub .picpost .tagimg:hover {
   box-shadow: 0 10px 15px -3px rgba(72, 138, 236, 0.3098039216), 0 4px 6px -2px rgba(72, 138, 236, 0.0901960784);
+  background: var(--SecondryColor);
 }
 .postsec .createpostcard .formpost .postpub .picpost .tagimg:focus, .postsec .createpostcard .formpost .postpub .picpost .tagimg:active {
   opacity: 0.85;

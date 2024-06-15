@@ -26,7 +26,7 @@
   height: 46rem;
   border-right: solid white 5px;
   border-bottom: solid white 2px;
-  background: hsl(173, 82%, 24%);
+  background: rgb(40, 40, 40);
   border-bottom-right-radius: 2rem;
 }
 .sidsection .sidebaritems {
@@ -54,7 +54,7 @@
   font-size: 21px;
 }
 .sidsection .sidebaritems .sidebaritemgroup .sidebaritem:hover {
-  background: var(--mmm);
+  background: var(--mmy);
   border-radius: 1rem;
 }
 .sidsection .sidebaritems .sidebaritemgroup .sidebaritem:hover .sidebarlabel {

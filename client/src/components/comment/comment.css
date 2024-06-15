@@ -86,7 +86,7 @@
 .commentsec .commentt .commentaire .commentaireinfo .commentairecontent {
   border-radius: 1.5rem;
   width: 90%;
-  background: white;
+  background: var(--cardBG);
   height: auto;
 }
 .commentsec .commentt .commentaire .commentaireinfo .commentairecontent .commentairecontentt {
