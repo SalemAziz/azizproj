@@ -227,3 +227,27 @@ export const deleteMatch = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getAvailableTimeSlots = async (req, res) => {
+  const { day, fieldId } = req.query;
+
+  try {
+    const matches = await Match.find({ fieldId, dayofthweek: day });
+
+    const occupiedSlots = matches.map(match => match.houroflocation);
+
+    const timeSlots = [
+      "07:00 AM", "08:30 AM", "10:00 AM", "11:30 AM",
+      "01:00 PM", "02:30 PM", "04:00 PM", "05:30 PM",
+      "07:00 PM", "08:30 PM", "10:00 PM"
+    ];
+
+    // Filter out occupied time slots
+    const availableTimeSlots = timeSlots.filter(slot => !occupiedSlots.includes(slot));
+
+    res.json({ timeSlots: availableTimeSlots });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Failed to fetch available time slots' });
+  }
+};

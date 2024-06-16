@@ -2,18 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import NavUser from '../../components/usercomp/NavUser';
-import "./pagescss/fieldinfo.css"
+import "./pagescss/fieldinfo.css";
+
 export default function FieldInfo() {
-  const [fields, setFields] = useState([]);
-  const [matchs, setMatchs] = useState([]);
-
-  
-  const { fieldId } = useParams();
+  const [field, setField] = useState(null);
+  const [matches, setMatches] = useState([]);
   const [publishError, setPublishError] = useState(null);
+
+  const { fieldId } = useParams();
   const { currentUser } = useSelector((state) => state.user);
-
-  console.log(matchs)
-
 
   useEffect(() => {
     const fetchField = async () => {
@@ -26,48 +23,74 @@ export default function FieldInfo() {
           return;
         }
         setPublishError(null);
-        setFields(data.fields[0]);
+        setField(data.fields[0]);
       } catch (error) {
         console.error(error.message);
+        setPublishError('Failed to fetch field information.');
       }
     };
 
     fetchField();
   }, [fieldId]);
-  
+
   useEffect(() => {
-    const fetchMatchs = async () => {
+    const fetchMatches = async () => {
       try {
         const res = await fetch(`/api/match/getmatch?fieldId=${fieldId}`);
         const data = await res.json();
         if (res.ok) {
-          setMatchs(data.matchs);
+          setMatches(data.matchs);
         }
       } catch (error) {
         console.log(error.message);
+        setPublishError('Failed to fetch matches.');
       }
     };
-      fetchMatchs();
-    
+
+    fetchMatches();
   }, [fieldId]);
 
   return (
     <>
       <NavUser />
       <div className='fieldinfo'>
+        <div className='fielddetail'>
+          {field ? (
+            <div className='fieldiii'>
+              <div className='fielddetailss'>
+                <div className='detailname'> {field.name}</div>
+                {field.location ? (
+                  <div className='detail'>
+                    Location: {field.location.state}, {field.location.city}, {field.location.town}
+                  </div>
+                ) : (
+                  <div>Location information not available</div>
+                )}
+                <div className='detail'>WorkHour: {field.workhour}</div>
+                <div className='detail'>Price: {field.feesf}</div>
+              </div>
+              <div className='imgg'>
+                <img src={field.picfield} className='imggg' alt='Field' />
+              </div>
+            </div>
+          ) : (
+            <p>Loading field information...</p>
+          )}
+          {publishError && <p className="error">{publishError}</p>}
+        </div>
 
         <div className="matchtable">
           <table className='matchtableinfo'>
             <thead>
               <tr>
                 <th>Creator</th>
-                <th>day</th>
+                <th>Day</th>
                 <th>Schedule</th>
-                <th>N°players</th>
+                <th>N° of Players</th>
               </tr>
             </thead>
             <tbody>
-              {matchs.map((match, index) => (
+              {matches.map((match, index) => (
                 <tr key={index}>
                   <td>{match.creatorusername}</td>
                   <td>{match.dayofthweek}</td>
@@ -78,28 +101,7 @@ export default function FieldInfo() {
             </tbody>
           </table>
         </div>
-        <div className='fielddetail'>
-          {fields ? (
-            <>
-              <div className='detail'>Field : {fields.name}</div>
-
-              {fields.location ? (
-                <div className='detail'>Location : {fields.location.state}, {fields.location.city}, {fields.location.town}</div>
-              ) : (
-                <div>Location information not available</div>
-              )}
-              <div className='detail'>WorkHour : {fields.workhour}</div>
-
-              <div className='detail'>Price : {fields.feesf}</div>
-
-
-            </>
-          ) : (
-            <p>Loading field information...</p>
-          )}
-          {publishError && <p className="error">{publishError}</p>}
-        </div>
       </div>
     </>
-  )
+  );
 }

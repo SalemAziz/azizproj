@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { createMatch,getmatchs, JoinMatchteam1 , deleteMatch,JoinMatchteam2} from '../controllers/match.js';
+import { createMatch,getmatchs, JoinMatchteam1 , deleteMatch,JoinMatchteam2,getAvailableTimeSlots} from '../controllers/match.js';
 import { verifyToken } from '../middleware/verifyUser.js';
 
 
@@ -12,7 +12,7 @@ router.post("/creatematch",verifyToken ,createMatch)
 router.get("/getmatch",verifyToken,getmatchs)
 router.put('/joinmatch/:matchId', verifyToken, JoinMatchteam1);
 router.put('/joinmatch2/:matchId', verifyToken, JoinMatchteam2);
-
+router.get('/availabletimeslots', verifyToken,getAvailableTimeSlots);
 router.delete('/deletematch/:matchId', verifyToken, deleteMatch);
 
 

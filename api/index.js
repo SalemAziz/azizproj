@@ -8,8 +8,7 @@ import postRoutes  from './routes/post.js';
 import demandeRoutes  from './routes/demande.js';
 import fieldRoutes  from './routes/fields.js';
 import commentRoutes from './routes/comment.js';
-import chatRoutes from './routes/chat.js';
-import messageRoutes from './routes/message.js';
+
 
 
 
@@ -44,8 +43,7 @@ app.use('/api/post', postRoutes);
 app.use('/api/demande', demandeRoutes);
 app.use('/api/field',fieldRoutes );
 app.use('/api/comment',commentRoutes );
-app.use('/api/chat',chatRoutes );
-app.use('/api/message',messageRoutes );
+
 
 
 

@@ -128,7 +128,7 @@ const MatchInfo = () => {
                         <h1 className='infomatch'>Date: {formData.dayofthweek} - {formData.houroflocation}</h1>
                         <h1 className='infomatch'>Fees: {formData.fees}</h1>
                         <h1 className='infomatch'>Description: {formData.description}</h1>
-                        {formData.picfield && <img src={formData.picfield} className='imgfield' alt='Field' />}
+                        <div className='imgggf'><img src={formData.picfield} className='imgfield' alt='Field' /></div>
                     </div>
                 </div>
             </div>

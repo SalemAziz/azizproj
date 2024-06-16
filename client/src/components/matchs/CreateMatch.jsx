@@ -89,6 +89,21 @@ function CreateMatch() {
               setFormData({ ...formData, matchname: e.target.value })
             } />
           </div>
+          <div className='chosefield'>
+            <select
+              className='chosef'
+              onChange={(e) =>
+                setFormData({ ...formData, fieldId: e.target.value })
+              }
+            >
+              <option value="">Select Field</option>
+              {fields.map(field => (
+                <option key={field._id} value={field._id}>
+                  {field.name}
+                </option>
+              ))}
+            </select>
+          </div>
 
           <div className='reservationdate'>
             <select className='reservationdat' onChange={(e) =>
@@ -110,21 +125,7 @@ function CreateMatch() {
               ))}
             </select>
           </div>
-          <div className='chosefield'>
-            <select
-              className='chosef'
-              onChange={(e) =>
-                setFormData({ ...formData, fieldId: e.target.value })
-              }
-            >
-              <option value="">Select Field</option>
-              {fields.map(field => (
-                <option key={field._id} value={field._id}>
-                  {field.name}
-                </option>
-              ))}
-            </select>
-          </div>
+
             <div className='descrip'>
         <input type="text" id='description' className='descripp' placeholder='description' onChange={(e) =>
               setFormData({ ...formData, description: e.target.value })

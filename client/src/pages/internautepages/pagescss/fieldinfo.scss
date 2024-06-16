@@ -13,71 +13,100 @@
     --mm: hsl(155, 70%, 30%);
     --cardHover: rgba(255, 255, 255);
     --mmm: hsl(155, 51%, 45%);
+    --blackColor2: hsl(0, 0%, 20%);
 }
 
 
-.fieldinfo{
-    transform: translateY(10rem);
+.fieldinfo {
+    transform: translateY(9rem);
     display: flex;
-    gap: 2rem;
-    .fielddetail{
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .fielddetail {
         display: flex;
-        width: 20rem;
-        height: 25rem; 
-        border-radius: 2rem;
-        box-shadow: 0 3px 4px rgba(2, 15, 29, 0.242);
-        border: 4px solid var(--mmy);
-        display: block;
-        text-align: center;
-
-
-
-        .detail{
-            margin: 0 auto;
-            margin-bottom: 2rem;
-            margin-top: 2rem;
-            
-            transform: translateY(0.6rem);
-            font-weight: 500;
-            font-size:22px;
-            color: white;
-            &:hover{
-                color:var(--mmy);
-            }
-
+        width: 90%;
+        max-width: 1200px;
+        background: var(--mmm);
+        border-radius: 3rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        .detailname{
+            font-size: 6rem;
+            color: var(--mmy);
         }
 
+        .fieldiii {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            width: 100%;
 
+            .fielddetailss {
+                flex: 1;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                margin-top: -1rem;
+
+                .detail {
+                    margin-bottom: 1rem;
+                    font-size: 1.5rem;
+                    color: var(--whiteColor);
+                    font-weight: 500;
+                    
+
+                    &:hover {
+                        color: var(--mmy);
+                    }
+                }
+            }
+
+            .imgg {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem;
+                box-shadow: 4px 5px 4px 8px rgba(0, 0, 0, 0.1);
+                background: white;
+
+
+                .imggg {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 5rem;
+                }
+            }
+        }
     }
-    .matchtable {
-       
 
-  
+    .matchtable {
+        width: 90%;
+        margin-bottom: 1rem;
 
         .matchtableinfo {
-            margin:  0 auto;
-            margin-top: 2rem;
-            width: 75rem;
+            width: 100%;
             border-collapse: collapse;
-            overflow: hidden;
-            background: var(--whiteColordeam2);
+            background: var(--whiteColordeam);
             border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
 
-            th, td {
+            th,
+            td {
                 padding: 1rem;
                 text-align: center;
-
             }
 
             th {
-                background:hsl(173, 82%, 24%);
+                background: hsl(173, 82%, 24%);
                 color: var(--whiteColor);
                 font-size: 1.3rem;
                 font-weight: 700;
                 text-transform: uppercase;
-                                    text-align: center;
-
-                
             }
 
             td {
@@ -85,10 +114,6 @@
                 color: var(--textColor);
                 font-size: 1rem;
                 font-weight: 400;
-
-                &:nth-child(2) {
-                    text-align: center;
-                }
             }
 
             tr {
@@ -96,11 +121,12 @@
                     background: var(--inputColor);
                 }
             }
-
-            .tabtitrole, .tabtitname {
-                height: 2rem;
-                width: auto;
-            }
         }
+    }
+
+    .error {
+        color: red;
+        font-size: 1rem;
+        margin-top: 1rem;
     }
 }

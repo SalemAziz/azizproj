@@ -32,39 +32,53 @@
         height: 37rem;
         margin-left: 1rem;
         border-radius: 2rem;
-        border: var(--mmy) solid 5px;
         margin-top: 1rem;
+        box-shadow: 4px 5px 4px 4px rgba(0, 0, 0, 0.1);
+
+        background: var(--mmm);
 
         .ffieldname {
             color: var(--mmy);
-            font-size: 55px;
-            transform: translate(0.5rem, 1rem);
+            font-size: 4rem;
+            transform: translate(0.5rem, 0rem);
             font-weight: 700;
             margin-left: 1rem;
         }
 
         .createdby {
             color: var(--whiteColor);
-            font-size: 28px;
-            transform: translate(1.5rem, 2rem);
+            font-size: 1.6rem;
+            transform: translate(1.5rem, 0rem);
             font-weight: 500;
             margin-bottom: 3rem;
         }
 
         .infomatch {
             color: var(--whiteColor);
-            font-size: 21px;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
             margin-left: 2rem;
             font-weight: 400;
+            transform: translateY(-2rem);
         }
 
-        .imgfield {
-            width: 20rem;
-            height: 12rem;
-            transform: translate(2rem, 0rem);
-            border: 2px solid white;
+        .imgggf {
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            height: 13.5rem;
+            box-shadow: 4px 5px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            margin: 0 auto;
             border-radius: 1rem;
+            transform: translateY(-0.6rem);
+
+
+            .imgfield {
+
+                transform: translate(0, 0.2rem);
+                border: 2px solid white;
+                border-radius: 1rem;
+            }
         }
     }
 
@@ -87,21 +101,22 @@
             background: var(--whiteColordeam2);
             border-radius: 1rem;
 
-            th, td {
+            th,
+            td {
                 padding: 1rem;
                 text-align: left;
 
             }
 
             th {
-                background:hsl(173, 82%, 24%);
+                background: var(--mmm);
                 color: var(--whiteColor);
                 font-size: 1.3rem;
                 font-weight: 700;
                 text-transform: uppercase;
-                                    text-align: center;
+                text-align: center;
 
-                
+
             }
 
             td {
@@ -121,7 +136,8 @@
                 }
             }
 
-            .tabtitrole, .tabtitname {
+            .tabtitrole,
+            .tabtitname {
                 height: 2rem;
                 width: auto;
             }

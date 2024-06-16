@@ -13,45 +13,80 @@
   --mm: hsl(155, 70%, 30%);
   --cardHover: rgba(255, 255, 255);
   --mmm: hsl(155, 51%, 45%);
+  --blackColor2: hsl(0, 0%, 20%);
 }
 
 .fieldinfo {
-  transform: translateY(10rem);
+  transform: translateY(9rem);
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 .fieldinfo .fielddetail {
   display: flex;
-  width: 20rem;
-  height: 25rem;
-  border-radius: 2rem;
-  box-shadow: 0 3px 4px rgba(2, 15, 29, 0.242);
-  border: 4px solid var(--mmy);
-  display: block;
-  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+  background: var(--mmm);
+  border-radius: 3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
-.fieldinfo .fielddetail .detail {
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  transform: translateY(0.6rem);
-  font-weight: 500;
-  font-size: 22px;
-  color: white;
-}
-.fieldinfo .fielddetail .detail:hover {
+.fieldinfo .fielddetail .detailname {
+  font-size: 6rem;
   color: var(--mmy);
 }
-.fieldinfo .matchtable .matchtableinfo {
-  margin: 0 auto;
-  margin-top: 2rem;
-  width: 75rem;
-  border-collapse: collapse;
-  overflow: hidden;
-  background: var(--whiteColordeam2);
-  border-radius: 1rem;
+.fieldinfo .fielddetail .fieldiii {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
 }
-.fieldinfo .matchtable .matchtableinfo th, .fieldinfo .matchtable .matchtableinfo td {
+.fieldinfo .fielddetail .fieldiii .fielddetailss {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: -1rem;
+}
+.fieldinfo .fielddetail .fieldiii .fielddetailss .detail {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--whiteColor);
+  font-weight: 500;
+}
+.fieldinfo .fielddetail .fieldiii .fielddetailss .detail:hover {
+  color: var(--mmy);
+}
+.fieldinfo .fielddetail .fieldiii .imgg {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: 4px 5px 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+.fieldinfo .fielddetail .fieldiii .imgg .imggg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5rem;
+}
+.fieldinfo .matchtable {
+  width: 90%;
+  margin-bottom: 1rem;
+}
+.fieldinfo .matchtable .matchtableinfo {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--whiteColordeam);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+.fieldinfo .matchtable .matchtableinfo th,
+.fieldinfo .matchtable .matchtableinfo td {
   padding: 1rem;
   text-align: center;
 }
@@ -61,7 +96,6 @@
   font-size: 1.3rem;
   font-weight: 700;
   text-transform: uppercase;
-  text-align: center;
 }
 .fieldinfo .matchtable .matchtableinfo td {
   background: var(--whiteColor);
@@ -69,13 +103,11 @@
   font-size: 1rem;
   font-weight: 400;
 }
-.fieldinfo .matchtable .matchtableinfo td:nth-child(2) {
-  text-align: center;
-}
 .fieldinfo .matchtable .matchtableinfo tr:nth-child(even) {
   background: var(--inputColor);
 }
-.fieldinfo .matchtable .matchtableinfo .tabtitrole, .fieldinfo .matchtable .matchtableinfo .tabtitname {
-  height: 2rem;
-  width: auto;
+.fieldinfo .error {
+  color: red;
+  font-size: 1rem;
+  margin-top: 1rem;
 }/*# sourceMappingURL=fieldinfo.css.map */

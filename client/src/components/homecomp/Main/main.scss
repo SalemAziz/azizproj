@@ -15,20 +15,54 @@
     --mmm: hsl(155, 51%, 45%);
 }
 
-.main {
+.mainfa{
     width: 100%;
-    background: white;
-    
+height: auto;    
+background: white;
 
-    .secTitle {
+    .secTitlefa{
         transform: translateY(-10px);
-        .title {
+        .icosearchh{
+            margin-left: -1.8rem;
+            margin-bottom: -0.5rem;
+            font-size: 1.5rem;
+            color: hsl(173, 82%, 24%),;
+        }
+        .searchInput{
+            width: 23rem;
+            margin-bottom: 3rem;
+            margin-left: 2rem;
+            height: 2.5rem;
+            border: 0;
+                    border-bottom: 2px solid var(--greytext);
+                    outline: 0;
+                    font-size: 1.05rem;
+                    color: gray;
+                    padding: 7px 0;
+                    background: transparent;
+                    transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+                 
+    
+                    &::placeholder {
+                        color: gray;
+                    }
+    
+            
+                    &:focus {
+                        padding-bottom: 6px;
+                        font-weight: 400;
+                        border-width: 3px;
+                        border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                        border-image-slice: 1;}
+        }
+        .titlefa{
             position: relative;
             width: max-content;
-            color: var(--textColor);
-            margin: 1rem 0;
+            color:hsl(173, 82%, 24%);
+            margin: 1rem 1rem;
             z-index: 2;
-            .icon{
+            margin-bottom: 3rem;
+            .iconf{
                 transform: translateY(4px);
                 font-size: 25px;
             }
@@ -36,12 +70,12 @@
             &::after {
                 position: absolute;
                 content: "";
-                background-color: var(--mmm);
+                background-color: hsl(173, 82%, 24%);
                 height: 5px;
-                width: 120px;
-                right: 7px;
-                bottom: 0px;
-                z-index: 1;
+                right: 5px;
+                bottom: -5px;
+                z-index: 1
+                
 
             }
 
@@ -50,19 +84,20 @@
 
     }
 
-    .secContent {
+    .secContentfa{
         justify-content: center;
         gap: 1.5rem;
+        margin-left: 1.6rem;
+
         
 
-        .singleDestination {
+        .singleDestinationf{
             height: 100%;
             display: grid;
             row-gap: 10px;
-          
             border-radius: 10px;
             align-items: center;
-            background: var(--cardBG);
+            background: var(--whiteColor);
             box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
             overflow: hidden;
 
@@ -73,53 +108,56 @@
 
             }
 
-            .imageDiv {
+            .imageDivf{
                 height: 180px;
                 width: 100%;
                 overflow: hidden;
 
-                .img {
+                .imgf{
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
                     transition: 2s ease;
                 }
                 &:hover{
-                    img{
+                    imgf{
                         transform: scale(1.1);
                     }
                 }
             }
-            .cardInfo{
+            .cardInfofa{
                 padding: 1rem;
-                .destTitle{
+                width: 15rem;
+                .destTitlef{
                     color: var(--blackColor);
                     font-size: 1.25rem;
 
                 }
-                .continent{
+                .continentf{
                     gap: .5rem;
 
-                    .icon{
-                        color: var(--textColor);
-                        font-size: 18px;
-                    }
-                    .name{
+                  
+                    .namef{
                         color: var(--textColor);
                         font-weight: 400;
                         font-size: 14px;
+                        display: flex;
+                        .iconf{
+                            color: var(--textColor);
+                            font-size: 18px;
+                        }
                         
                     }
                 }
-                .fees{
-                    width: 100%;
+                .feesf{
+                    width: 20rem;
                     justify-content: space-between;
                     padding: 1rem;
                     margin: 1rem 0;
                     border-top: 1.5px solid var(--greytext);
                     border-bottom: 1.5px solid var(--greytext);
                     
-                    .grade{
+                    .gradef{
                         color: var(--textColor);
                         max-width: 100px;
                         line-height: 20px; 
@@ -132,17 +170,22 @@
 
                         }
                     }
-                    .price{
+                    .pricef{
                         font-size: 2rem;
                         color: var(--blackColor);
                     }
 
 
                 }
-                .desc{
+                .descf{
                     font-size: 13.5px;
                     color: var(--textColor);
                     font-weight: 500 ;
+                    word-wrap: break-word;
+                    word-break: break-all;
+                    white-space: normal;
+                    height: 5rem;
+                    margin-right: -6rem;
                 }
                 .btn{
                     margin-top: 1rem;
@@ -168,16 +211,16 @@
 
 
 @media screen and (min-width:500px) {
-    .title{
+    .titlefa{
         font-size: 1.5rem;
         &::after{
             width: 500px !important;
         }
     }
-    .secContent{
+    .secContentfa{
         grid-template-columns: repeat(4,1fr);
         
-        .singleDestination{
+        .singleDestinationf{
             height: auto;
 
         }

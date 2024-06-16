@@ -114,7 +114,6 @@ header .toggleNavbar:hover.icon {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 1rem;
   }
   .header .navBar .navLists .navItem .logoutbtn {
     display: flex;
@@ -130,6 +129,7 @@ header .toggleNavbar:hover.icon {
     transition-duration: 0.3s;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
     background-color: rgb(255, 65, 65);
+    margin-left: 1rem;
     /* plus sign */
     /* text */
     /* hover effect on button width */
@@ -192,10 +192,5 @@ header .toggleNavbar:hover.icon {
     height: 48px;
     width: 48px;
     transform: translateY(4px);
-  }
-  .header .navBar .navLists .logoutico {
-    font-size: 25px;
-    transform: translateY(3px) translateX(0px);
-    margin-right: -20px;
   }
 }/*# sourceMappingURL=navuser.css.map */
