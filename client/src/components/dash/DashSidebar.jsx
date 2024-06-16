@@ -73,6 +73,12 @@ export default function DashSidebar() {
               <span className="sidebarlabel">Fields</span>
             </div>
           </Link>
+          <Link to='/mainad?tab=Collab'>
+            <div className={`sidebaritem ${tab === 'Collab' ? 'active' : ''}`}>
+              <TbSoccerField className="sidebaricon" />
+              <span className="sidebarlabel">collab</span>
+            </div>
+          </Link>
 
         </div>
       </div>

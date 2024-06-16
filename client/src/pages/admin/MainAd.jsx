@@ -6,6 +6,10 @@ import DashUser from '../../components/dash/DashUser';
 import DashPost from '../../components/dash/DashPost';
 import DashMatch from '../../components/dash/DashMatch';
 import DashboardComp from '../../components/dash/DashboardComp';
+import DashField from '../../components/dash/DashField';
+import DashCreatf from '../../components/dash/DashCreatf';
+
+
 import "../admin/mainad.css"
 
 export default function MainAd() {
@@ -31,6 +35,10 @@ export default function MainAd() {
     {tab === 'User' && <DashUser />}
     {tab === 'Posts' && <DashPost />}
     {tab === 'Matchs' && <DashMatch />}
+    {tab === 'Fields' && <DashField />}
+    {tab === 'Collab' && <DashCreatf />}
+
+    
     </div>
     </div>
   </>
