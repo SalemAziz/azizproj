@@ -242,7 +242,6 @@ export const getAvailableTimeSlots = async (req, res) => {
       "07:00 PM", "08:30 PM", "10:00 PM"
     ];
 
-    // Filter out occupied time slots
     const availableTimeSlots = timeSlots.filter(slot => !occupiedSlots.includes(slot));
 
     res.json({ timeSlots: availableTimeSlots });

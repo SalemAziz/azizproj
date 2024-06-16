@@ -2,10 +2,16 @@ import React, { useEffect, useState } from 'react';
 import "./creatematch.css"
 
 function CreateMatch() {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    matchname: '',
+    fieldId: '',
+    description: '',
+    dayofthweek: '',
+    houroflocation: ''
+  });
   const [fields, setFields] = useState([]);
-  const [searchName, setSearchName] = useState('');
   const [publishError, setPublishError] = useState(null);
+  const [timeSlots, setTimeSlots] = useState([]);
 
   useEffect(() => {
     const fetchFields = async () => {
@@ -47,38 +53,41 @@ function CreateMatch() {
     }
   };
 
-  const filteredFields = fields.filter(field =>
-    (searchName === '' || field.name.toLowerCase().includes(searchName.toLowerCase()))
-  );
+  const handleDayChange = async (e) => {
+    const day = e.target.value;
+    setFormData({ ...formData, dayofthweek: day });
+    const fieldId = formData.fieldId;
+    if (!day || !fieldId) {
+      return;
+    }
 
-  const getCurrentWeekDays = () => {
+    try {
+      const res = await fetch(`/api/match/availabletimeslots?day=${day}&fieldId=${fieldId}`);
+      const data = await res.json();
+      if (res.ok) {
+        setTimeSlots(data.timeSlots);
+      }
+    } catch (error) {
+      console.error('Error fetching available time slots:', error.message);
+    }
+  };
+
+  const handleTimeSlotChange = (e) => {
+    setFormData({ ...formData, houroflocation: e.target.value });
+  };
+
+  const getNext30Days = () => {
     const current = new Date();
-    const weekDays = [];
-    const firstDayOfWeek = current.getDate() - current.getDay() + 1; // Get Monday (or the first day of the week)
-    for (let i = 0; i < 7; i++) {
-      const day = new Date(current.setDate(firstDayOfWeek + i));
-      weekDays.push(day.toDateString()); // You can format this date as needed
+    const next30Days = [];
+    for (let i = 0; i < 30; i++) {
+      const day = new Date();
+      day.setDate(current.getDate() + i);
+      next30Days.push(day.toDateString()); // Format the date as needed
     }
-    return weekDays;
+    return next30Days;
   };
-  const getTimeSlots = () => {
-    const timeSlots = [];
-    let currentTime = new Date();
-    currentTime.setHours(7, 0, 0, 0); // Start at 7:00 AM
-    const endTime = new Date();
-    endTime.setHours(22, 0, 0, 0); // End at 12:00 PM
 
-    while (currentTime <= endTime) {
-      const timeString = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      timeSlots.push(timeString);
-      currentTime.setMinutes(currentTime.getMinutes() + 90); // Increment by 1.5 hours
-    }
-    return timeSlots;
-  };
-  const timeSlots = getTimeSlots();
-
-
-  const daysOfWeek = getCurrentWeekDays();
+  const daysOfWeek = getNext30Days();
 
   return (
     <div className='creatematchsection'>
@@ -106,19 +115,15 @@ function CreateMatch() {
           </div>
 
           <div className='reservationdate'>
-            <select className='reservationdat' onChange={(e) =>
-              setFormData({ ...formData, dayofthweek: e.target.value })
-            }>
+            <select className='reservationdat' onChange={handleDayChange}>
               <option value="">Select Day</option>
               {daysOfWeek.map((day, index) => (
                 <option key={index} value={day}>{day}</option>
               ))}
             </select>
-            </div>
-            <div className='reservationdate'>
-            <select className='reservationdatt' onChange={(e) =>
-              setFormData({ ...formData, houroflocation: e.target.value })
-            }>
+          </div>
+          <div className='reservationdate'>
+            <select className='reservationdatt' onChange={handleTimeSlotChange}>
               <option value="">Select Time</option>
               {timeSlots.map((slot, index) => (
                 <option key={index} value={slot}>{slot}</option>
@@ -126,16 +131,14 @@ function CreateMatch() {
             </select>
           </div>
 
-            <div className='descrip'>
-        <input type="text" id='description' className='descripp' placeholder='description' onChange={(e) =>
+          <div className='descrip'>
+            <input type="text" id='description' className='descripp' placeholder='description' onChange={(e) =>
               setFormData({ ...formData, description: e.target.value })
             } />
           </div>
 
           <button type='submit' className='matchcrt'><span>Reserve</span></button>
-       
         </div>
-      
       </form>
     </div>
   )

@@ -61,7 +61,7 @@ const Matchs = () => {
                 <div className="matchInfo">
                   <h4 className="matchTitle">{match.creatorusername}</h4>
                   <span className='matchcontinent flex'><FaLocationDot className='matchicon' />
-                    <span className="matchname">{match.field}</span>
+                    <span className="matchname">{match.fieldname}</span>
                   </span>
                   <div className="matchfees flex">
                     <div className="matchgrade">
