@@ -3,11 +3,15 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import "./dashside.css"
 import { useSelector, useDispatch } from 'react-redux';
-import { signOut } from '../../redux/user/userSlice';
+import { IoIosPersonAdd } from "react-icons/io";
 import { MdPostAdd } from "react-icons/md";
 import { GiSoccerBall } from "react-icons/gi";
 import { TbSoccerField } from "react-icons/tb";
 import { IoCreate } from "react-icons/io5";
+import { FaComment  } from "react-icons/fa";
+import { FaWpforms } from "react-icons/fa6";
+
+
 
 export default function DashSidebar() {
   const location = useLocation();
@@ -69,8 +73,26 @@ export default function DashSidebar() {
           </Link>
           <Link to='/mainad?tab=Collab'>
             <div className={`sidebaritem ${tab === 'Collab' ? 'active' : ''}`}>
+              <FaComment   className="sidebaricon" />
+              <span className="sidebarlabel">Cmts</span>
+            </div>
+          </Link>
+          <Link to='/mainad?tab=Collab'>
+            <div className={`sidebaritem ${tab === 'Collab' ? 'active' : ''}`}>
+              <FaWpforms    className="sidebaricon" />
+              <span className="sidebarlabel">calls</span>
+            </div>
+          </Link>
+          <Link to='/mainad?tab=Collab'>
+            <div className={`sidebaritem ${tab === 'Collab' ? 'active' : ''}`}>
               <IoCreate className="sidebaricon" />
               <span className="sidebarlabel">collab</span>
+            </div>
+          </Link>
+          <Link to='/mainad?tab=Collab'>
+            <div className={`sidebaritem ${tab === 'Collab' ? 'active' : ''}`}>
+              <IoIosPersonAdd className="sidebaricon" />
+              <span className="sidebarlabel">Add User</span>
             </div>
           </Link>
 
