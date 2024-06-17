@@ -1,0 +1,216 @@
+:root {
+    --PrimaryColor: hsl(199, 100%, 43%);
+    --SecondryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColordeam: hsl(0, 0%, 93%);
+    --greytext: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 240);
+    --cardBG: rgb(225, 225, 225);
+    --mm: hsl(155, 27%, 45%);
+    --cardHover: rgba(255, 255, 255);
+    --mmm: hsl(155, 51%, 45%);
+    --mmy: hsl(43, 100%, 43%);
+    --mmr: hsl(0, 57%, 53%);
+    --blackColor2: hsl(198, 19%, 45%);
+    --whiteColordeam2: hsl(0, 60%, 99%);
+    --blackColor3: hsl(153, 29%, 33%);
+    --mmx: hsl(43, 50%, 57%);
+
+}
+
+.creatfsec {
+    width: 100%;
+
+    .creatform {
+        display: block;
+        margin-left: 1rem;
+
+
+        .nameinputt {
+            .nameinputtname {
+                width: 19rem;
+                border: 0;
+                border-bottom: 2px solid var(--greytext);
+                outline: 0;
+                font-size: 1.05rem;
+                color: black;
+                padding: 7px 0;
+                background: transparent;
+                transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+                margin-bottom: 2rem;
+
+                &::placeholder {
+                    color: gray;
+                }
+
+
+                &:focus {
+                    padding-bottom: 6px;
+                    font-weight: 400;
+                    border-width: 3px;
+                    border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                    border-image-slice: 1;
+                }
+
+            }
+
+
+
+
+        }
+
+        .locationinput {
+            display: flex;
+            gap: 3rem;
+
+            .locationinputtt {
+                width: 19rem;
+                border: 0;
+                border-bottom: 2px solid var(--greytext);
+                outline: 0;
+                font-size: 1.05rem;
+                color: black;
+                padding: 7px 0;
+                background: transparent;
+                transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+                margin-bottom: 2rem;
+
+                &::placeholder {
+                    color: gray;
+                }
+
+
+                &:focus {
+                    padding-bottom: 6px;
+                    font-weight: 400;
+                    border-width: 3px;
+                    border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                    border-image-slice: 1;
+                }
+
+            }
+
+
+        }
+
+        .ownerdetailinput {
+            display: flex;
+            gap: 3rem;
+
+            .ownerdetailinputtt {
+                width: 19rem;
+                border: 0;
+                border-bottom: 2px solid var(--greytext);
+                outline: 0;
+                font-size: 1.05rem;
+                color: black;
+                padding: 7px 0;
+                background: transparent;
+                transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+                margin-bottom: 2rem;
+
+                &::placeholder {
+                    color: gray;
+                }
+
+
+                &:focus {
+                    padding-bottom: 6px;
+                    font-weight: 400;
+                    border-width: 3px;
+                    border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                    border-image-slice: 1;
+                }
+
+            }
+
+        }
+
+        .detailsinputt {
+            display: flex;
+            gap: 3rem;
+
+            .detailsinputtt {
+                width: 19rem;
+                border: 0;
+                border-bottom: 2px solid var(--greytext);
+                outline: 0;
+                font-size: 1.05rem;
+                color: black;
+                padding: 7px 0;
+                background: transparent;
+                transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+                margin-bottom: 2rem;
+
+                &::placeholder {
+                    color: gray;
+                }
+
+
+                &:focus {
+                    padding-bottom: 6px;
+                    font-weight: 400;
+                    border-width: 3px;
+                    border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                    border-image-slice: 1;
+                }
+
+            }
+        }
+
+        .descriptioninput {
+            width: 40rem;
+            height: 10rem;
+            font-size: 1rem;
+            color: black;
+            padding: 7px 0;
+            background: transparent;
+            transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+            margin-bottom: 2rem;
+            border: 2px solid var(--greytext);
+
+            &:focus {
+                padding-bottom: 6px;
+
+                font-weight: 400;
+                border-width: 3px;
+                border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                border-image-slice: 1;
+            }
+        }
+        .pictureinputt{
+            font-size: 2.8rem;
+            margin-left:1rem ;
+            color: hsl(173, 82%, 24%);
+            &:hover{
+                color: var(--PrimaryColor);
+            }
+        }
+        .selectedddimg{
+            width: 7rem;
+            margin-left: 10rem;
+            margin-top: -2rem;
+            border: darkcyan dotted 5px;
+        }
+        .btdemande{
+            background: darkcyan;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 3rem;
+            width: 7rem;
+            height: 3rem;
+            cursor: pointer;
+            box-shadow:2px  2px 2px rgba(140, 140, 141, 0.549);
+            transform:translate(60rem,1rem) ;
+            &:hover{
+                background: var(--PrimaryColor);
+            }
+        }
+        
+    }
+}

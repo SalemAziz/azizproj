@@ -7,13 +7,7 @@ import { signOut } from '../../redux/user/userSlice';
 import { MdPostAdd } from "react-icons/md";
 import { GiSoccerBall } from "react-icons/gi";
 import { TbSoccerField } from "react-icons/tb";
-
-
-
-
-
-
-
+import { IoCreate } from "react-icons/io5";
 
 export default function DashSidebar() {
   const location = useLocation();
@@ -75,7 +69,7 @@ export default function DashSidebar() {
           </Link>
           <Link to='/mainad?tab=Collab'>
             <div className={`sidebaritem ${tab === 'Collab' ? 'active' : ''}`}>
-              <TbSoccerField className="sidebaricon" />
+              <IoCreate className="sidebaricon" />
               <span className="sidebarlabel">collab</span>
             </div>
           </Link>

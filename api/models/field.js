@@ -33,6 +33,10 @@ const fieldSchema = new mongoose.Schema({
 
     ownerName: {
         type: String,
+        required: true,
+    },
+    ownerEmail: {
+        type: String,
         ref: "user",
         required: true,
     },

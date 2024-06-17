@@ -8,10 +8,10 @@ export const createF = async (req, res, next) => {
       return next(errorHandler(403, 'You are not allowed to create a post'));
     }
 
-    const { name, location, ownerPhone, ownerName, feesf, workhour, description } = req.body;
+    const { name, location, ownerPhone, ownerName, feesf, workhour, description,ownerEmail } = req.body;ownerEmail
 
     // Check for required fields
-    if (!name || !location || !ownerPhone || !ownerName || !feesf || !workhour || !description) {
+    if (!name || !location || !ownerPhone || !ownerName || !feesf || !workhour || !ownerEmail || !description) {
       return next(errorHandler(400, 'Please provide all required fields: name, location, ownerPhone, ownerName, feesf, workhour, and description'));
     }
 
