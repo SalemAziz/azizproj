@@ -8,6 +8,10 @@ import DashMatch from '../../components/dash/DashMatch';
 import DashboardComp from '../../components/dash/DashboardComp';
 import DashField from '../../components/dash/DashField';
 import DashCreatf from '../../components/dash/DashCreatf';
+import Dashdemande from '../../components/dash/Dashdemande';
+import DashAddUser from '../../components/dash/DashAddUser';
+
+
 
 
 import "../admin/mainad.css"
@@ -37,6 +41,8 @@ export default function MainAd() {
     {tab === 'Matchs' && <DashMatch />}
     {tab === 'Fields' && <DashField />}
     {tab === 'Collab' && <DashCreatf />}
+    {tab === 'calls' && <Dashdemande />}   
+    {tab === 'AddUser' && <DashAddUser />}
 
     
     </div>

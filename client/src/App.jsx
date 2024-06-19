@@ -16,6 +16,9 @@ import MainAd from './pages/admin/MainAd';
 import Acount from './pages/Acount';
 import Fields from './pages/internautepages/Fields';
 import FieldInfo from './pages/internautepages/FieldInfo';
+import PrivateRouteFieldowner from './components/PrivateRouteFieldowner';
+import FieldReservations from './pages/fieldowner/FieldReservations';
+
 
 
 export default function App() {
@@ -40,7 +43,9 @@ export default function App() {
         <Route path='/fieldinfo/:fieldId' element={<FieldInfo />} />
         <Route element={<PrivateRouteAdmin />}>
         <Route path='/mainad' element={<MainAd />} />
-
+        </Route>
+        <Route element={<PrivateRouteFieldowner />}>
+        <Route path='/FieldReservation' element={<FieldReservations />} />
         </Route>
 
         </Route>

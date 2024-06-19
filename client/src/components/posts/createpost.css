@@ -155,7 +155,7 @@
 .postsec .createpostcard .selected {
   width: 50px;
   height: 50px;
-  transform: translate(24rem, -7.15rem);
+  transform: translate(18rem, -7.15rem);
   border: dotted var(--mm);
   border-radius: 1rem;
 }/*# sourceMappingURL=createpost.css.map */

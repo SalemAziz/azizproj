@@ -78,7 +78,7 @@ export default function Main() {
 
         <div className='secContentfa grid'>
           {filteredFields.map((field) => (
-            <Link to={`/fieldinfo/${field._id}`} key={field._id}>
+            
             <div key={field._id} className="singleDestinationf">
               <div className="imageDivf">
                 <img src={field.picfield} alt={field.name} />
@@ -105,7 +105,7 @@ export default function Main() {
               
               </div>
             </div>
-            </Link>
+           
           ))}
         </div>
       </section>

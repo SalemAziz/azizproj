@@ -56,11 +56,21 @@
 }
 .mainmatch .matchContent {
   justify-content: center;
-  gap: 1.5rem;
+  display: flex;
+}
+.mainmatch .matchContent .deleteButton {
+  color: red;
+  font-size: 1.5rem;
+  width: 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-left: -1.2rem;
+  transform: translate(1.5rem, -0.2rem);
 }
 .mainmatch .matchContent .singlematch {
   height: 2.7rem;
-  width: 85%;
+  width: 75rem;
   margin: 0 auto;
   margin-bottom: 0.6rem;
   border-radius: 2rem;
@@ -73,6 +83,7 @@
   background: var(--blackColor5);
   box-shadow: 1 4px 4px rgba(85, 85, 114, 0.549);
   transition: 0.3S ease;
+  transform: translateX(-1rem);
 }
 .mainmatch .matchContent .singlematch .imageDiv .imgg {
   width: 2.5rem;
@@ -90,7 +101,7 @@
   font-size: 1.3rem;
   margin-top: 2.1rem;
   margin-left: 1rem;
-  margin-right: 3rem;
+  margin-right: 1rem;
 }
 .mainmatch .matchContent .singlematch .matchInfo .matchcontinent {
   gap: 0.2rem;

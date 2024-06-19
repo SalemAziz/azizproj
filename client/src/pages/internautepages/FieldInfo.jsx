@@ -33,22 +33,7 @@ export default function FieldInfo() {
     fetchField();
   }, [fieldId]);
 
-  useEffect(() => {
-    const fetchMatches = async () => {
-      try {
-        const res = await fetch(`/api/match/getmatch?fieldId=${fieldId}`);
-        const data = await res.json();
-        if (res.ok) {
-          setMatches(data.matchs);
-        }
-      } catch (error) {
-        console.log(error.message);
-        setPublishError('Failed to fetch matches.');
-      }
-    };
-
-    fetchMatches();
-  }, [fieldId]);
+ 
 
   return (
     <>
@@ -56,51 +41,29 @@ export default function FieldInfo() {
       <div className='fieldinfo'>
         <div className='fielddetail'>
           {field ? (
-            <div className='fieldiii'>
-              <div className='fielddetailss'>
-                <div className='detailname'> {field.name}</div>
-                {field.location ? (
+            <div class="card">
+  <label class="avatar"><img src={field.picfield} className='avatara'/></label>
+  <label class="info">
+    <span class="info-1">Name:{field.name}</span>
+    <span class="info-2">                {field.location ? (
                   <div className='detail'>
                     Location: {field.location.state}, {field.location.city}, {field.location.town}
                   </div>
                 ) : (
                   <div>Location information not available</div>
                 )}
-                <div className='detail'>WorkHour: {field.workhour}</div>
-                <div className='detail'>Price: {field.feesf}</div>
-              </div>
-              <div className='imgg'>
-                <img src={field.picfield} className='imggg' alt='Field' />
-              </div>
-            </div>
+                <div>feed:{field.feesf}</div></span>
+  </label>
+  <div class="content-1">{field.description}</div>
+
+</div>
           ) : (
             <p>Loading field information...</p>
           )}
           {publishError && <p className="error">{publishError}</p>}
         </div>
 
-        <div className="matchtable">
-          <table className='matchtableinfo'>
-            <thead>
-              <tr>
-                <th>Creator</th>
-                <th>Day</th>
-                <th>Schedule</th>
-                <th>N° of Players</th>
-              </tr>
-            </thead>
-            <tbody>
-              {matches.map((match, index) => (
-                <tr key={index}>
-                  <td>{match.creatorusername}</td>
-                  <td>{match.dayofthweek}</td>
-                  <td>{match.houroflocation}</td>
-                  <td>{match.numberOfPlayers}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+
       </div>
     </>
   );

@@ -58,6 +58,14 @@
   height: flex;
   transform: translate(0px, -7px);
 }
+.post .postContent .singlepost .contentdiv .deleteButtons {
+  transform: translate(35rem, -4rem);
+  font-size: 1.1rem;
+  border: none;
+  background: transparent;
+  color: red;
+  cursor: pointer;
+}
 .post .postContent .singlepost .contentdiv .postpic .imgb {
   height: 23rem;
   width: 36rem;
@@ -73,6 +81,7 @@
   padding-top: 1rem;
   padding-bottom: 1.5rem;
   background: var(--whiteColor);
+  margin-top: -0.9rem;
 }
 .post .postContent .singlepost .postbtnsdiv {
   display: flex;

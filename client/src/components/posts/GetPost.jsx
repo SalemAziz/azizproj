@@ -3,11 +3,14 @@ import { useSelector } from 'react-redux';
 import "./getpost.css";
 import { FaRegHeart, FaRegComment } from "react-icons/fa";
 import Comment from '../comment/Comment'; 
+import { RiDeleteBinLine } from "react-icons/ri";
 
 function GetPost() {
   const { currentUser } = useSelector((state) => state.user);
   const [userPosts, setUserPosts] = useState([]);
   const [visibleCommentPostId, setVisibleCommentPostId] = useState(null);
+  const [filteredPosts, setFilteredPosts] = useState([]);
+
   console.log(userPosts)
 
   const handleLike = async (postId) => {
@@ -35,6 +38,22 @@ function GetPost() {
       }
     } catch (error) {
       console.log(error.message);
+    }
+  };
+  const handleDeletePost = async (postId) => {
+    try {
+      const res = await fetch(`/api/post/deletepost/${postId}`, {
+        method: 'DELETE',
+      });
+      if (res.ok) {
+        setUserPosts(prevPosts  => prevPosts .filter(post => post._id !== postId));
+        setFilteredPosts(prevPosts => prevPosts .filter(post => post._id !== postId));
+      } else {
+        const data = await res.json();
+        console.error('Failed to delete match:', data.message);
+      }
+    } catch (error) {
+      console.error('Error deleting match:', error.message);
     }
   };
 
@@ -73,7 +92,14 @@ function GetPost() {
               <div className='postcreator'>
                 {post.creatorpost}
               </div>
+          
               <div className='contentdiv'>
+              {currentUser && post.userId === currentUser._id && (
+              <button onClick={() => handleDeletePost(post._id)} className="deleteButtons">
+                <RiDeleteBinLine />
+
+              </button>
+            )}
                 <div className="desc">
                   {post.content}
                 </div>
@@ -91,6 +117,7 @@ function GetPost() {
                 >
                   <FaRegComment className='postico2'/>
                 </button>
+
               </div>
               {visibleCommentPostId === post._id && (
                 <div className="commentSection">

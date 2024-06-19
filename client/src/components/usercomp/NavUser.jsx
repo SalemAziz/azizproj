@@ -52,6 +52,11 @@ const NavUser = () => {
                                 <Link to="/mainad?tab=Posts" className="navLink">Admin</Link>
                             </li>
                         )}
+                          {currentUser?.role === 'fieldowner' && (
+                            <li className="navItem">
+                                <Link to="/FieldReservation" className="navLink">FieldReservation</Link>
+                            </li>
+                        )}
 
                         <li className="navItem">
                             <Link to="/matchpage" className="navLink">Matchs</Link>
@@ -60,13 +65,14 @@ const NavUser = () => {
                             <Link to="/postpage" className="navLink">Community</Link>
                         </li>
                      
-                            <li className="navItem">
-                                <Link to="/" className="navLink">demande</Link>
-                            </li>
-                        
+                          
                         <li className="navItem">
                             <Link to="/Fields" className="navLink">Fields</Link>
                         </li>
+                        <li className="navItem">
+                                <Link to="/account" className="navLink">Profile</Link>
+                            </li>
+                        
                         <li className="navItem">
 
                         <Link className="profilepic" to='/account'>

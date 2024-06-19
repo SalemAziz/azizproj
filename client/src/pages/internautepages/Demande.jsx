@@ -135,7 +135,7 @@ export default function Demande() {
               setFormData({ ...formData, playerallowd: e.target.value })} />
             </div>
             <div className='descrip'>
-              <input type="text" id='' className='fiettrbn' placeholder='Description ' onChange={(e) =>
+              <input type="text" id='' className='demandedesc' placeholder='Description ' onChange={(e) =>
               setFormData({ ...formData, description: e.target.value })
             }/> 
             </div>

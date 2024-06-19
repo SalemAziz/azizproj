@@ -197,26 +197,31 @@
             }
 
             .demandedesc {
-                width: 40rem;
-                height: 10rem;
-                margin-bottom: 3rem;
-                border-radius: 1rem;
-                margin-top: 3rem;
+                transform: translate(-5.5rem,-5rem);
 
-                background: hsl(173, 82%, 24%);
-                border: solid 2px var(--whiteColor);
+                width: 37rem;
+                border: 0;
+                border-bottom: 2px solid var(--greytext);
+                outline: 0;
+                font-size: 1.05rem;
+                color: black;
+                padding: 7px 0;
+                background: transparent;
+                transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+                margin-left: 5.4rem;
+
+                &::placeholder {
+                    color: gray;
+                }
+
 
                 &:focus {
-                    border: solid 2px var(--mmy);
-                    outline: none;
-
+                    padding-bottom: 6px;
+                    font-weight: 400;
+                    border-width: 3px;
+                    border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+                    border-image-slice: 1;
                 }
-
-                .ttxtt {
-                    transform: translateY(30px);
-
-                }
-
 
             }
 

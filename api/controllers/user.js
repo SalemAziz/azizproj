@@ -49,11 +49,11 @@ export const test = (req, res) => {
         {
           $set: {
             username: req.body.username,
-            email: req.body.email,
-            password: req.body.password,
+
             profilePicture: req.body.profilePicture,
-            phone: req.body.phone,
+            ownerPhone: req.body.phone,
             birthday: req.body.birthday,
+            role: req.body.role,
 
           },
         },

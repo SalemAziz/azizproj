@@ -216,7 +216,7 @@ export const JoinMatchteam2 = async (req, res, next) => {
 
 
 export const deleteMatch = async (req, res, next) => {
-  if (req.user.role === 'admin' && req.user.id === req.params.userId) {
+  if (req.user.id === req.params.userId) {
     return next(errorHandler(403, 'You are not allowed to delete this match'));
   }
   
@@ -250,3 +250,4 @@ export const getAvailableTimeSlots = async (req, res) => {
     res.status(500).json({ message: 'Failed to fetch available time slots' });
   }
 };
+

@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import "./managepost.css"
-export default function DashField() {
+export default function Dashdemande() {
     const { currentUser } = useSelector((state) => state.user);
-    const [fields, setFields] = useState([]);
+    const [demands, setDemands] = useState([]);
+    console.log(demands)
 
     useEffect(() => {
-        const fetchFields = async () => {
+        const fetchDemande = async () => {
             try {
-                const res = await fetch(`/api/field/getfield`);
+                const res = await fetch(`/api/demande/getdemande`);
                 if (res.ok) {
                     const data = await res.json();
                     console.log('Fetched data:', data);
-                    setFields(data.fields || []);
+                    setDemands(data.demands || []);
                 } else {
                     console.error('Failed to fetch fields:', res.statusText);
                 }
@@ -21,53 +22,51 @@ export default function DashField() {
             }
         };
 
-        fetchFields();
+        fetchDemande();
     }, []);
-
-    const handleDeletefield = async (fieldId) => {
+    const handleDeleteDemande = async (demandeId) => {
         try {
-            const res = await fetch(`/api/field/deletefield/${fieldId}`, {
+            const res = await fetch(`/api/demande/delete/${demandeId}`, {
                 method: 'DELETE',
             });
             const data = await res.json();
             if (!res.ok) {
                 console.log(data.message);
             } else {
-                setFields((prev) => prev.filter((field) => field._id !== fieldId));
+                setDemands((prev) => prev.filter((demande) => demande._id !== demandeId));
             }
         } catch (error) {
             console.log(error.message);
         }
       };
-
-    return (
-        <div className='tabsec'>
-            {fields.length > 0 ? (
+  return (
+    <div className='tabsec'>
+            {demands.length > 0 ? (
                 <table className='tabs'>
                     <thead>
                         <tr>
                             <th className='tabattrb'>Created At</th>
-                            <th className='tabattrb'>Creator</th>
-                            <th className='tabattrb'>Post Image</th>
-                            <th className='tabattrb'>Name</th>
-                            <th className='tabattrb'>Work Hour</th>
+                            <th className='tabattrb'>ownerfullname</th>
+                            <th className='tabattrb'>Field Image</th>
+                            <th className='tabattrb'>email</th>
+                            <th className='tabattrb'>numtel</th>
                             <th className='tabattrb'>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {fields.map((field) => (
-                            <tr key={field._id} className='ms'>
+                        {demands.map((demande) => (
+                            <tr key={demande._id} className='ms'>
                                 <td className='mrp'>
-                                    {new Date(field.createdAt).toLocaleDateString()}
+                                    {new Date(demande.createdAt).toLocaleDateString()}
                                 </td>
-                                <td className='mrp'>{field.adminFieldAdder}</td>
+                                <td className='mrp'>{demande.ownerfullname}</td>
                                 <td className='mrp'>
-                                    <img src={field.picfield} alt='Post' className='mrppic' />
+                                    <img src={demande.picfield} alt='Post' className='mrppic' />
                                 </td>
-                                <td className='mrp'>{field.name}</td>
-                                <td className='mrp'>{field.workhour}</td>
+                                <td className='mrp'>{demande.email}</td>
+                                <td className='mrp'>{demande.numtel}</td>
                                 <td className='mrp'>
-                                    <button className='deltemrp'onClick={() => handleDeletefield(field._id)}>
+                                    <button className='deltemrp' onClick={() => handleDeleteDemande(demande._id)}>
                                         <span className="text">Delete</span>
                                         <span className="icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -84,5 +83,5 @@ export default function DashField() {
                 <p>You have no posts yet!</p>
             )}
         </div>
-    );
+  )
 }

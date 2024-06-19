@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import "./match.css";
 import { IoSearch } from "react-icons/io5";
 
+import { RiDeleteBinLine } from "react-icons/ri";
+
 
 const Matchs = () => {
   const { currentUser } = useSelector((state) => state.user);
@@ -39,6 +41,23 @@ const Matchs = () => {
     );
   }, [searchTerm, userMatchs]);
 
+  const handleDeleteMatch = async (matchId) => {
+    try {
+      const res = await fetch(`/api/match/deletematch/${matchId}`, {
+        method: 'DELETE',
+      });
+      if (res.ok) {
+        setUserMatchs(prevMatches => prevMatches.filter(match => match._id !== matchId));
+        setFilteredMatchs(prevMatches => prevMatches.filter(match => match._id !== matchId));
+      } else {
+        const data = await res.json();
+        console.error('Failed to delete match:', data.message);
+      }
+    } catch (error) {
+      console.error('Error deleting match:', error.message);
+    }
+  };
+
   return (
     <section className='mainmatch container section'>
       <input 
@@ -49,12 +68,11 @@ const Matchs = () => {
         className="searchBar"
       /><IoSearch className='icosearch' />
 
-
       {filteredMatchs.length > 0 ? (
         filteredMatchs.map((match) => (
-          <Link to={`/matchinfo/${match._id}`} key={match._id}>
-            <div className='matchContent grid'>
-              <div className="singlematch">
+          <div className='matchContent grid' key={match._id}>
+            <Link to={`/matchinfo/${match._id}`}>
+              <div className='singlematch'>
                 <div className="imageDiv">
                   <img className='imgg' src={match.creatorpic} alt={match.creator} />
                 </div>
@@ -77,10 +95,17 @@ const Matchs = () => {
                   <div className="matchdesc">
                     <p>"{match.description}"</p>
                   </div>
+                  
                 </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+            {currentUser && match.userId === currentUser._id && (
+              <button onClick={() => handleDeleteMatch(match._id)} className="deleteButton">
+                <RiDeleteBinLine />
+
+              </button>
+            )}
+          </div>
         ))
       ) : (
         <p>No posts available.</p>

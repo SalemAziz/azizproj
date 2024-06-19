@@ -162,20 +162,31 @@
   color: hsl(173, 82%, 24%);
 }
 .demande .demandeform .fieldattrb .demandedesc {
-  width: 40rem;
-  height: 10rem;
-  margin-bottom: 3rem;
-  border-radius: 1rem;
-  margin-top: 3rem;
-  background: hsl(173, 82%, 24%);
-  border: solid 2px var(--whiteColor);
+  transform: translate(-5.5rem, -5rem);
+  width: 37rem;
+  border: 0;
+  border-bottom: 2px solid var(--greytext);
+  outline: 0;
+  font-size: 1.05rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s, padding-bottom 0.2s, font-weight 0.2s;
+  margin-left: 5.4rem;
+}
+.demande .demandeform .fieldattrb .demandedesc::-moz-placeholder {
+  color: gray;
+}
+.demande .demandeform .fieldattrb .demandedesc::placeholder {
+  color: gray;
 }
 .demande .demandeform .fieldattrb .demandedesc:focus {
-  border: solid 2px var(--mmy);
-  outline: none;
-}
-.demande .demandeform .fieldattrb .demandedesc .ttxtt {
-  transform: translateY(30px);
+  padding-bottom: 6px;
+  font-weight: 400;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+     border-image: linear-gradient(to right, hsl(173, 82%, 24%), hsl(173, 82%, 24%));
+  border-image-slice: 1;
 }
 .demande .demandeform .fieldattrb .btdemande {
   transform: translate(34.5rem);

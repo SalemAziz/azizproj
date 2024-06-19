@@ -71,14 +71,9 @@ export default function DashSidebar() {
               <span className="sidebarlabel">Fields</span>
             </div>
           </Link>
-          <Link to='/mainad?tab=Collab'>
-            <div className={`sidebaritem ${tab === 'Collab' ? 'active' : ''}`}>
-              <FaComment   className="sidebaricon" />
-              <span className="sidebarlabel">Cmts</span>
-            </div>
-          </Link>
-          <Link to='/mainad?tab=Collab'>
-            <div className={`sidebaritem ${tab === 'Collab' ? 'active' : ''}`}>
+       
+          <Link to='/mainad?tab=calls'>
+            <div className={`sidebaritem ${tab === 'calls' ? 'active' : ''}`}>
               <FaWpforms    className="sidebaricon" />
               <span className="sidebarlabel">calls</span>
             </div>
@@ -89,8 +84,8 @@ export default function DashSidebar() {
               <span className="sidebarlabel">collab</span>
             </div>
           </Link>
-          <Link to='/mainad?tab=Collab'>
-            <div className={`sidebaritem ${tab === 'Collab' ? 'active' : ''}`}>
+          <Link to='/mainad?tab=AddUser'>
+            <div className={`sidebaritem ${tab === 'AddUser' ? 'active' : ''}`}>
               <IoIosPersonAdd className="sidebaricon" />
               <span className="sidebarlabel">Add User</span>
             </div>

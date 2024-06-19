@@ -1,0 +1,115 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 43%);
+  --SecondryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColordeam: hsl(0, 0%, 93%);
+  --greytext: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 225);
+  --mm: hsl(155, 70%, 30%);
+  --cardHover: rgba(255, 255, 255);
+  --mmm: hsl(155, 51%, 45%);
+  --blackColor2: hsl(0, 0%, 20%);
+}
+
+.fieldinfo {
+  transform: translateY(9rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.fieldinfo .card {
+  width: 50rem;
+  height: 15rem;
+  border-radius: 44px;
+  background: lightgrey;
+  background: hsl(173, 82%, 24%);
+  box-shadow: 2px 3px 3px hsl(173, 82%, 24%), 2px 3px 3px hsl(173, 82%, 24%);
+  margin: 0 auto;
+}
+.fieldinfo .card .avatar {
+  width: 12rem;
+  height: 12rem;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 30px 15px 20px 25px;
+  border-radius: 3rem;
+}
+.fieldinfo .card .avatar .avatara {
+  border: rgba(255, 255, 255, 0.9) solid 3px;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 3rem;
+}
+.fieldinfo .card .info {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 2.5rem;
+  width: 85px;
+  text-align: justify;
+}
+.fieldinfo .card .info .info-1 {
+  display: inline-block;
+  height: 5rem;
+  width: 33rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  color: white;
+  background: var(--color2);
+}
+.fieldinfo .card .info .info-2 {
+  text-align: justify;
+  display: inline-block;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  color: var(--mmy);
+  margin-top: 0.5rem;
+  text-align: justify;
+  height: 7rem;
+  width: 33rem;
+}
+.fieldinfo .matchtable {
+  width: 90%;
+  margin-bottom: 1rem;
+}
+.fieldinfo .matchtable .matchtableinfo {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--whiteColordeam);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+.fieldinfo .matchtable .matchtableinfo th,
+.fieldinfo .matchtable .matchtableinfo td {
+  padding: 1rem;
+  text-align: center;
+}
+.fieldinfo .matchtable .matchtableinfo th {
+  background: hsl(173, 82%, 24%);
+  color: var(--whiteColor);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.fieldinfo .matchtable .matchtableinfo td {
+  background: var(--whiteColor);
+  color: var(--textColor);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.fieldinfo .matchtable .matchtableinfo tr:nth-child(even) {
+  background: var(--inputColor);
+}
+.fieldinfo .error {
+  color: red;
+  font-size: 1rem;
+  margin-top: 1rem;
+}/*# sourceMappingURL=fieldreserv.css.map */

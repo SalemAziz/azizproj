@@ -46,11 +46,8 @@ export const getfields = async (req, res, next) => {
     const fields = await Field.find({
       ...(req.query.userId && { userId: req.query.userId }),
       ...(req.query.fieldId && { _id: req.query.fieldId }),
-      ...(req.query.searchTerm && {
-        $or: [
-          { content: { $regex: req.query.searchTerm, $options: 'i' } },
-        ],
-      }),
+      ...(req.query.ownerEmail && { ownerEmail: req.query.ownerEmail }),
+
     })
       .sort({ updatedAt: sortDirection })
       .skip(startIndex)
@@ -78,3 +75,43 @@ export const getfields = async (req, res, next) => {
   } catch (error) {
     next(error);
   } };
+
+  export const deletefield = async (req, res, next) => {
+    if (req.user.role === 'admin' && req.user.id === req.params.userId) {
+      return next(errorHandler(403, 'You are not allowed to delete this match'));
+    }
+    
+    try {
+      await Field.findByIdAndDelete(req.params.fieldId);
+      res.status(200).json({ message: 'The demande has been deleted' });
+    } catch (error) {
+      next(error);
+    }
+  };
+  export const updateField = async (req, res, next) => {
+    if (req.user.role === 'admin' && req.user.id === req.params.userId) {
+      return next(errorHandler(403, 'You are not allowed to delete this match'));
+    }
+
+  
+      const updatedUser = await Field.findByIdAndUpdate(
+        req.params.fieldid,
+        {
+          $set: {
+            name: req.body.name,
+            location: req.body.location,
+            password: req.body.password,
+            profilePicture: req.body.profilePicture,
+            phone: req.body.phone,
+            birthday: req.body.birthday,
+
+          },
+        },
+        { new: true }
+      );
+      const { password, ...rest } = updatedUser._doc;
+      res.status(200).json(rest);
+  
+      next(error);
+   
+  };
