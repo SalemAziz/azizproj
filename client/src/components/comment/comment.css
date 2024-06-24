@@ -69,7 +69,8 @@
   border: none;
   background: transparent;
   color: var(--blackColor2);
-  transform: translate(33rem, -1.5rem);
+  transform: translate(29.3rem, -1.5rem);
+  margin-right: 1rem;
 }
 .commentsec .commentt .commentaire .commentlikebtn:hover {
   color: var(--mmr);

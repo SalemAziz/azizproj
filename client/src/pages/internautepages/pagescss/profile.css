@@ -122,9 +122,8 @@
   background: var(--yyyy);
 }
 .profsec .uper {
-  color: #bebebe;
+  color: orange;
   font-weight: 500;
   font-size: 20px;
-  align-self: center;
-  transform: translateY(-430px) translateX(380px);
+  transform: translate(8rem, -1rem);
 }/*# sourceMappingURL=profile.css.map */

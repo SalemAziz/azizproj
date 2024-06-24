@@ -24,6 +24,14 @@
   transform: translate(0, 7rem);
   width: 100%;
 }
+.accountinfo .deleteButtons {
+  transform: translate(36rem, -3rem);
+  font-size: 1.1rem;
+  border: none;
+  background: transparent;
+  color: red;
+  cursor: pointer;
+}
 .accountinfo .accountinfffo {
   width: 100%;
   height: flex;
@@ -158,14 +166,13 @@
   color: var(--mm);
 }
 .accountinfo .accountinfffo .mainaccount .pub .postContentt {
-  justify-content: center;
   gap: 1.5rem;
   margin-bottom: 5rem;
 }
 .accountinfo .accountinfffo .mainaccount .pub .postContentt .singlepostt {
   height: flex;
   margin-top: 1.5rem;
-  width: 35rem;
+  width: 38rem;
   row-gap: 10px;
   border-radius: 1.5rem;
   align-items: center;
@@ -202,19 +209,22 @@
   padding-top: 1rem;
   padding-bottom: 1.5rem;
 }
+.accountinfo .accountinfffo .mainaccount .pub .postContentt .singlepostt .contentdivv .postpicc {
+  margin: 0 auto;
+}
 .accountinfo .accountinfffo .mainaccount .pub .postContentt .singlepostt .contentdivv .postpicc .imgbb {
   height: 23rem;
-  width: 32rem;
+  width: 35rem;
   transform: translate(1.5rem, -1rem);
   border-radius: 1.9rem;
+  margin: 0 auto;
 }
 .accountinfo .accountinfffo .mainaccount .matchaccount {
   transform: translateY(3rem);
   width: 38rem;
-  margin-left: -3rem;
 }
 .accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount {
-  width: 24rem;
+  width: 22rem;
   border-radius: 1.5rem;
   background: rgb(40, 40, 40);
 }
@@ -223,12 +233,12 @@
   height: 5.5rem;
 }
 .accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tabthead .tabhhead {
-  transform: translate(0rem);
+  transform: translate(-1rem);
 }
 .accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tbodyy {
   height: 5rem;
-  transform: translate(1.5rem);
   color: white;
+  transform: translate(1.5rem);
 }
 .accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tbodyy .linkk {
   color: white;
@@ -237,4 +247,5 @@
   border-radius: 50rem;
   width: 4.5rem;
   height: 4.5rem;
+  margin-left: 1rem;
 }/*# sourceMappingURL=profinfo.css.map */

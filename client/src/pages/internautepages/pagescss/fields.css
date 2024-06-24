@@ -123,6 +123,7 @@
 }
 .mainf .secContentf .singleDestinationf .cardInfof .continentf {
   gap: 0.5rem;
+  width: 30rem;
 }
 .mainf .secContentf .singleDestinationf .cardInfof .continentf .namef {
   color: var(--textColor);

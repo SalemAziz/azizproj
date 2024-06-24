@@ -1,6 +1,7 @@
 import Comment from '../models/comment.js';
 import { errorHandler } from '../middleware/error.js';
 import User from '../models/user.js';
+import { comment } from 'postcss';
 
 
 export const createComment = async (req, res, next) => {
@@ -62,6 +63,24 @@ export const likeComment = async (req, res, next) => {
     }
     await comment.save();
     res.status(200).json(comment);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const deleteComment = async (req, res, next) => {
+  if ( req.user.id === req.params.userId) {
+    return next(errorHandler(403, 'You are not allowed to delete this post'));
+  }
+  
+  try {
+    const comment = await Comment.findByIdAndDelete(req.params.commentId);
+    if (!comment) {
+      return res.status(404).json({ message: 'Post not found' });
+    }
+    
+    
+    res.status(200).json({ message: 'The post and its comments have been deleted' });
   } catch (error) {
     next(error);
   }

@@ -2,9 +2,8 @@ import React, { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { app } from '../../firebase';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import "./dashcreatf.css"
+import "./dashcreatf.css";
 import { LuUploadCloud } from "react-icons/lu";
-
 
 export default function DashCreatf() {
   const fileRef = useRef(null);
@@ -50,7 +49,7 @@ export default function DashCreatf() {
           setImageUploadProgress(null);
           setImageUploadError(null);
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setFormData({ ...formData, image: downloadURL });
+            setFormData((prevData) => ({ ...prevData, image: downloadURL }));
           });
         }
       );
@@ -85,7 +84,6 @@ export default function DashCreatf() {
   };
 
   return (
-
     <section className='creatfsec'>
       <form onSubmit={handleSubmit} className='creatform'>
         <div className='nameinputt'>
@@ -98,30 +96,30 @@ export default function DashCreatf() {
         </div>
         <div className='locationinput'>
           <input
-          className='locationinputtt'
+            className='locationinputtt'
             type="text"
             placeholder="State"
-            onChange={(e) => setFormData({ 
-              ...formData, 
-              location: { ...formData.location, state: e.target.value } 
+            onChange={(e) => setFormData({
+              ...formData,
+              location: { ...formData.location, state: e.target.value }
             })}
           />
           <input
             type="text"
             className='locationinputtt'
             placeholder="City"
-            onChange={(e) => setFormData({ 
-              ...formData, 
-              location: { ...formData.location, city: e.target.value } 
+            onChange={(e) => setFormData({
+              ...formData,
+              location: { ...formData.location, city: e.target.value }
             })}
           />
           <input
             type="text"
             className='locationinputtt'
             placeholder="Town"
-            onChange={(e) => setFormData({ 
-              ...formData, 
-              location: { ...formData.location, town: e.target.value } 
+            onChange={(e) => setFormData({
+              ...formData,
+              location: { ...formData.location, town: e.target.value }
             })}
           />
         </div>
@@ -149,25 +147,22 @@ export default function DashCreatf() {
           <input
             type="text"
             className='detailsinputtt'
-
             placeholder="Fees"
             onChange={(e) => setFormData({ ...formData, feesf: e.target.value })}
           />
           <input
             type="text"
             className='detailsinputtt'
-
             placeholder="Working Hours"
             onChange={(e) => setFormData({ ...formData, workhour: e.target.value })}
           />
         </div>
-          <textarea
-            type="text"
-            className='descriptioninput'
-            placeholder="Description"
-            onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-          />
-       
+        <textarea
+          type="text"
+          className='descriptioninput'
+          placeholder="Description"
+          onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+        />
         <div>
           <input
             type="file"
@@ -175,17 +170,15 @@ export default function DashCreatf() {
             ref={fileRef}
             onChange={handleFileChange}
           />
-          <span className='pictureinputt'  onClick={() => fileRef.current.click()}><LuUploadCloud />
+          <span className='pictureinputt' onClick={() => fileRef.current.click()}><LuUploadCloud />
           </span>
         </div>
         <button type="submit" className='btdemande'>Add Field</button>
         {imageUploadError && <div className='error'>{imageUploadError}</div>}
-      {imageUploadProgress && <div className='progress'>Uploading: {imageUploadProgress}%</div>}
-      {formData.image && <img src={formData.image} alt='upload' className='selectedddimg' />}
-      {publishError && <div className='error'>{publishError}</div>}
+        {imageUploadProgress && <div className='progress'>Uploading: {imageUploadProgress}%</div>}
+        {formData.image && <img src={formData.image} alt='upload' className='selectedddimg' />}
+        {publishError && <div className='error'>{publishError}</div>}
       </form>
-  
     </section>
   );
 }
-

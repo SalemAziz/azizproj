@@ -3,16 +3,28 @@ import { useSelector } from 'react-redux';
 import { IoSend } from "react-icons/io5";
 import { FaThumbsUp } from 'react-icons/fa';
 
-
 import './comment.css'
 
 export default function Comment({ postId }) {
   const { currentUser } = useSelector((state) => state.user);
   const [comment, setComment] = useState('');
-  const [commentError, setCommentError] = useState(null);
   const [comments, setComments] = useState([]);
-  console.log(comments);
 
+  const handleDeleteComment = async (commentId) => {
+    try {
+      const res = await fetch(`/api/comment/deletecomment/${commentId}`, {
+        method: 'DELETE',
+      });
+      if (res.ok) {
+        setComments(prevComments => prevComments.filter(comment => comment._id !== commentId));
+      } else {
+        const data = await res.json();
+        console.error('Failed to delete comment:', data.message);
+      }
+    } catch (error) {
+      console.error('Error deleting comment:', error.message);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,17 +46,17 @@ export default function Comment({ postId }) {
       const data = await res.json();
       if (res.ok) {
         setComment('');
-        setCommentError(null);
         setComments([data, ...comments]);
       }
     } catch (error) {
-      setCommentError(error.message);
+      console.error('Error creating comment:', error.message);
     }
   };
+
   const handleLike = async (commentId) => {
     try {
       if (!currentUser) {
-        navigate('/sign-in');
+        // Handle case when user is not logged in
         return;
       }
       const res = await fetch(`/api/comment/likeComment/${commentId}`, {
@@ -53,7 +65,7 @@ export default function Comment({ postId }) {
       if (res.ok) {
         const data = await res.json();
         setComments(
-          comments.map((comment) =>
+          comments.map(comment =>
             comment._id === commentId
               ? {
                   ...comment,
@@ -65,11 +77,10 @@ export default function Comment({ postId }) {
         );
       }
     } catch (error) {
-      console.log(error.message);
+      console.error('Error liking comment:', error.message);
     }
   };
 
-  
   useEffect(() => {
     const getComments = async () => {
       try {
@@ -79,73 +90,59 @@ export default function Comment({ postId }) {
           setComments(data);
         }
       } catch (error) {
-        console.log(error.message);
+        console.error('Error fetching comments:', error.message);
       }
     };
     getComments();
   }, [postId]);
 
-
-
-
-
-
   return (
     <section className='commentsec'>
       <form onSubmit={handleSubmit}>
         <div className='createcomment'>
-        <img  className="createimg"src={currentUser.profilePicture} />
-        <textarea
-          type='text'
-          value={comment}
-          placeholder='Add a comment'
-          onChange={(e) => setComment(e.target.value)}
-          className='commenttype'
-        />
+          <img className="createimg" src={currentUser.profilePicture} alt="Profile" />
+          <textarea
+            type='text'
+            value={comment}
+            placeholder='Add a comment'
+            onChange={(e) => setComment(e.target.value)}
+            className='commenttype'
+          />
         </div>
-        <button className="commenticon" type="submit"><IoSend />
-        </button>
+        <button className="commenticon" type="submit"><IoSend /></button>
       </form>
+
       {comments.length === 0 ? (
-        <p className='commentit'>No comments yet!</p>
+        <p className='commentit'>Be the first to comment!</p>
       ) : (
         <div className='commentt'>
           <div className='commenttt'>
-            <p>Comments </p>
+            <p>Comments</p>
             <div className='border border-gray-400 py-1 px-2 rounded-sm'>
-              <p>  ({comments.length})</p>
+              <p>({comments.length})</p>
             </div>
           </div>
           {comments.map((comment) => (
-            <div key={comment._id}                 
-            className='commentaire' >
+            <div key={comment._id} className='commentaire'>
               <div className='commentaireinfo'>
-
-                <img  className="commentaireinfoimg"src={comment.creatorpiccom} />
+                <img className="commentaireinfoimg" src={comment.creatorpiccom} alt="Profile" />
                 <div className='commentairecontent'>
-                <div className='commentaireinfoname'>
-              {comment.creatorcomment}
-              </div>
-              <div
-              className='commentairecontentt'> {comment.comment}</div>
-              
-                
-              </div>
-              
-              
+                  <div className='commentaireinfoname'>{comment.creatorcomment}</div>
+                  <div className='commentairecontentt'>{comment.comment}</div>
+                </div>
               </div>
               <button onClick={() => handleLike(comment._id)} className="commentlikebtn" type='button'>
-                Like  {comment.numberOfLikes}
+                Like {comment.numberOfLikes}
               </button>
-             
+              {currentUser && comment.userId === currentUser._id && (
+                <button onClick={() => handleDeleteComment(comment._id)} className="commentlikebtn">
+                  Delete
+                </button>
+              )}
             </div>
           ))}
         </div>
       )}
-      
-
-     
-
     </section>
   );
 }

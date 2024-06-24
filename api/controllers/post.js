@@ -80,7 +80,7 @@ export const create = async (req, res, next) => {
     } };
 
     export const deletePost = async (req, res, next) => {
-      if (req.user.role === 'admin' && req.user.id === req.params.userId) {
+      if ( req.user.id === req.params.userId) {
         return next(errorHandler(403, 'You are not allowed to delete this post'));
       }
       

@@ -59,7 +59,7 @@ const NavUser = () => {
                         )}
 
                         <li className="navItem">
-                            <Link to="/matchpage" className="navLink">Matchs</Link>
+                            <Link to="/matchpage" className="navLink">Matches</Link>
                         </li>
                         <li className="navItem">
                             <Link to="/postpage" className="navLink">Community</Link>

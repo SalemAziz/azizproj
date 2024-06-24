@@ -10,6 +10,8 @@ import { FaPhone } from "react-icons/fa6";
 import { FaBirthdayCake } from "react-icons/fa";
 import { FaRegHeart, FaRegComment } from "react-icons/fa";
 import Comment from '../comment/Comment'; 
+import GetPost from '../posts/GetPost'
+import { RiDeleteBinLine } from "react-icons/ri";
 
 
 
@@ -21,7 +23,23 @@ export default function ProfInfo() {
     const [userPosts, setUserPosts] = useState([]);
     const [userMatchs, setUserMatchs] = useState([]);
     const [visibleCommentPostId, setVisibleCommentPostId] = useState(null);
-  console.log(userPosts)
+  
+    const handleDeletePost = async (postId) => {
+    try {
+      const res = await fetch(`/api/post/deletepost/${postId}`, {
+        method: 'DELETE',
+      });
+      if (res.ok) {
+        setUserPosts(prevPosts  => prevPosts .filter(post => post._id !== postId));
+        setFilteredPosts(prevPosts => prevPosts .filter(post => post._id !== postId));
+      } else {
+        const data = await res.json();
+        console.error('Failed to delete match:', data.message);
+      }
+    } catch (error) {
+      console.error('Error deleting match:', error.message);
+    }
+  };
 
   const handleLike = async (postId) => {
     try {
@@ -117,19 +135,24 @@ export default function ProfInfo() {
 
         </div>
         <div className='pub'>
-        <div className='postContentt '>
+        <div className='postContentt'>
         {userPosts.length > 0 ? (
           userPosts.map((post) => (
             <div key={post._id} className="singlepostt">
-
               <div className='postcrtpicc'>
                 <img src={post.creatorpic} alt='Creator' className='imgaa' />
               </div>
-
               <div className='postcreatorr'>
                 {post.creatorpost}
               </div>
+          
               <div className='contentdivv'>
+              {currentUser && post.userId === currentUser._id && (
+              <button onClick={() => handleDeletePost(post._id)} className="deleteButtons">
+                <RiDeleteBinLine />
+
+              </button>
+            )}
                 <div className="descc">
                   {post.content}
                 </div>
@@ -147,6 +170,7 @@ export default function ProfInfo() {
                 >
                   <FaRegComment className='postico2'/>
                 </button>
+
               </div>
               {visibleCommentPostId === post._id && (
                 <div className="commentSection">
@@ -154,13 +178,10 @@ export default function ProfInfo() {
                 </div>
               )}
             </div>
-
-
           ))
         ) : (
           <p>No posts available.</p>
         )}
-
       </div>
 
         </div>
@@ -171,7 +192,7 @@ export default function ProfInfo() {
       <tr className='tabhhead'> 
         <th>Image</th>
         <th>Username</th>
-        <th>Location</th>
+       
 
       </tr>
     </thead>
@@ -182,11 +203,7 @@ export default function ProfInfo() {
             <img src={match.picfield} alt={match.creator} className='imgaccc' />
           </td>
           <td><Link className="linkk" to={`/matchinfo/${match._id}`}>{match.creatorusername}</Link></td>
-          <td>
-            <span className='matchcontinent flex'>
-              <span className="matchname">{match.field}</span>
-            </span>
-          </td>
+        
 
         </tr>
       ))}

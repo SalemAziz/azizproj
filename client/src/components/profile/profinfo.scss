@@ -30,7 +30,14 @@
 .accountinfo {
     transform: translate(0, 7rem);
     width: 100%;
-    
+    .deleteButtons{
+        transform: translate(36rem,-3rem);
+        font-size: 1.1rem;
+        border: none;
+        background: transparent;
+        color: red;
+        cursor: pointer;
+    }
 
     .accountinfffo {
 
@@ -159,6 +166,7 @@
                     
                     width: 95%;
                     margin: 0 auto;
+                    
     
     
     
@@ -212,14 +220,13 @@
                 }
 
                 .postContentt {
-                    justify-content: center;
                     gap: 1.5rem;
                     margin-bottom: 5rem;
 
                     .singlepostt {
                         height: flex;
                         margin-top: 1.5rem;
-                        width: 35rem;
+                        width: 38rem;
                         row-gap: 10px;
                         border-radius: 1.5rem;
                         align-items: center;
@@ -265,11 +272,13 @@
                             }
 
                             .postpicc {
+                                margin: 0 auto;
                                 .imgbb {
                                     height: 23rem;
-                                    width: 32rem;
+                                    width: 35rem;
                                     transform: translate(1.5rem, -1rem);
                                     border-radius: 1.9rem;
+                                    margin: 0 auto;
 
                                 }
                             }
@@ -282,10 +291,9 @@
             .matchaccount {
                 transform: translateY(3rem);
                 width: 38rem;
-                margin-left: -3rem;
 
                 .tablematchaccount {
-                    width: 24rem;
+                    width: 22rem;
                     border-radius: 1.5rem;
                     background: rgb(40,40,40);
 
@@ -297,13 +305,15 @@
 
 
                         .tabhhead {
-                            transform: translate(0rem);
+                            transform: translate(-1rem);
                         }
                     }
                     .tbodyy{
                         height: 5rem;
-                        transform: translate(1.5rem);
                         color: white;
+                        
+                            transform: translate(1.5rem);
+                        
                         .linkk{
                             color: white;
                         }
@@ -311,7 +321,9 @@
                             border-radius: 50rem;
                             width: 4.5rem;
                             height: 4.5rem;
+                            margin-left: 1rem;
                         }
+                        
 
                              }
                 }
