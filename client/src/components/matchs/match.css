@@ -66,7 +66,60 @@
   background: transparent;
   cursor: pointer;
   margin-left: -1.2rem;
-  transform: translate(1.5rem, -0.2rem);
+  transform: translate(1.5rem, -0.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgb(255, 95, 95);
+  cursor: pointer;
+  border: 2px solid rgb(255, 201, 201);
+  transition-duration: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.mainmatch .matchContent .deleteButton:hover {
+  background-color: rgb(255, 0, 0);
+}
+.mainmatch .matchContent .deleteButton:hover .bin-top {
+  transform: rotate(45deg);
+}
+.mainmatch .matchContent .deleteButton:hover .garbage {
+  animation: throw 0.4s linear;
+}
+.mainmatch .matchContent .deleteButton:active {
+  transform: scale(0.9);
+}
+.mainmatch .matchContent .bin-bottom {
+  width: 15px;
+  z-index: 2;
+}
+.mainmatch .matchContent .bin-top {
+  width: 17px;
+  transform-origin: right;
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+.mainmatch .matchContent .garbage {
+  position: absolute;
+  width: 14px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+}
+@keyframes throw {
+  from {
+    transform: translate(-400%, -700%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
 }
 .mainmatch .matchContent .singlematch {
   height: 2.7rem;

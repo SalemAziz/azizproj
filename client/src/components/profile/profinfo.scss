@@ -292,40 +292,113 @@
                 transform: translateY(3rem);
                 width: 38rem;
 
-                .tablematchaccount {
-                    width: 22rem;
+                .match-list {
+                    width: 25rem;
                     border-radius: 1.5rem;
-                    background: rgb(40,40,40);
+                    display: block;
+                    background: rgb(40, 40, 40);
+                    padding: 0.5rem;
 
 
-                    .tabthead {
+
+                    .match-item {
                         color: white;
-                        height: 5.5rem;
-                        
+                        height: 3rem;
+                        display: flex;
+                        margin-bottom: 0.5rem;
+                        background: hsl(173, 82%, 24%);
+                        border-radius: 3rem;
 
-
-                        .tabhhead {
-                            transform: translate(-1rem);
-                        }
-                    }
-                    .tbodyy{
-                        height: 5rem;
-                        color: white;
-                        
-                            transform: translate(1.5rem);
-                        
-                        .linkk{
-                            color: white;
-                        }
                         .imgaccc{
                             border-radius: 50rem;
-                            width: 4.5rem;
-                            height: 4.5rem;
-                            margin-left: 1rem;
-                        }
-                        
+                            height: 2.8rem;
+                            width: 3rem;
 
-                             }
+                            margin-right: 1rem;
+                            margin-left:0.5rem ;
+                            margin-top: 0.1rem;
+                            
+
+                        }
+                        .linkk{
+                            color: white;
+                            transform: translateY(0.5rem);
+                            font-size: 1.2rem;
+
+                        }
+                        .db{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            width: 2rem;
+                            height: 2rem;
+                            border-radius: 50%;
+                            background-color: rgb(255, 95, 95);
+                            transform: translate(1rem,0.4rem);
+                            cursor: pointer;
+                            border: 2px solid rgb(255, 201, 201);
+                            transition-duration: 0.3s;
+                            position: relative;
+                            overflow: hidden;
+                          
+                            &:hover {
+                              background-color: rgb(255, 0, 0);
+                          
+                              .bin-top {
+                                transform: rotate(45deg);
+                              }
+                          
+                              .garbage {
+                                animation: throw 0.4s linear;
+                              }
+                            }
+                          
+                            &:active {
+                              transform: scale(0.9);
+                            }
+                          }
+                          
+                          .bin-bottom {
+                            width: 15px;
+                            z-index: 2;
+                          }
+                          
+                          .bin-top {
+                            width: 17px;
+                            transform-origin: right;
+                            transition-duration: 0.3s;
+                            z-index: 2;
+                          }
+                          
+                          .garbage {
+                            position: absolute;
+                            width: 14px;
+                            height: auto;
+                            z-index: 1;
+                            opacity: 0;
+                            transition: all 0.3s;
+                          }
+                          
+                          @keyframes throw {
+                            from {
+                              transform: translate(-400%, -700%);
+                              opacity: 0;
+                            }
+                            to {
+                              transform: translate(0%, 0%);
+                              opacity: 1;
+                            }
+                        }
+                        &:hover{
+                            background: var(--mmy);
+                            border-radius: 3rem;
+                        }
+
+
+                        
+                    }
+                
                 }
             }
         }

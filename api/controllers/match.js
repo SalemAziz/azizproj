@@ -7,9 +7,9 @@ const cooldown = new Set();
 
 export const createMatch = async (req, res) => {
   try {
-    const { matchname, fieldId, description, reservationdate, dayofthweek,houroflocation} = req.body;
+    const { matchname, fieldId, description, reservationdate, dayofthweek, houroflocation } = req.body;
 
-    if (!fieldId || !description  || !matchname || !dayofthweek || !houroflocation) {
+    if (!fieldId || !description || !matchname || !dayofthweek || !houroflocation) {
       throw new Error("All inputs are required");
     }
 
@@ -19,11 +19,8 @@ export const createMatch = async (req, res) => {
     const username = user.username;
     const userphoto = user.profilePicture;
     
-    const field= await Field.findById(fieldId);
+    const field = await Field.findById(fieldId);
     const fieldn = field.name;
-
-    
-
 
     if (cooldown.has(userId)) {
       throw new Error("You are posting too frequently. Please try again shortly.");
@@ -33,27 +30,38 @@ export const createMatch = async (req, res) => {
 
     setTimeout(() => {
       cooldown.delete(userId);
-    }, 1); 
+    }, 0); // 60 seconds cooldown
 
     // Create match
     const match = await Match.create({
-      
       userId: userId,
       creatorusername: username,
-      creatorpic:userphoto,
+      creatorpic: userphoto,
       fieldId,
       dayofthweek,
       description,
-      matchname, houroflocation, 
+      matchname,
+      houroflocation,
       reservationdate,
-      fieldname:fieldn,
+      fieldname: fieldn,
     });
+
+    // Convert dayofthweek to a Date object and check if it is in the past
+    const matchDate = new Date(dayofthweek);
+    const today = new Date();
+
+    if (matchDate < today) {
+      // Delete match if the date is in the past
+      await Match.findByIdAndDelete(match._id);
+      throw new Error("The match date is in the past. Match has been deleted.");
+    }
 
     res.json(match);
   } catch (err) {
     return res.status(400).json({ error: "Failed to create match", message: err.message });
   }
 };
+
 
 
 export const getmatchs = async (req, res, next) => {

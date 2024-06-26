@@ -223,29 +223,91 @@
   transform: translateY(3rem);
   width: 38rem;
 }
-.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount {
-  width: 22rem;
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list {
+  width: 25rem;
   border-radius: 1.5rem;
+  display: block;
   background: rgb(40, 40, 40);
+  padding: 0.5rem;
 }
-.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tabthead {
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item {
   color: white;
-  height: 5.5rem;
+  height: 3rem;
+  display: flex;
+  margin-bottom: 0.5rem;
+  background: hsl(173, 82%, 24%);
+  border-radius: 3rem;
 }
-.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tabthead .tabhhead {
-  transform: translate(-1rem);
-}
-.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tbodyy {
-  height: 5rem;
-  color: white;
-  transform: translate(1.5rem);
-}
-.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tbodyy .linkk {
-  color: white;
-}
-.accountinfo .accountinfffo .mainaccount .matchaccount .tablematchaccount .tbodyy .imgaccc {
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item .imgaccc {
   border-radius: 50rem;
-  width: 4.5rem;
-  height: 4.5rem;
-  margin-left: 1rem;
+  height: 2.8rem;
+  width: 3rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  margin-top: 0.1rem;
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item .linkk {
+  color: white;
+  transform: translateY(0.5rem);
+  font-size: 1.2rem;
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item .db {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgb(255, 95, 95);
+  transform: translate(1rem, 0.4rem);
+  cursor: pointer;
+  border: 2px solid rgb(255, 201, 201);
+  transition-duration: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item .db:hover {
+  background-color: rgb(255, 0, 0);
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item .db:hover .bin-top {
+  transform: rotate(45deg);
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item .db:hover .garbage {
+  animation: throw 0.4s linear;
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item .db:active {
+  transform: scale(0.9);
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item .bin-bottom {
+  width: 15px;
+  z-index: 2;
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item .bin-top {
+  width: 17px;
+  transform-origin: right;
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item .garbage {
+  position: absolute;
+  width: 14px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+}
+@keyframes throw {
+  from {
+    transform: translate(-400%, -700%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
+.accountinfo .accountinfffo .mainaccount .matchaccount .match-list .match-item:hover {
+  background: var(--mmy);
+  border-radius: 3rem;
 }/*# sourceMappingURL=profinfo.css.map */
