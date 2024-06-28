@@ -38,7 +38,7 @@
 }
 .matchattrib .matchinfo .ffieldname {
   color: var(--mmy);
-  font-size: 4rem;
+  font-size: 3.2rem;
   transform: translate(0.5rem, 0rem);
   font-weight: 700;
   margin-left: 1rem;

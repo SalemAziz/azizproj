@@ -5,39 +5,45 @@ import Comment from '../models/comment.js';
 
 
 export const create = async (req, res, next) => {
+  try {
     if (!req.user) {
       return next(errorHandler(403, 'You are not allowed to create a post'));
     }
-    if ( !req.body.content) {
+    if (!req.body.content) {
       return next(errorHandler(400, 'Please provide content'));
     }
 
+    const userId = req.user.id;
 
- const userId = req.user.id;
-
+    // Fetch user details to get username and profile picture
     const user = await User.findById(userId);
-    const username = user.username;
-    const userprof = user.profilePicture;
+    if (!user) {
+      return next(errorHandler(404, 'User not found'));
+    }
 
-  
+    const { username, profilePicture } = user;
+
+    // Create a new post
     const newPost = new Post({
       ...req.body,
       userId: req.user.id,
       creatorpost: username,
-      creatorpic: userprof,
-     
-
-
+      creatorpic: profilePicture,
     });
-    try {
-      const savedPost = await newPost.save();
-      res.status(201).json(savedPost);
-      next();
-    } catch (error) {
-      next(error);
-    }
-  };
 
+    // Save the new post to the database
+    const savedPost = await newPost.save();
+
+    // Update user's posts count
+    user.posts += 1;
+    await user.save();
+
+    // Respond with the created post
+    res.status(201).json(savedPost);
+  } catch (error) {
+    next(error);
+  }
+};
   export const getposts = async (req, res, next) => {
     try {
       const startIndex = parseInt(req.query.startIndex) || 0;

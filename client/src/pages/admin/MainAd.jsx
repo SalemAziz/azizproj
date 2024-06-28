@@ -30,22 +30,26 @@ export default function MainAd() {
     <>
    
     <div className='postionnn'>
-    <div className='classnaem flex'>
+    <div className='classnaem '>
    
     <DashSidebar />
     </div>
     <div className='aa grid'>
-    {tab === 'Stat' && <DashboardComp />}
-    {tab === 'User' && <DashUser />}
-    {tab === 'Posts' && <DashPost />}
-    {tab === 'Matchs' && <DashMatch />}
-    {tab === 'Fields' && <DashField />}
-    {tab === 'Collab' && <DashCreatf />}
-    {tab === 'calls' && <Dashdemande />}   
-    {tab === 'AddUser' && <DashAddUser />}
+      {tab === 'Stat' && <DashboardComp />}
+      {tab === 'User' && <DashUser />}
+      {tab === 'Posts' && <DashPost />}
+       {tab === 'Matchs' && <DashMatch />}
+       {tab === 'Fields' && <DashField />}
+        {tab === 'Collab' && <DashCreatf />}
+       {tab === 'calls' && <Dashdemande />}
+       {tab === 'AddUser' && <DashAddUser />}</div>
+   
+   
+   
+       
+    
 
     
-    </div>
     </div>
   </>
   

@@ -7,33 +7,42 @@ import { comment } from 'postcss';
 export const createComment = async (req, res, next) => {
   try {
     if (!req.user) {
-      return next(errorHandler(403, 'You are not allowed to create a post'));
+      return next(errorHandler(403, 'You are not allowed to create a comment'));
     }
-    const { comment, postId } = req.body;
 
- 
+    const { comment, postId } = req.body;
     const userId = req.user.id;
 
+    // Fetch user details to get username and profile picture
     const user = await User.findById(userId);
-    const username = user.username;
-    const userprof = user.profilePicture;
+    if (!user) {
+      return next(errorHandler(404, 'User not found'));
+    }
 
+    const { username, profilePicture } = user;
 
+    // Create a new comment
     const newComment = new Comment({
-      creatorpiccom:userprof,
-      creatorcomment:username,
+      creatorpiccom: profilePicture,
+      creatorcomment: username,
       comment,
       postId,
       userId,
     });
+
+    // Save the new comment to the database
     await newComment.save();
 
+    // Update user's comment count
+    user.comments += 1;
+    await user.save();
+
+    // Respond with the created comment
     res.status(200).json(newComment);
   } catch (error) {
     next(error);
   }
 };
-
 
 
 export const getPostComments = async (req, res, next) => {

@@ -1,8 +1,6 @@
-import React from 'react'
-import NavUser from '../../components/usercomp/NavUser'
-import { useSelector } from 'react-redux';
-import "./pagescss/profile.css"
-import { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import NavUser from '../../components/usercomp/NavUser';
 import { app } from '../../firebase';
 import {
   getDownloadURL,
@@ -10,21 +8,27 @@ import {
   ref,
   uploadBytesResumable,
 } from 'firebase/storage';
-import { useDispatch } from 'react-redux';
-import { updateUserStart, updateUserFailure, updateUserSuccess,  deleteUserStart,
+import {
+  updateUserStart,
+  updateUserFailure,
+  updateUserSuccess,
+  deleteUserStart,
   deleteUserSuccess,
-  deleteUserFailure} from '../../redux/user/userSlice';
-
+  deleteUserFailure,
+} from '../../redux/user/userSlice';
+import "./pagescss/profile.css";
 
 export default function Profile() {
   const { currentUser, loading, error } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const fileRef = useRef(null)
+  const fileRef = useRef(null);
   const [image, setImage] = useState(undefined);
   const [imagePercent, setImagePercent] = useState(0);
   const [imageError, setImageError] = useState(false);
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+
   useEffect(() => {
     let timer;
     if (updateSuccess) {
@@ -34,12 +38,13 @@ export default function Profile() {
     }
     return () => clearTimeout(timer);
   }, [updateSuccess]);
-  
+
   useEffect(() => {
     if (image) {
       handleFileUpload(image);
     }
   }, [image]);
+
   const handleFileUpload = async (image) => {
     const storage = getStorage(app);
     const fileName = new Date().getTime() + image.name;
@@ -62,9 +67,11 @@ export default function Profile() {
       }
     );
   };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -87,6 +94,7 @@ export default function Profile() {
       dispatch(updateUserFailure(error));
     }
   };
+
   const handleDeleteAccount = async () => {
     try {
       dispatch(deleteUserStart());
@@ -104,6 +112,13 @@ export default function Profile() {
     }
   };
 
+  const handleConfirmDelete = () => {
+    setShowConfirm(true);
+  };
+
+  const handleCancelDelete = () => {
+    setShowConfirm(false);
+  };
 
   return (
     <>
@@ -111,8 +126,13 @@ export default function Profile() {
       <section className='profsec'>
         <div className='proff'>
           <form onSubmit={handleSubmit} className='profform'>
-            <input type="file" ref={fileRef} hidden accept='image/*'
-              onChange={(e) => setImage(e.target.files[0])} />
+            <input
+              type='file'
+              ref={fileRef}
+              hidden
+              accept='image/*'
+              onChange={(e) => setImage(e.target.files[0])}
+            />
             <img
               src={formData.profilePicture || currentUser.profilePicture}
               alt='profile'
@@ -145,24 +165,21 @@ export default function Profile() {
               className='profput'
               onChange={handleChange}
             />
-               <input
+            <input
               defaultValue={currentUser.phone}
               type='tel'
-          id='phone'
-          placeholder='phone'
-
-          className='profput'
-          onChange={handleChange}
-             
+              id='phone'
+              placeholder='Phone'
+              className='profput'
+              onChange={handleChange}
             />
-             <input
+            <input
               defaultValue={currentUser.birthday}
               type='date'
               id='birthday'
               className='profput'
               onChange={handleChange}
             />
-            
             <input
               type='password'
               id='password'
@@ -173,14 +190,32 @@ export default function Profile() {
             <button className='probtn'>
               {loading ? 'Loading...' : 'Update'}
             </button>
-            <button onClick={handleDeleteAccount} className='proftx'>Delete Account</button>
+            <button type='button' onClick={handleConfirmDelete} className='proftx'>
+              Delete Account
+            </button>
           </form>
-        
           <p className='uper'>{error && 'Something went wrong!'}</p>
-          <p className='uper'> {updateSuccess && 'User is updated successfully!'}
-          </p>
+          <p className='uper'>{updateSuccess && 'User is updated successfully!'}</p>
         </div>
       </section>
+
+      {showConfirm && (
+        <div className="card">
+          <button className="exit-button" onClick={handleCancelDelete}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+            </svg>
+          </button>
+          <div className="card-content">
+            <h2 className="card-heading">Confirm Deletion</h2>
+            <p className="card-description">Are you sure you want to delete this account?</p>
+            <div className="card-button-wrapper">
+              <button className="card-button primary" onClick={handleDeleteAccount}>Yes</button>
+              <button className="card-button secondary" onClick={handleCancelDelete}>No</button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
-  )
+  );
 }

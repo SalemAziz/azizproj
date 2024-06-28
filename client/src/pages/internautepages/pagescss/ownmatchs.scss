@@ -1,0 +1,194 @@
+:root {
+    --PrimaryColor: hsl(199, 100%, 43%);
+    --SecondryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColordeam: hsl(0, 0%, 93%);
+    --greytext: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 240);
+    --cardBG: rgb(225, 225, 225);
+    --mm: hsl(155, 27%, 45%);
+    --cardHover: rgba(255, 255, 255);
+    --mmm: hsl(155, 51%, 45%);
+    --mmy: hsl(43, 100%, 43%);
+    --mmr: hsl(0, 57%, 53%);
+    --blackColor2: hsl(198, 19%, 45%);
+    --whiteColordeam2: hsl(0, 60%, 99%);
+    --blackColor3: hsl(153, 29%, 33%);
+}
+
+.matchattriba{
+    transform: translateY(7rem);
+    height: auto;
+    gap: 5rem;
+    .deleteButton {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        background-color: transparent;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+        position: relative;
+        overflow: hidden;
+        transform: translate(4rem);
+      
+        svg {
+          width: 44%;
+        }
+      
+        &:hover {
+          background-color: rgb(237, 56, 56);
+          overflow: visible;
+      
+          .bin path {
+            fill: #fff;
+          }
+        }
+      
+        
+      }
+      
+      .bin path {
+        transition: all 0.2s;
+      }
+      
+      .tooltip {
+        --tooltip-color: rgb(41, 41, 41);
+        position: absolute;
+        top: -40px;
+        background-color: var(--tooltip-color);
+        color: white;
+        border-radius: 5px;
+        font-size: 12px;
+        padding: 8px 12px;
+        font-weight: 600;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.105);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.5s;
+      
+        &::before {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          transform: rotate(45deg);
+          content: "";
+          background-color: var(--tooltip-color);
+          bottom: -10%;
+        }
+      }
+      
+      .deleteButton:hover .tooltip {
+        opacity: 1;
+      }
+      
+
+    .matchinfoa{
+        width: 90%;
+        height: 5rem;
+        margin-top: 1rem;
+
+        display: flex;
+        background: var(--mmm);
+        box-shadow:10px 10px 10px 10px rgba(0, 0, 0, 0.105);
+margin-bottom: 1rem;
+       transform: translateY(3rem);
+       margin: 0 auto;
+       border-radius: 2rem;
+       border: white 3px solid;
+
+
+
+        .infomatcha{
+            color: var(--whiteColor);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+            font-weight: 400;
+            transform: translateY(1.3rem);
+            margin: 0 auto;
+        }
+
+    
+    }
+
+    .teamTablesa{
+        display: flex;
+        gap: 2rem;
+        transform: translateY(5rem);
+
+        .captiona{
+            color: var(--mmy);
+            font-size: 37px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .teamTablea{
+            width: 40rem;
+            border-collapse: collapse;
+            overflow: hidden;
+            background: var(--whiteColordeam2);
+            border-radius: 1rem;
+            margin: 0 auto;
+            margin-top: 1rem;
+            
+
+            th,
+            td {
+                padding: 1rem;
+                text-align: left;
+                
+
+            }
+
+            th {
+                background: var(--mmm);
+                color: var(--whiteColor);
+                font-size: 1.3rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                text-align: center;
+
+
+            }
+
+            td {
+                background: var(--whiteColor);
+                color: var(--textColor);
+                font-size: 1rem;
+                font-weight: 400;
+
+                &:nth-child(2) {
+                    text-align: center;
+                }
+            }
+
+            tr {
+                &:nth-child(even) {
+                    background: var(--inputColor);
+                }
+                
+            }
+
+            .tabtitrolea,
+            .tabtitnamea{
+                height: 2rem;
+                width: auto;
+            }
+        }
+    }
+
+    
+}

@@ -28,9 +28,10 @@ export const createMatch = async (req, res) => {
 
     cooldown.add(userId);
 
+    // Set a 60 seconds cooldown
     setTimeout(() => {
       cooldown.delete(userId);
-    }, 0); // 60 seconds cooldown
+    }, 60000); // 60 seconds cooldown
 
     // Create match
     const match = await Match.create({
@@ -49,6 +50,7 @@ export const createMatch = async (req, res) => {
     // Convert dayofthweek to a Date object and check if it is in the past
     const matchDate = new Date(dayofthweek);
     const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set today's date to midnight
 
     if (matchDate < today) {
       // Delete match if the date is in the past
@@ -56,11 +58,17 @@ export const createMatch = async (req, res) => {
       throw new Error("The match date is in the past. Match has been deleted.");
     }
 
+    // Update the user's match count
+    user.matchs = (user.matchs || 0) + 1;
+    await user.save();
+
     res.json(match);
   } catch (err) {
     return res.status(400).json({ error: "Failed to create match", message: err.message });
   }
 };
+
+
 
 
 
@@ -259,3 +267,40 @@ export const getAvailableTimeSlots = async (req, res) => {
   }
 };
 
+export const deletePlayerFromMatch = async (req, res, next) => {
+  try {
+    const { matchId, playerId } = req.params;
+    const userId = req.user.id; // Get the authenticated user's ID
+
+    const match = await Match.findById(matchId);
+    if (!match) {
+      return next(errorHandler(404, 'Match not found'));
+    }
+
+    // Check if the authenticated user is the match creator
+    if (userId !== match.userId.toString()) {
+      return next(errorHandler(403, 'You are not allowed to delete players from this match'));
+    }
+
+    // Check if the player is in team1
+    const team1Index = match.team1.findIndex(player => player._id.toString() === playerId);
+    if (team1Index !== -1) {
+      match.team1.splice(team1Index, 1);
+      await match.save();
+      return res.status(200).json(match);
+    }
+
+    // Check if the player is in team2
+    const team2Index = match.team2.findIndex(player => player._id.toString() === playerId);
+    if (team2Index !== -1) {
+      match.team2.splice(team2Index, 1);
+      await match.save();
+      return res.status(200).json(match);
+    }
+
+    // If player not found in either team
+    return next(errorHandler(404, 'Player not found in the match'));
+  } catch (error) {
+    next(error);
+  }
+};

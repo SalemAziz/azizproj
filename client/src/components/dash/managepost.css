@@ -19,36 +19,123 @@
   table-layout: auto;
   margin-left: 2rem;
 }
-.tabsec .tabs {
+.tabsec .card {
+  width: 300px;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  position: absolute;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.068);
+  margin: 0 auto;
+  margin-top: -7rem;
+  transform: translate(30rem, -25rem);
+}
+.tabsec .card .card-content {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.tabsec .card .card-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(27, 27, 27);
+}
+.tabsec .card .card-description {
+  font-weight: 100;
+  color: rgb(102, 102, 102);
+}
+.tabsec .card .card-button-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.tabsec .card .card-button {
+  width: 50%;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.tabsec .card .card-button.primary {
+  background-color: rgb(255, 114, 109);
+  color: white;
+}
+.tabsec .card .card-button.primary:hover {
+  background-color: rgb(255, 73, 66);
+}
+.tabsec .card .card-button.secondary {
+  background-color: #ddd;
+}
+.tabsec .card .card-button.secondary:hover {
+  background-color: rgb(197, 197, 197);
+}
+.tabsec .card .exit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.tabsec .card .exit-button:hover svg {
+  fill: black;
+}
+.tabsec .card .exit-button svg {
+  fill: rgb(175, 175, 175);
+}
+
+.tabs {
   width: 80rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: 2rem;
   background: var(--whiteColor);
+  overflow-x: auto; /* Add horizontal scroll */
+  overflow-y: auto; /* Add vertical scroll */
+  display: block; /* Ensure the table can scroll */
+  height: 43rem;
+  margin-top: -1rem;
 }
-.tabsec .tabs .tabattrb {
+.tabs .tabattrb {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-right: 1rem;
   border-bottom: solid hsl(173, 82%, 24%) 3px;
   color: hsl(173, 82%, 24%);
+  width: 80rem;
 }
-.tabsec .tabs .ms {
+.tabs .ms {
   border-bottom-width: 5px solid var(--blackColor);
 }
-.tabsec .tabs .ms .mrp {
+.tabs .ms .mrp {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 4.5rem;
   padding-right: 1rem;
   color: black;
 }
-.tabsec .tabs .ms .mrp .mrppic {
+.tabs .ms .mrp .mrppic {
   -o-object-fit: cover;
      object-fit: cover;
   height: 2.5rem;
   transform: translateX(-2rem);
 }
-.tabsec .tabs .ms .mrp .deltemrp {
+.tabs .ms .mrp .deltemrp {
   width: 150px;
   height: 50px;
   cursor: pointer;
@@ -61,13 +148,13 @@
   position: relative;
   transition: background 200ms;
 }
-.tabsec .tabs .ms .mrp .deltemrp .text {
+.tabs .ms .mrp .deltemrp .text {
   transform: translateX(35px);
   color: white;
   font-weight: bold;
   transition: color 200ms, transform 200ms;
 }
-.tabsec .tabs .ms .mrp .deltemrp .icon {
+.tabs .ms .mrp .deltemrp .icon {
   position: absolute;
   border-left: 1px solid #c41b1b;
   transform: translateX(110px);
@@ -78,24 +165,24 @@
   justify-content: center;
   transition: width 200ms, transform 200ms, border-left 200ms;
 }
-.tabsec .tabs .ms .mrp .deltemrp svg {
+.tabs .ms .mrp .deltemrp svg {
   width: 15px;
   fill: #eee;
 }
-.tabsec .tabs .ms .mrp .deltemrp:hover {
+.tabs .ms .mrp .deltemrp:hover {
   background: #ff3636;
 }
-.tabsec .tabs .ms .mrp .deltemrp:hover .text {
+.tabs .ms .mrp .deltemrp:hover .text {
   color: transparent;
 }
-.tabsec .tabs .ms .mrp .deltemrp:hover .icon {
+.tabs .ms .mrp .deltemrp:hover .icon {
   width: 150px;
   border-left: none;
   transform: translateX(0);
 }
-.tabsec .tabs .ms .mrp .deltemrp:focus {
+.tabs .ms .mrp .deltemrp:focus {
   outline: none;
 }
-.tabsec .tabs .ms .mrp .deltemrp:active .icon svg {
+.tabs .ms .mrp .deltemrp:active .icon svg {
   transform: scale(0.8);
 }/*# sourceMappingURL=managepost.css.map */

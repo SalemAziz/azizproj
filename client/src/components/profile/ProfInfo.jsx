@@ -206,7 +206,7 @@ export default function ProfInfo() {
                 {userMatchs.map((match) => (
                   <div key={match.id} className='match-item'>
                     <img src={match.picfield} alt={match.creator} className='imgaccc' />
-                    <Link className="linkk" to={`/matchinfo/${match._id}`}>
+                    <Link className="linkk" to={`/ownmatchs/${match._id}`}>
                       {match.dayofthweek}-{match.houroflocation}
                     </Link>
                     <button onClick={() => handleDeleteMatch(match._id)} className="db">

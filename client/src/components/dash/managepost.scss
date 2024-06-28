@@ -1,136 +1,213 @@
 :root {
-    --PrimaryColor: hsl(199, 100%, 43%);
-    --SecondryColor: hsl(187, 85%, 43%);
-    --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
-    --whiteColor: hsl(0, 0%, 100%);
-    --blackColor: hsl(201, 33%, 16%);
-    --textColor: hsl(240, 4%, 36%);
-    --whiteColordeam: hsl(0, 0%, 93%);
-    --greytext: rgb(190, 190, 190);
-    --inputColor: rgb(239, 239, 239);
-    --bodyColor: rgb(240, 240, 240);
-    --cardBG: rgb(225, 225, 225);
-    --mm: hsl(155, 51%, 45%);
-    --gradientColorm: linear-gradient(to right, hsl(199, 100%, 41%), hsl(199, 100%, 43%));
-    --yyyy: hsl(199, 50%, 53%);
+  --PrimaryColor: hsl(199, 100%, 43%);
+  --SecondryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(43, 100%, 43%), hsl(34, 94%, 45%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColordeam: hsl(0, 0%, 93%);
+  --greytext: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 225);
+  --mm: hsl(155, 51%, 45%);
+  --gradientColorm: linear-gradient(to right, hsl(199, 100%, 41%), hsl(199, 100%, 43%));
+  --yyyy: hsl(199, 50%, 53%);
 }
 
 .tabsec {
-    table-layout: auto;
-    margin-left: 2rem;
+  table-layout: auto;
+  margin-left: 2rem;
 
-
-
-
-    .tabs {
-        width:80rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        border-radius: 2rem;
-        background: var(--whiteColor);
-
-
-
-        .tabattrb {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            padding-right: 1rem;
-            border-bottom: solid hsl(173, 82%, 24%) 3px;
-            color:  hsl(173, 82%, 24%);          
-           
-
-        }
-
-        .ms {
-            border-bottom-width: 5px solid var(--blackColor);
-            
-
-            .mrp {
-
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
-                padding-left: 4.5rem;
-                padding-right: 1rem;
-                color:black;
-                
-
-                .mrppic {
-                    object-fit: cover;
-                    height: 2.5rem;
-                    transform: translateX(-2rem);
-
-                }
-
-             
-
-                .deltemrp {
-                    width: 150px;
-  height: 50px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  background: #e62222; // using single declaration for background
-  border: none;
-  border-radius: 5px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-  position: relative; // added for absolute positioning inside
-  transition: background 200ms; // combined transition for button and children
-
-  .text {
-    transform: translateX(35px);
-    color: white;
-    font-weight: bold;
-    transition: color 200ms, transform 200ms; // added transition
-  }
-
-  .icon {
-    position: absolute;
-    border-left: 1px solid #c41b1b;
-    transform: translateX(110px);
-    height: 40px;
-    width: 40px;
+  .card {
+    width: 300px;
+    height: fit-content;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: width 200ms, transform 200ms, border-left 200ms; // added transition
-  }
+    gap: 20px;
+    padding: 30px;
+    position: absolute;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.068);
+    margin: 0 auto;
+    margin-top: -7rem;
+    transform: translate(30rem,-25rem);
 
-  svg {
-    width: 15px;
-    fill: #eee;
-  }
-
-  &:hover {
-    background: #ff3636;
-
-    .text {
-      color: transparent;
+    .card-content {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
     }
 
-    .icon {
-      width: 150px;
-      border-left: none;
-      transform: translateX(0);
+    .card-heading {
+      font-size: 20px;
+      font-weight: 700;
+      color: rgb(27, 27, 27);
+    }
+
+    .card-description {
+      font-weight: 100;
+      color: rgb(102, 102, 102);
+    }
+
+    .card-button-wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .card-button {
+      width: 50%;
+      height: 35px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+
+      &.primary {
+        background-color: rgb(255, 114, 109);
+        color: white;
+
+        &:hover {
+          background-color: rgb(255, 73, 66);
+        }
+      }
+
+      &.secondary {
+        background-color: #ddd;
+
+        &:hover {
+          background-color: rgb(197, 197, 197);
+        }
+      }
+    }
+
+    .exit-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: transparent;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+
+      &:hover svg {
+        fill: black;
+      }
+
+      svg {
+        fill: rgb(175, 175, 175);
+      }
     }
   }
+}
 
-  &:focus {
-    outline: none;
+.tabs {
+  width: 80rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 2rem;
+  background: var(--whiteColor);
+  overflow-x: auto; /* Add horizontal scroll */
+  overflow-y: auto; /* Add vertical scroll */
+  display: block; /* Ensure the table can scroll */
+  height: 43rem;
+  margin-top: -1rem;
+
+  .tabattrb {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+    border-bottom: solid hsl(173, 82%, 24%) 3px;
+    color: hsl(173, 82%, 24%);
+    width: 80rem;
   }
 
-  &:active {
-    .icon svg {
-      transform: scale(0.8);
-    }
-  }
-                  
+  .ms {
+    border-bottom-width: 5px solid var(--blackColor);
 
-           
+    .mrp {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 4.5rem;
+      padding-right: 1rem;
+      color: black;
 
-                }
+      .mrppic {
+        object-fit: cover;
+        height: 2.5rem;
+        transform: translateX(-2rem);
+      }
 
-            }
+      .deltemrp {
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        background: #e62222;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+        position: relative;
+        transition: background 200ms;
 
+        .text {
+          transform: translateX(35px);
+          color: white;
+          font-weight: bold;
+          transition: color 200ms, transform 200ms;
         }
 
+        .icon {
+          position: absolute;
+          border-left: 1px solid #c41b1b;
+          transform: translateX(110px);
+          height: 40px;
+          width: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: width 200ms, transform 200ms, border-left 200ms;
+        }
+
+        svg {
+          width: 15px;
+          fill: #eee;
+        }
+
+        &:hover {
+          background: #ff3636;
+
+          .text {
+            color: transparent;
+          }
+
+          .icon {
+            width: 150px;
+            border-left: none;
+            transform: translateX(0);
+          }
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &:active {
+          .icon svg {
+            transform: scale(0.8);
+          }
+        }
+      }
     }
+  }
 }

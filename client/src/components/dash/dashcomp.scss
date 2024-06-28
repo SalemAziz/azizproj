@@ -29,6 +29,7 @@
 .dashstatsection {
     width: 84rem;
     margin-left: -2rem;
+    margin-top: 1rem;
 
     
 
@@ -58,6 +59,22 @@
         padding: 0.75rem; /* Assuming Tailwind's p-3 corresponds to 0.75rem */
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
+    .demandeicon{
+        background-color: #ffa703; /* Tailwind's lime-600 color */
+        color: #ffffff; /* White color */
+        border-radius: 9999px; /* Fully rounded corners */
+        font-size: 3rem; /* Assuming Tailwind's text-5xl corresponds to 3rem */
+        padding: 0.75rem; /* Assuming Tailwind's p-3 corresponds to 0.75rem */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    .fieldicon{
+        background-color: #df0fdf; /* Tailwind's lime-600 color */
+        color: #ffffff; /* White color */
+        border-radius: 9999px; /* Fully rounded corners */
+        font-size: 3rem; /* Assuming Tailwind's text-5xl corresponds to 3rem */
+        padding: 0.75rem; /* Assuming Tailwind's p-3 corresponds to 0.75rem */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
  
     
 
@@ -74,7 +91,7 @@
             padding: 0.75rem;
             background-color: white;
             gap: 1rem;
-            width: 18rem;
+            width: 15rem;
             width: 28%;
             border-radius: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

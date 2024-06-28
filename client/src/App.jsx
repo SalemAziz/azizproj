@@ -5,6 +5,8 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Profile from './pages/internautepages/Profile';
 import Demande from './pages/internautepages/Demande';  
+import OwnMatchs from './pages/internautepages/OwnMatchs';  
+
 import './index.css'
 import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteA from './components/PrivateRouteA';
@@ -41,6 +43,8 @@ export default function App() {
         <Route path='/matchpage' element={<MatchPage />} />
         <Route path='/matchinfo/:matchId' element={<MatchInfo />} />
         <Route path='/fieldinfo/:fieldId' element={<FieldInfo />} />
+        <Route path='/ownmatchs/:matchId' element={<OwnMatchs />} />
+
         <Route element={<PrivateRouteAdmin />}>
         <Route path='/mainad' element={<MainAd />} />
         </Route>

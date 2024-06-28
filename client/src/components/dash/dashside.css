@@ -23,10 +23,11 @@
 
 .sidsection {
   width: 11rem;
-  height: 46rem;
+  height: 45.62rem;
   border-right: solid white 5px;
   border-bottom: solid white 2px;
-  background: rgb(40, 40, 40);
+  background: hsl(173, 82%, 24%);
+  margin-top: -2rem;
   border-bottom-right-radius: 2rem;
 }
 .sidsection .sidebaritems {
@@ -34,15 +35,15 @@
 }
 .sidsection .sidebaritems .sidebaritemgroup {
   margin-right: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   display: block;
 }
 .sidsection .sidebaritems .sidebaritemgroup .imgproff {
   border: 4.5px solid white;
   border-radius: 50rem;
   width: 5.8rem;
-  transform: translate(0.5rem, 0.5rem);
-  margin-bottom: 2rem;
+  transform: translate(0.5rem, 2rem);
+  margin-bottom: 4rem;
 }
 .sidsection .sidebaritems .sidebaritemgroup .sidebaritem {
   margin-bottom: 2rem;

@@ -6,7 +6,7 @@ import { verifyToken } from '../middleware/verifyUser.js';
 const router = express.Router();
 
 router.post("/createdemande" ,createDemande)
-router.get("/getdemande" ,getdemande)
+router.get("/getdemande" ,verifyToken,getdemande)
 router.delete("/delete/:demandeId" ,verifyToken,deletedemande)
 
 

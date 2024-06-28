@@ -126,4 +126,84 @@
   font-weight: 500;
   font-size: 20px;
   transform: translate(8rem, -1rem);
+}
+
+.card {
+  width: 300px;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  position: absolute;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.068);
+  transform: translate(39rem, -20rem);
+  margin: 0 auto;
+}
+.card .card-content {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card .card-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(27, 27, 27);
+}
+.card .card-description {
+  font-weight: 100;
+  color: rgb(102, 102, 102);
+}
+.card .card-button-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.card .card-button {
+  width: 50%;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.card .card-button.primary {
+  background-color: rgb(255, 114, 109);
+  color: white;
+}
+.card .card-button.primary:hover {
+  background-color: rgb(255, 73, 66);
+}
+.card .card-button.secondary {
+  background-color: #ddd;
+}
+.card .card-button.secondary:hover {
+  background-color: rgb(197, 197, 197);
+}
+.card .exit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.card .exit-button:hover svg {
+  fill: black;
+}
+.card .exit-button svg {
+  fill: rgb(175, 175, 175);
 }/*# sourceMappingURL=profile.css.map */

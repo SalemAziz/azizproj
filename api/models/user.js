@@ -31,6 +31,18 @@ const userSchema = new mongoose.Schema({
     phone:{
         type: String,
     },
+    matchs:{
+        type: Number,
+        default:0,
+    },
+    posts:{
+        type: Number,
+        default:0,
+    },
+    comments:{
+        type: Number,
+        default:0,
+    },
 }, {timestamps: true});
 
 const User = mongoose.model('User', userSchema);
